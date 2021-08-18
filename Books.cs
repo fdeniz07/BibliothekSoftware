@@ -21,14 +21,15 @@ namespace Bibliothek
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Titel { get; set; }
         public string Description { get; set; }
         public string Summary { get; set; }
         public string ISBN { get; set; }
         public string PublicationYear { get; set; }
         public string Edition { get; set; }
         public string Language { get; set; }
-        public string PrintLenght { get; set; }
+        public Nullable<int> PrintLenght { get; set; }
+        public string QRCode { get; set; }
         public string InnerBarcode { get; set; }
         public Nullable<int> NumberOfRentals { get; set; }
         public Nullable<int> AuthorId { get; set; }
@@ -43,8 +44,6 @@ namespace Bibliothek
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
-        public string Titel { get; set; }
-        public string QRCode { get; set; }
     
         public virtual Authors Authors { get; set; }
         public virtual BooksByCategories BooksByCategories { get; set; }

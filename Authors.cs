@@ -21,7 +21,9 @@ namespace Bibliothek
         }
     
         public int Id { get; set; }
-        public string AuthorName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string VollName { get; set; }
         public string AuthorAbout { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
@@ -30,9 +32,6 @@ namespace Bibliothek
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string VollName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books> Books { get; set; }
