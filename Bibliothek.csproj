@@ -132,6 +132,9 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tools.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TypesOfBooks.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

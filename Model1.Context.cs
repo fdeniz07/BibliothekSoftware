@@ -40,5 +40,6 @@ namespace Bibliothek
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TypesOfBooks> TypesOfBooks { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Tools> Tools { get; set; }
     }
 }

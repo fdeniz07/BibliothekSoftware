@@ -23,6 +23,13 @@ namespace Bibliothek
         public int Id { get; set; }
         public string BookType { get; set; }
         public string TypeDetails { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<bool> IsActive { get; set; }
+        public string CreatedByName { get; set; }
+        public string ModifiedByName { get; set; }
+        public string Note { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books> Books { get; set; }

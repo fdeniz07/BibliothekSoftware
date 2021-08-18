@@ -43,6 +43,8 @@ namespace Bibliothek
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
+        public string Titel { get; set; }
+        public string QRCode { get; set; }
     
         public virtual Authors Authors { get; set; }
         public virtual BooksByCategories BooksByCategories { get; set; }

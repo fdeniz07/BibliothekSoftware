@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,7 +20,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AuthorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="VollName" Type="nvarchar" MaxLength="50" />
           <Property Name="AuthorAbout" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
@@ -28,21 +30,22 @@
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Description" Type="varchar" MaxLength="100" />
-          <Property Name="Summary" Type="varchar(max)" />
-          <Property Name="ISBN" Type="varchar" MaxLength="50" />
-          <Property Name="PublicationYear" Type="varchar" MaxLength="4" />
-          <Property Name="Edition" Type="varchar" MaxLength="50" />
-          <Property Name="Language" Type="varchar" MaxLength="50" />
-          <Property Name="PrintLenght" Type="varchar" MaxLength="5" />
+          <Property Name="Titel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="25" />
+          <Property Name="PublicationYear" Type="nvarchar" MaxLength="4" />
+          <Property Name="Edition" Type="nvarchar" MaxLength="20" />
+          <Property Name="Language" Type="nvarchar" MaxLength="20" />
+          <Property Name="PrintLenght" Type="int" />
+          <Property Name="QRCode" Type="nvarchar" MaxLength="250" />
           <Property Name="InnerBarcode" Type="nvarchar" MaxLength="250" />
           <Property Name="NumberOfRentals" Type="int" />
           <Property Name="AuthorId" Type="int" />
@@ -56,7 +59,7 @@
           <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="BooksByCategories">
           <Key>
@@ -101,7 +104,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PublisherName" Type="nvarchar(max)" />
           <Property Name="PublisherAbout" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
@@ -175,13 +178,27 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TypesOfBooks">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BookType" Type="varchar" MaxLength="50" />
-          <Property Name="TypeDetails" Type="varchar(max)" />
+          <Property Name="BookType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeDetails" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -203,7 +220,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_BookCategories">
+        <Association Name="FK_Books_BooksByCategories">
           <End Role="BooksByCategories" Type="Self.BooksByCategories" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -361,13 +378,14 @@
           <EntitySet Name="Staffs" EntityType="Self.Staffs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tools" EntityType="Self.Tools" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypesOfBooks" EntityType="Self.TypesOfBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_BookCategories" Association="Self.FK_Books_BookCategories">
+          <AssociationSet Name="FK_Books_BooksByCategories" Association="Self.FK_Books_BooksByCategories">
             <End Role="BooksByCategories" EntitySet="BooksByCategories" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
@@ -416,8 +434,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DamlaLibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -445,8 +462,11 @@
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VollName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -454,13 +474,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ISBN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PublicationYear" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="Edition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PrintLenght" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PublicationYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Edition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PrintLenght" Type="String" />
           <Property Name="InnerBarcode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="NumberOfRentals" Type="Int32" />
           <Property Name="AuthorId" Type="Int32" />
@@ -474,13 +494,15 @@
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Authors" Relationship="Self.FK_Books_Authors" FromRole="Books" ToRole="Authors" />
           <NavigationProperty Name="BooksByCategories" Relationship="Self.FK_Books_BookCategories" FromRole="Books" ToRole="BooksByCategories" />
           <NavigationProperty Name="Publishers" Relationship="Self.FK_Books_Publishers" FromRole="Books" ToRole="Publishers" />
           <NavigationProperty Name="Section" Relationship="Self.FK_Books_Section" FromRole="Books" ToRole="Section" />
           <NavigationProperty Name="TypesOfBooks" Relationship="Self.FK_Books_TypesOfBooks" FromRole="Books" ToRole="TypesOfBooks" />
           <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Books" FromRole="Books" ToRole="BorrowingBooks" />
+          <Property Name="Titel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BooksByCategories">
           <Key>
@@ -619,9 +641,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TypeDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_TypesOfBooks" FromRole="TypesOfBooks" ToRole="Books" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -857,7 +886,15 @@
             <End Role="Staffs" EntitySet="Staffs" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="Tools" EntityType="DamlaLibraryModel.Tools" />
         </EntityContainer>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -878,8 +915,10 @@
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="DamlaLibraryModel.Authors">
               <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="VollName" ColumnName="VollName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
                 <ScalarProperty Name="AuthorAbout" ColumnName="AuthorAbout" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
@@ -894,8 +933,9 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="DamlaLibraryModel.Books">
               <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+                <ScalarProperty Name="Titel" ColumnName="Titel" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Summary" ColumnName="Summary" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
@@ -1050,6 +1090,13 @@
           <EntitySetMapping Name="TypesOfBooks">
             <EntityTypeMapping TypeName="DamlaLibraryModel.TypesOfBooks">
               <MappingFragment StoreEntitySet="TypesOfBooks">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BookType" ColumnName="BookType" />
                 <ScalarProperty Name="TypeDetails" ColumnName="TypeDetails" />
@@ -1062,6 +1109,14 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tools">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.Tools">
+              <MappingFragment StoreEntitySet="Tools">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
