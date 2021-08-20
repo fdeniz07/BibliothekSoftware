@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibliothek.Forms
@@ -22,13 +16,39 @@ namespace Bibliothek.Forms
         private void BookList_Load(object sender, EventArgs e)
         {
             //Listeleme
-            var values = db.Books.ToList();
-            gridControl1.DataSource = values;
+            //var values = db.Books.ToList();
+            ToBookList();
             lueAuthor.Properties.DataSource = db.Authors.ToList();
             luePublisher.Properties.DataSource = db.Publishers.ToList();
             lueType.Properties.DataSource = db.TypesOfBooks.ToList();
             lueAuthor.Properties.DataSource = db.BooksByCategories.ToList();
             lueSection.Properties.DataSource = db.Section.ToList();
+        }
+
+        void ToBookList()
+        {
+            var values = from books in db.Books
+                select new
+                {
+                    books.Id,
+                    books.Titel,
+                    books.Description,
+                    books.Summary,
+                    books.ISBN,
+                    books.PublicationYear,
+                    books.Edition,
+                    books.Language,
+                    books.PrintLenght,
+                    books.Authors.FullName,
+                    books.Publishers.PublisherName,
+                    books.TypesOfBooks.BookType,
+                    books.BooksByCategories.Category,
+                    books.Section.SectionName,
+                    books.IsActive,
+                    books.Note
+                };
+            gridControl1.DataSource = values.ToList();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -59,23 +79,11 @@ namespace Bibliothek.Forms
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            var values = db.Books.ToList();
-            gridControl1.DataSource = values;
+            //var values = db.Books.ToList();
+            //gridControl1.DataSource = values;
+            ToBookList();
         }
 
-        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
-            txtBookName.Text = gridView1.GetFocusedRowCellValue("Titel").ToString();
-            txtDescription.Text = gridView1.GetFocusedRowCellValue("Description").ToString();
-            txtSummary.Text = gridView1.GetFocusedRowCellValue("Summary").ToString();
-            txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
-            txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("PublicationYear").ToString();
-            txtEdition.Text = gridView1.GetFocusedRowCellValue("Edition").ToString();
-            txtLanguage.Text = gridView1.GetFocusedRowCellValue("Language").ToString();
-            txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("PrintLenght").ToString();
-            txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -105,6 +113,20 @@ namespace Bibliothek.Forms
 
             db.SaveChanges();
             MessageBox.Show("Buch erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
+            txtBookName.Text = gridView1.GetFocusedRowCellValue("Titel").ToString();
+            txtDescription.Text = gridView1.GetFocusedRowCellValue("Description").ToString();
+            txtSummary.Text = gridView1.GetFocusedRowCellValue("Summary").ToString();
+            txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
+            txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("PublicationYear").ToString();
+            txtEdition.Text = gridView1.GetFocusedRowCellValue("Edition").ToString();
+            txtLanguage.Text = gridView1.GetFocusedRowCellValue("Language").ToString();
+            txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("PrintLenght").ToString();
+            txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
         }
     }
 }

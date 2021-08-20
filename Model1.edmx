@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -22,7 +22,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="VollName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
           <Property Name="AuthorAbout" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
@@ -434,8 +434,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DamlaLibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -457,7 +456,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VollName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AuthorAbout" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDate" Type="DateTime" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
@@ -467,6 +465,7 @@
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -914,10 +913,10 @@
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="DamlaLibraryModel.Authors">
               <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="VollName" ColumnName="VollName" />
                 <ScalarProperty Name="AuthorAbout" ColumnName="AuthorAbout" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />

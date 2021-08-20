@@ -30,8 +30,6 @@ namespace Bibliothek.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookList));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnList = new DevExpress.XtraEditors.SimpleButton();
             this.lueAuthor = new DevExpress.XtraEditors.LookUpEdit();
@@ -69,8 +67,8 @@ namespace Bibliothek.Forms
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtBookName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueAuthor.Properties)).BeginInit();
@@ -89,26 +87,9 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1079, 737);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(241)))), ((int)(((byte)(251)))));
-            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(182)))), ((int)(((byte)(239)))));
-            this.gridView1.Appearance.Row.Options.UseBackColor = true;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
@@ -148,9 +129,9 @@ namespace Bibliothek.Forms
             this.groupControl1.Controls.Add(this.labelControl16);
             this.groupControl1.Controls.Add(this.txtBookName);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(1097, 12);
+            this.groupControl1.Location = new System.Drawing.Point(1524, -1);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(375, 737);
+            this.groupControl1.Size = new System.Drawing.Size(388, 974);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "BUCHTRANSAKTIONEN";
             // 
@@ -455,19 +436,36 @@ namespace Bibliothek.Forms
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Buchtitel :";
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(-1, -2);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1519, 975);
+            this.gridControl1.TabIndex = 5;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged_1);
+            // 
             // BookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1484, 761);
-            this.Controls.Add(this.groupControl1);
+            this.ClientSize = new System.Drawing.Size(1834, 861);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.groupControl1);
             this.Name = "BookList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BookList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -487,14 +485,13 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LookUpEdit lueSection;
         private DevExpress.XtraEditors.LookUpEdit lueBookCategory;
@@ -532,5 +529,7 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.SimpleButton btnList;
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

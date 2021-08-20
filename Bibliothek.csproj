@@ -94,6 +94,12 @@
     <Compile Include="Forms\BookList.Designer.cs">
       <DependentUpon>BookList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewBook.Designer.cs">
+      <DependentUpon>NewBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookList.resx">
       <DependentUpon>BookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewBook.resx">
+      <DependentUpon>NewBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

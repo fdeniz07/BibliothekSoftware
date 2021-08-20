@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bibliothek.Forms;
 using System.Windows.Forms;
-using Bibliothek.Forms;
 
 namespace Bibliothek
 {
@@ -18,11 +10,17 @@ namespace Bibliothek
             InitializeComponent();
         }
 
-        private void btnBookListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.BookList bookList = new BookList();
             bookList.MdiParent = this;
             bookList.Show();
+        }
+
+        private void btnNewBook_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.NewBook newBook = new NewBook();
+            newBook.Show();
         }
     }
 }
