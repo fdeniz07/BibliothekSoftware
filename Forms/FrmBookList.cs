@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Bibliothek.Forms
 {
-    public partial class BookList : Form
+    public partial class FrmBookList : Form
     {
-        public BookList()
+        public FrmBookList()
         {
             InitializeComponent();
         }
@@ -28,27 +28,27 @@ namespace Bibliothek.Forms
         void ToBookList()
         {
             var values = from books in db.Books
-                select new
-                {
-                    books.Id,
-                    books.Titel,
-                    books.Description,
-                    books.Summary,
-                    books.ISBN,
-                    books.PublicationYear,
-                    books.Edition,
-                    books.Language,
-                    books.PrintLenght,
-                    books.Authors.FullName,
-                    books.Publishers.PublisherName,
-                    books.TypesOfBooks.BookType,
-                    books.BooksByCategories.Category,
-                    books.Section.SectionName,
-                    books.IsActive,
-                    books.Note
-                };
+                         select new
+                         {
+                             books.Id,
+                             books.Titel,
+                             books.Description,
+                             books.Summary,
+                             books.ISBN,
+                             books.PublicationYear,
+                             books.Edition,
+                             books.Language,
+                             books.PrintLenght,
+                             books.Authors.FullName,
+                             books.Publishers.PublisherName,
+                             books.TypesOfBooks.BookType,
+                             books.BooksByCategories.Category,
+                             books.Section.SectionName,
+                             books.IsActive,
+                             books.Note
+                         };
             gridControl1.DataSource = values.ToList();
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -56,13 +56,13 @@ namespace Bibliothek.Forms
             Books books = new Books();
             books.Titel = txtBookName.Text;
             books.Description = txtDescription.Text;
-            books.Summary = txtSummary.Text;
+            books.Summary = rtxtSummary.Text;
             books.ISBN = txtISBN.Text;
             books.PublicationYear = txtPublicationYear.Text;
             books.Edition = txtEdition.Text;
             books.Language = txtLanguage.Text;
             books.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
-            books.AuthorId =byte.Parse( lueAuthor.EditValue.ToString());
+            books.AuthorId = byte.Parse(lueAuthor.EditValue.ToString());
             books.PublisherId = byte.Parse(luePublisher.EditValue.ToString());
             books.TypeId = byte.Parse(lueType.EditValue.ToString());
             books.BookCategoryId = byte.Parse(lueBookCategory.EditValue.ToString());
@@ -101,15 +101,13 @@ namespace Bibliothek.Forms
             var value = db.Books.Find(id);
             value.Titel = txtBookName.Text;
             value.Description = txtDescription.Text;
-            value.Summary = txtSummary.Text;
+            value.Summary = rtxtSummary.Text;
             value.ISBN = txtISBN.Text;
             value.PublicationYear = txtPublicationYear.Text;
             value.Edition = txtEdition.Text;
             value.Language = txtLanguage.Text;
             value.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
             value.Note = txtNote.Text;
-            
-
 
             db.SaveChanges();
             MessageBox.Show("Buch erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -120,7 +118,7 @@ namespace Bibliothek.Forms
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
             txtBookName.Text = gridView1.GetFocusedRowCellValue("Titel").ToString();
             txtDescription.Text = gridView1.GetFocusedRowCellValue("Description").ToString();
-            txtSummary.Text = gridView1.GetFocusedRowCellValue("Summary").ToString();
+            rtxtSummary.Text = gridView1.GetFocusedRowCellValue("Summary").ToString();
             txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
             txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("PublicationYear").ToString();
             txtEdition.Text = gridView1.GetFocusedRowCellValue("Edition").ToString();

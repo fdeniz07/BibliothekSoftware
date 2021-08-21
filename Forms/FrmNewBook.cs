@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Bibliothek.Forms
 {
-    public partial class NewBook : Form
+    public partial class FrmNewBook : Form
     {
-        public NewBook()
+        public FrmNewBook()
         {
             InitializeComponent();
         }
@@ -16,7 +16,7 @@ namespace Bibliothek.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            NewBook newBook = new NewBook();
+            FrmNewBook newBook = new FrmNewBook();
             //newBook.Hide();
         }
 
@@ -27,7 +27,7 @@ namespace Bibliothek.Forms
 
             books.Titel = txtBookName.Text;
             books.Description = txtDescription.Text;
-            books.Summary = txtSummary.Text;
+            books.Summary = rtxtSummary.Text;
             books.ISBN = txtISBN.Text;
             books.PublicationYear = txtPublicationYear.Text;
             books.Edition = txtEdition.Text;

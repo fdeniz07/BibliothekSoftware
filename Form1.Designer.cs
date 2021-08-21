@@ -29,11 +29,12 @@ namespace Bibliothek
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCategoryList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewCategory = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnBookListForm = new DevExpress.XtraBars.BarButtonItem();
@@ -44,7 +45,7 @@ namespace Bibliothek
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookStatistics = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
@@ -66,7 +67,9 @@ namespace Bibliothek
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -76,8 +79,8 @@ namespace Bibliothek
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
+            this.btnCategoryList,
+            this.btnNewCategory,
             this.barButtonItem4,
             this.barButtonItem5,
             this.btnBookListForm,
@@ -88,7 +91,7 @@ namespace Bibliothek
             this.barButtonItem11,
             this.barButtonItem12,
             this.barButtonItem13,
-            this.barButtonItem14,
+            this.btnBookStatistics,
             this.barButtonItem15,
             this.barButtonItem16,
             this.barButtonItem17,
@@ -103,8 +106,7 @@ namespace Bibliothek
             this.ribbonPage4,
             this.ribbonPage5,
             this.ribbonPage3});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1834, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1584, 148);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // barButtonItem1
@@ -113,21 +115,23 @@ namespace Bibliothek
             this.barButtonItem1.Id = 1;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem2
+            // btnCategoryList
             // 
-            this.barButtonItem2.Caption = "Kategorieliste";
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnCategoryList.Caption = "Kategorieliste";
+            this.btnCategoryList.Id = 2;
+            this.btnCategoryList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoryList.ImageOptions.Image")));
+            this.btnCategoryList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCategoryList.ImageOptions.LargeImage")));
+            this.btnCategoryList.Name = "btnCategoryList";
+            this.btnCategoryList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCategoryList_ItemClick);
             // 
-            // barButtonItem3
+            // btnNewCategory
             // 
-            this.barButtonItem3.Caption = "Neue Kategorie";
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnNewCategory.Caption = "Neue Kategorie";
+            this.btnNewCategory.Id = 3;
+            this.btnNewCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCategory.ImageOptions.Image")));
+            this.btnNewCategory.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewCategory.ImageOptions.LargeImage")));
+            this.btnNewCategory.Name = "btnNewCategory";
+            this.btnNewCategory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCategory_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -153,8 +157,8 @@ namespace Bibliothek
             // 
             this.btnNewBook.Caption = "Neues Buch";
             this.btnNewBook.Id = 7;
-            this.btnNewBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btnNewBook.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.btnNewBook.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewBook.ImageOptions.Image")));
+            this.btnNewBook.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewBook.ImageOptions.LargeImage")));
             this.btnNewBook.Name = "btnNewBook";
             this.btnNewBook.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewBook_ItemClick);
             // 
@@ -206,13 +210,14 @@ namespace Bibliothek
             this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
             this.barButtonItem13.Name = "barButtonItem13";
             // 
-            // barButtonItem14
+            // btnBookStatistics
             // 
-            this.barButtonItem14.Caption = "Buchstatistik";
-            this.barButtonItem14.Id = 14;
-            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
-            this.barButtonItem14.Name = "barButtonItem14";
+            this.btnBookStatistics.Caption = "Buchstatistik";
+            this.btnBookStatistics.Id = 14;
+            this.btnBookStatistics.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.btnBookStatistics.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.btnBookStatistics.Name = "btnBookStatistics";
+            this.btnBookStatistics.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBookStatistics_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -280,8 +285,8 @@ namespace Bibliothek
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCategoryList);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnNewCategory);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -301,7 +306,7 @@ namespace Bibliothek
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem14);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnBookStatistics);
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem15);
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem16);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
@@ -366,17 +371,22 @@ namespace Bibliothek
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1834, 1041);
+            this.ClientSize = new System.Drawing.Size(1584, 881);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,8 +398,8 @@ namespace Bibliothek
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnCategoryList;
+        private DevExpress.XtraBars.BarButtonItem btnNewCategory;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem btnBookListForm;
@@ -400,7 +410,7 @@ namespace Bibliothek
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem btnBookStatistics;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
         private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
@@ -420,6 +430,7 @@ namespace Bibliothek
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Bibliothek.Forms
 {
-    partial class BookList
+    partial class FrmBookList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@ namespace Bibliothek.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.rtxtSummary = new System.Windows.Forms.RichTextBox();
             this.btnList = new DevExpress.XtraEditors.SimpleButton();
             this.lueAuthor = new DevExpress.XtraEditors.LookUpEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -59,7 +60,6 @@ namespace Bibliothek.Forms
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtISBN = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSummary = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtDescription = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -69,6 +69,9 @@ namespace Bibliothek.Forms
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueAuthor.Properties)).BeginInit();
@@ -83,16 +86,19 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPublicationYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtISBN.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.rtxtSummary);
             this.groupControl1.Controls.Add(this.btnList);
             this.groupControl1.Controls.Add(this.lueAuthor);
             this.groupControl1.Controls.Add(this.btnDelete);
@@ -121,7 +127,6 @@ namespace Bibliothek.Forms
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.txtISBN);
             this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.txtSummary);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txtDescription);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -129,16 +134,24 @@ namespace Bibliothek.Forms
             this.groupControl1.Controls.Add(this.labelControl16);
             this.groupControl1.Controls.Add(this.txtBookName);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Location = new System.Drawing.Point(1524, -1);
+            this.groupControl1.Location = new System.Drawing.Point(1190, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(388, 974);
+            this.groupControl1.Size = new System.Drawing.Size(388, 845);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "BUCHTRANSAKTIONEN";
+            // 
+            // rtxtSummary
+            // 
+            this.rtxtSummary.Location = new System.Drawing.Point(144, 138);
+            this.rtxtSummary.Name = "rtxtSummary";
+            this.rtxtSummary.Size = new System.Drawing.Size(227, 72);
+            this.rtxtSummary.TabIndex = 37;
+            this.rtxtSummary.Text = "Zusammenfassung";
             // 
             // btnList
             // 
             this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
-            this.btnList.Location = new System.Drawing.Point(142, 612);
+            this.btnList.Location = new System.Drawing.Point(142, 668);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(228, 37);
             this.btnList.TabIndex = 21;
@@ -147,7 +160,7 @@ namespace Bibliothek.Forms
             // 
             // lueAuthor
             // 
-            this.lueAuthor.Location = new System.Drawing.Point(144, 291);
+            this.lueAuthor.Location = new System.Drawing.Point(144, 347);
             this.lueAuthor.Name = "lueAuthor";
             this.lueAuthor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -159,7 +172,7 @@ namespace Bibliothek.Forms
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(142, 569);
+            this.btnDelete.Location = new System.Drawing.Point(142, 625);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
             this.btnDelete.TabIndex = 19;
@@ -169,7 +182,7 @@ namespace Bibliothek.Forms
             // btnUpdate
             // 
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(142, 526);
+            this.btnUpdate.Location = new System.Drawing.Point(142, 582);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
             this.btnUpdate.TabIndex = 18;
@@ -179,7 +192,7 @@ namespace Bibliothek.Forms
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(143, 483);
+            this.btnSave.Location = new System.Drawing.Point(143, 539);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 37);
             this.btnSave.TabIndex = 17;
@@ -188,7 +201,7 @@ namespace Bibliothek.Forms
             // 
             // lueSection
             // 
-            this.lueSection.Location = new System.Drawing.Point(143, 395);
+            this.lueSection.Location = new System.Drawing.Point(143, 451);
             this.lueSection.Name = "lueSection";
             this.lueSection.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -199,7 +212,7 @@ namespace Bibliothek.Forms
             // 
             // lueBookCategory
             // 
-            this.lueBookCategory.Location = new System.Drawing.Point(143, 369);
+            this.lueBookCategory.Location = new System.Drawing.Point(143, 425);
             this.lueBookCategory.Name = "lueBookCategory";
             this.lueBookCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -210,7 +223,7 @@ namespace Bibliothek.Forms
             // 
             // lueType
             // 
-            this.lueType.Location = new System.Drawing.Point(143, 343);
+            this.lueType.Location = new System.Drawing.Point(143, 399);
             this.lueType.Name = "lueType";
             this.lueType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -221,7 +234,7 @@ namespace Bibliothek.Forms
             // 
             // luePublisher
             // 
-            this.luePublisher.Location = new System.Drawing.Point(143, 317);
+            this.luePublisher.Location = new System.Drawing.Point(143, 373);
             this.luePublisher.Name = "luePublisher";
             this.luePublisher.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -232,161 +245,154 @@ namespace Bibliothek.Forms
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(101, 294);
+            this.labelControl10.Location = new System.Drawing.Point(101, 350);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(34, 13);
+            this.labelControl10.Size = new System.Drawing.Size(35, 13);
             this.labelControl10.TabIndex = 13;
             this.labelControl10.Text = "Autor :";
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(143, 421);
+            this.txtNote.Location = new System.Drawing.Point(143, 477);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(227, 20);
             this.txtNote.TabIndex = 14;
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(72, 424);
+            this.labelControl11.Location = new System.Drawing.Point(69, 480);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(63, 13);
+            this.labelControl11.Size = new System.Drawing.Size(67, 13);
             this.labelControl11.TabIndex = 13;
             this.labelControl11.Text = "Erläuterung :";
             // 
             // txtInnerBarkod
             // 
-            this.txtInnerBarkod.Location = new System.Drawing.Point(143, 447);
+            this.txtInnerBarkod.Location = new System.Drawing.Point(143, 503);
             this.txtInnerBarkod.Name = "txtInnerBarkod";
             this.txtInnerBarkod.Size = new System.Drawing.Size(227, 20);
             this.txtInnerBarkod.TabIndex = 14;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(50, 450);
+            this.labelControl9.Location = new System.Drawing.Point(50, 506);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(85, 13);
+            this.labelControl9.Size = new System.Drawing.Size(87, 13);
             this.labelControl9.TabIndex = 13;
             this.labelControl9.Text = "Innerer Barcode :";
             // 
             // txtPrintLenght
             // 
-            this.txtPrintLenght.Location = new System.Drawing.Point(143, 265);
+            this.txtPrintLenght.Location = new System.Drawing.Point(143, 321);
             this.txtPrintLenght.Name = "txtPrintLenght";
             this.txtPrintLenght.Size = new System.Drawing.Size(227, 20);
             this.txtPrintLenght.TabIndex = 14;
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(75, 268);
+            this.labelControl8.Location = new System.Drawing.Point(71, 324);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(60, 13);
+            this.labelControl8.Size = new System.Drawing.Size(65, 13);
             this.labelControl8.TabIndex = 13;
             this.labelControl8.Text = "Drucklänge :";
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(83, 398);
+            this.labelControl15.Location = new System.Drawing.Point(79, 454);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(52, 13);
+            this.labelControl15.Size = new System.Drawing.Size(57, 13);
             this.labelControl15.TabIndex = 13;
             this.labelControl15.Text = "Abteilung :";
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(60, 372);
+            this.labelControl14.Location = new System.Drawing.Point(56, 432);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(75, 13);
+            this.labelControl14.Size = new System.Drawing.Size(80, 13);
             this.labelControl14.TabIndex = 13;
             this.labelControl14.Text = "Buchkategorie :";
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(56, 346);
+            this.labelControl13.Location = new System.Drawing.Point(75, 406);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(79, 13);
+            this.labelControl13.Size = new System.Drawing.Size(61, 13);
             this.labelControl13.TabIndex = 13;
-            this.labelControl13.Text = "Art des Buches :";
+            this.labelControl13.Text = "Buchgenre :";
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(98, 320);
+            this.labelControl12.Location = new System.Drawing.Point(98, 376);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(37, 13);
+            this.labelControl12.Size = new System.Drawing.Size(39, 13);
             this.labelControl12.TabIndex = 13;
             this.labelControl12.Text = "Verlag :";
             // 
             // txtLanguage
             // 
-            this.txtLanguage.Location = new System.Drawing.Point(143, 239);
+            this.txtLanguage.Location = new System.Drawing.Point(143, 295);
             this.txtLanguage.Name = "txtLanguage";
             this.txtLanguage.Size = new System.Drawing.Size(227, 20);
             this.txtLanguage.TabIndex = 14;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(89, 242);
+            this.labelControl7.Location = new System.Drawing.Point(89, 298);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(46, 13);
+            this.labelControl7.Size = new System.Drawing.Size(47, 13);
             this.labelControl7.TabIndex = 13;
             this.labelControl7.Text = "Sprache :";
             // 
             // txtEdition
             // 
-            this.txtEdition.Location = new System.Drawing.Point(143, 213);
+            this.txtEdition.Location = new System.Drawing.Point(143, 269);
             this.txtEdition.Name = "txtEdition";
             this.txtEdition.Size = new System.Drawing.Size(227, 20);
             this.txtEdition.TabIndex = 14;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(91, 216);
+            this.labelControl6.Location = new System.Drawing.Point(90, 272);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(44, 13);
+            this.labelControl6.Size = new System.Drawing.Size(46, 13);
             this.labelControl6.TabIndex = 13;
             this.labelControl6.Text = "Auflage :";
             // 
             // txtPublicationYear
             // 
-            this.txtPublicationYear.Location = new System.Drawing.Point(143, 187);
+            this.txtPublicationYear.Location = new System.Drawing.Point(143, 243);
             this.txtPublicationYear.Name = "txtPublicationYear";
             this.txtPublicationYear.Size = new System.Drawing.Size(227, 20);
             this.txtPublicationYear.TabIndex = 12;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(46, 190);
+            this.labelControl5.Location = new System.Drawing.Point(41, 246);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(89, 13);
+            this.labelControl5.Size = new System.Drawing.Size(95, 13);
             this.labelControl5.TabIndex = 11;
             this.labelControl5.Text = "Erscheinungsjahr :";
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(143, 161);
+            this.txtISBN.Location = new System.Drawing.Point(143, 217);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(227, 20);
             this.txtISBN.TabIndex = 10;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(105, 164);
+            this.labelControl4.Location = new System.Drawing.Point(107, 220);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(30, 13);
+            this.labelControl4.Size = new System.Drawing.Size(29, 13);
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "ISBN :";
-            // 
-            // txtSummary
-            // 
-            this.txtSummary.Location = new System.Drawing.Point(143, 135);
-            this.txtSummary.Name = "txtSummary";
-            this.txtSummary.Size = new System.Drawing.Size(227, 20);
-            this.txtSummary.TabIndex = 8;
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(39, 138);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(96, 13);
+            this.labelControl3.Size = new System.Drawing.Size(102, 13);
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Zusammenfassung :";
             // 
@@ -401,7 +407,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl2.Location = new System.Drawing.Point(64, 112);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(71, 13);
+            this.labelControl2.Size = new System.Drawing.Size(76, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Beschreibung :";
             // 
@@ -415,9 +421,9 @@ namespace Bibliothek.Forms
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(118, 60);
+            this.labelControl16.Location = new System.Drawing.Point(122, 60);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(17, 13);
+            this.labelControl16.Size = new System.Drawing.Size(16, 13);
             this.labelControl16.TabIndex = 3;
             this.labelControl16.Text = "Id :";
             // 
@@ -432,36 +438,64 @@ namespace Bibliothek.Forms
             // 
             this.labelControl1.Location = new System.Drawing.Point(87, 86);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(48, 13);
+            this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Buchtitel :";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(-1, -2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1519, 975);
+            this.gridControl1.Size = new System.Drawing.Size(1184, 845);
             this.gridControl1.TabIndex = 5;
+            this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView1,
+            this.cardView1,
+            this.gridView2,
+            this.winExplorerView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.Aqua;
+            this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged_1);
             // 
-            // BookList
+            // cardView1
+            // 
+            this.cardView1.GridControl = this.gridControl1;
+            this.cardView1.Name = "cardView1";
+            this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridView2.Appearance.Row.BackColor2 = System.Drawing.Color.Aqua;
+            this.gridView2.Appearance.Row.Options.UseBackColor = true;
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.Name = "gridView2";
+            // 
+            // winExplorerView1
+            // 
+            this.winExplorerView1.GridControl = this.gridControl1;
+            this.winExplorerView1.Name = "winExplorerView1";
+            // 
+            // FrmBookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1834, 861);
+            this.ClientSize = new System.Drawing.Size(1580, 857);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
-            this.Name = "BookList";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimizeBox = false;
+            this.Name = "FrmBookList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -481,12 +515,14 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPublicationYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtISBN.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSummary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -514,7 +550,6 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtISBN;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txtSummary;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtDescription;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -531,5 +566,9 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Card.CardView cardView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView winExplorerView1;
+        private System.Windows.Forms.RichTextBox rtxtSummary;
     }
 }
