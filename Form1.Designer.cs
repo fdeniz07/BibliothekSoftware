@@ -47,8 +47,8 @@ namespace Bibliothek
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.btnBookStatistics = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookType = new DevExpress.XtraBars.BarButtonItem();
+            this.bntQRCode = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -93,8 +93,8 @@ namespace Bibliothek
             this.barButtonItem13,
             this.btnBookStatistics,
             this.barButtonItem15,
-            this.barButtonItem16,
-            this.barButtonItem17,
+            this.btnBookType,
+            this.bntQRCode,
             this.barButtonItem18,
             this.barButtonItem6});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -214,8 +214,8 @@ namespace Bibliothek
             // 
             this.btnBookStatistics.Caption = "Buchstatistik";
             this.btnBookStatistics.Id = 14;
-            this.btnBookStatistics.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.btnBookStatistics.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.btnBookStatistics.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookStatistics.ImageOptions.Image")));
+            this.btnBookStatistics.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookStatistics.ImageOptions.LargeImage")));
             this.btnBookStatistics.Name = "btnBookStatistics";
             this.btnBookStatistics.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBookStatistics_ItemClick);
             // 
@@ -227,25 +227,27 @@ namespace Bibliothek
             this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
             this.barButtonItem15.Name = "barButtonItem15";
             // 
-            // barButtonItem16
+            // btnBookType
             // 
-            this.barButtonItem16.Caption = "Buchtyp-Statistiken";
-            this.barButtonItem16.Id = 16;
-            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.barButtonItem16.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.btnBookType.Caption = "Buchtyp-Statistiken";
+            this.btnBookType.Id = 16;
+            this.btnBookType.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookType.ImageOptions.Image")));
+            this.btnBookType.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookType.ImageOptions.LargeImage")));
+            this.btnBookType.Name = "btnBookType";
+            this.btnBookType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBookType_ItemClick);
             // 
-            // barButtonItem17
+            // bntQRCode
             // 
-            this.barButtonItem17.Caption = "QR Code Erstellung";
-            this.barButtonItem17.Id = 17;
-            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
-            this.barButtonItem17.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
-            this.barButtonItem17.Name = "barButtonItem17";
+            this.bntQRCode.Caption = "QR Code Generierung";
+            this.bntQRCode.Id = 17;
+            this.bntQRCode.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
+            this.bntQRCode.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.bntQRCode.Name = "bntQRCode";
+            this.bntQRCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bntQRCode_ItemClick);
             // 
             // barButtonItem18
             // 
-            this.barButtonItem18.Caption = "Barcode Erstellung";
+            this.barButtonItem18.Caption = "Barcode Generierung";
             this.barButtonItem18.Id = 18;
             this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
             this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
@@ -308,13 +310,13 @@ namespace Bibliothek
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnBookStatistics);
             this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem15);
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnBookType);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "ribbonPageGroup10";
             // 
             // ribbonPageGroup11
             // 
-            this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup11.ItemLinks.Add(this.bntQRCode);
             this.ribbonPageGroup11.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "ribbonPageGroup11";
@@ -412,8 +414,8 @@ namespace Bibliothek
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem btnBookStatistics;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem btnBookType;
+        private DevExpress.XtraBars.BarButtonItem bntQRCode;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;

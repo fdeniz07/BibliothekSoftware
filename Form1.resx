@@ -723,7 +723,7 @@
         2zax9GEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barButtonItem14.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBookStatistics.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABB0RVh0VGl0
         bGUAUGllO0NoYXJ0O+NmYDoAAANbSURBVDhPbZNpTFNZGIYPogbG7S+ajJNRRDEkhhCNk0lMjCQq4xZh
@@ -743,7 +743,7 @@
         zsdjuUOOhscT4pBf/QZLUGZRfqDMoyygzPf6LO7jMVeRrygWBpH/AcxTUm8ObXlCAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barButtonItem14.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBookStatistics.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABB0RVh0VGl0
         bGUAUGllO0NoYXJ0O+NmYDoAAApWSURBVFhHnZd5UFX3FcevabYmTdqmmc60ncl0kjSbWhM1sYsm0bgg
@@ -854,7 +854,7 @@
         trwN+b/m/NOIn0muSobNHoUfPgI/IvjfUPApU/8DUnmm2NlLGrUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="barButtonItem16.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBookType.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAApdEVYdFRpdGxlAFN0YWNrZWRIb3Jpem9udGFsQ3ls
@@ -872,7 +872,7 @@
         aAhcpmnQkWkcxGXjc+hIRr4dGXl2pBsGmLTc/h0X9TE2XMhR2Ry/AS0mPkFSiMK5AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barButtonItem16.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBookType.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAApdEVYdFRpdGxlAFN0YWNrZWRIb3Jpem9udGFsQ3ls

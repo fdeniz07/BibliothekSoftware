@@ -43,5 +43,19 @@ namespace Bibliothek
             bookStatistics.MdiParent = this;
             bookStatistics.Show();
         }
+
+        private void btnBookType_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmBookType bookType = new FrmBookType();
+            bookType.MdiParent = this;
+            bookType.Show();
+        }
+
+        private void bntQRCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmQRCode qrCode = new FrmQRCode();
+            //qrCode.MdiParent = this;
+            qrCode.Show();
+        }
     }
 }

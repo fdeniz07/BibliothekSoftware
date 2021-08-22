@@ -30,7 +30,7 @@ namespace Bibliothek.Forms
              * 10- En cok kitabin oldugu tür adi - Das Genre mit den meisten Büchern - Number of books with the most book genres
              *
              * 11- En az  kitabin oldugu tür adi - Das Genre mit den wenigsten Büchern - Number of books with the least book genres
-             * 12- En cok kitaba sahip yazar - Autor mit den meisten Büchern - Number of books by the same author
+             * 12- En cok kitaba sahip yazar - Autor mit den meisten Büchern - Author with most books
              * 13- En cok kitaba sahip yayinevi - Verlag mit den meisten Büchern - Publisher with most books
              * 14- En fazla kitabin oldugu bölüm adi - Die Abteilung mit den meisten Büchern - The section with the most books
              * 15- En fazla kitabin oldugu yayin yili - Maximale Anzahl an Erscheinungsjahren - Publication year with the most books
@@ -47,19 +47,36 @@ namespace Bibliothek.Forms
             lblSectionTotals.Text = db.Section.Count().ToString(); //5
             lblTotalCategory.Text = db.BooksByCategories.Count().ToString(); //6
             lblTotalDifferntBook.Text = (from x in db.Books select x.Titel).Distinct().Count().ToString(); //7
-
-
-
-            lblTotalSummary.Text = db.Books.Count(x => x.Summary != "").ToString(); //16
+            lblTotalNumberOfLanguages.Text = (from x in db.Books select x.Language).Distinct().Count().ToString(); //8
+            lblMostPages.Text = (from x in db.Books orderby x.PrintLenght descending select x.Titel).FirstOrDefault().ToString(); //9-1
+            lblPageCount.Text = (from x in db.Books orderby x.PrintLenght descending select x.PrintLenght).FirstOrDefault().ToString(); //9-2
             
+            lblMostBookGenres.Text = db.Books.OrderByDescending(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z =>
+                new
+                {
+                    Bookgenre = z.Key,
+                    //Summe = z.Count()
+                }).FirstOrDefault().ToString();
+
+            //lblMostBookGenres.Text =
+            //    (from x in db.Books group x.Titel by x.TypeId).Count().ToString();
+            //lblLeastBookGenres.Text=
+
+
+            lblActiveBooks.Text = db.Books.Count(x => x.Summary != "").ToString(); //16
+
             //lblMaximumNumberOfYearsOfPublication.Text = 
-            
+
             //lblDepartmenrWithMostOfTheBooks.Text = db.Books.Count()
 
             // lblCategoryWithTheMostBooks.Text =(from x in db.Books orderby x.BookCategoryId descending select x.Titel).FirstOrDefault();
 
 
-
+            //var values = db.Books.OrderBy(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z => new
+            //{
+            //    BookType = z.Key,
+            //    Summe = z.Count()
+            //});
 
         }
     }
