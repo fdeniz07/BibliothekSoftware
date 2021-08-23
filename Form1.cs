@@ -10,12 +10,7 @@ namespace Bibliothek
             InitializeComponent();
         }
 
-        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.FrmBookList bookList = new FrmBookList();
-            bookList.MdiParent = this;
-            bookList.Show();
-        }
+
 
         private void btnNewBook_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -56,6 +51,34 @@ namespace Bibliothek
             Forms.FrmQRCode qrCode = new FrmQRCode();
             //qrCode.MdiParent = this;
             qrCode.Show();
+        }
+
+        private void btnStudentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmStudent student = new FrmStudent();
+            student.MdiParent = this;
+            student.Show();
+        }
+
+        private void btnBookList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmBookList bookList = new FrmBookList();
+            bookList.MdiParent = this;
+            bookList.Show();
+        }
+
+        private void btnBookGenreList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmBookGenre bookGenre = new FrmBookGenre();
+            bookGenre.MdiParent = this;
+            bookGenre.Show();
+        }
+
+        private void btnBookGenreAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewBookGenre bookGenre = new FrmNewBookGenre();
+            //bookGenre.MdiParent = this;
+            bookGenre.Show();
         }
     }
 }

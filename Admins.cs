@@ -19,7 +19,5 @@ namespace Bibliothek
         public string LastName { get; set; }
         public string Role { get; set; }
         public string Description { get; set; }
-    
-        public virtual Users Users { get; set; }
     }
 }

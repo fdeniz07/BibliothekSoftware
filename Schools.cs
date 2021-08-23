@@ -20,11 +20,26 @@ namespace Bibliothek
             this.Students = new HashSet<Students>();
         }
     
-        public short Id { get; set; }
+        public int Id { get; set; }
         public string SchoolName { get; set; }
-        public Nullable<short> SchoolTypeId { get; set; }
+        public int TypeId { get; set; }
+        public string PhoneNumber { get; set; }
+        public string FaxNumber { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string AutherizedPerson { get; set; }
+        public string Homepage { get; set; }
+        public int CityId { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public bool IsDeleted { get; set; }
+        public bool IsActive { get; set; }
+        public string CreatedByName { get; set; }
+        public string ModifiedByName { get; set; }
+        public string Note { get; set; }
     
-        public virtual SchoolTypes SchoolTypes { get; set; }
+        public virtual Cities Cities { get; set; }
+        public virtual TypesOfSchools TypesOfSchools { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Students> Students { get; set; }
     }

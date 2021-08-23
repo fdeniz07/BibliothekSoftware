@@ -51,19 +51,21 @@ namespace Bibliothek.Forms
             lblMostPages.Text = (from x in db.Books orderby x.PrintLenght descending select x.Titel).FirstOrDefault().ToString(); //9-1
             lblPageCount.Text = (from x in db.Books orderby x.PrintLenght descending select x.PrintLenght).FirstOrDefault().ToString(); //9-2
             
-            lblMostBookGenres.Text = db.Books.OrderByDescending(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z =>
-                new
-                {
-                    Bookgenre = z.Key,
-                    //Summe = z.Count()
-                }).FirstOrDefault().ToString();
+
+
+            //lblMostBookGenres.Text = db.Books.OrderByDescending(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z =>
+            //    new
+            //    {
+            //        Bookgenre = z.Key,
+            //        //Summe = z.Count()
+            //    }).FirstOrDefault().ToString();
 
             //lblMostBookGenres.Text =
             //    (from x in db.Books group x.Titel by x.TypeId).Count().ToString();
             //lblLeastBookGenres.Text=
 
 
-            lblActiveBooks.Text = db.Books.Count(x => x.Summary != "").ToString(); //16
+            lblNumberOfBooksSummary.Text = db.Books.Count(x => x.Summary != "").ToString(); //16
 
             //lblMaximumNumberOfYearsOfPublication.Text = 
 

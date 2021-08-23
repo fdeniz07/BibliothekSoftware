@@ -15,10 +15,25 @@ namespace Bibliothek
     public partial class Users
     {
         public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int GenderId { get; set; }
+        public string Picture { get; set; }
+        public string Description { get; set; }
+        public string Email { get; set; }
+        public int RoleId { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public bool IsDeleted { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsArchived { get; set; }
+        public string CreatedByName { get; set; }
+        public string ModifiedByName { get; set; }
+        public string Note { get; set; }
     
-        public virtual Admins Admins { get; set; }
-        public virtual Staffs Staffs { get; set; }
+        public virtual Gender Gender { get; set; }
+        public virtual Roles Roles { get; set; }
     }
 }

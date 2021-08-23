@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -31,20 +32,20 @@ namespace Bibliothek.Forms
                          select new
                          {
                              books.Id,
-                             books.Titel,
-                             books.Description,
-                             books.Summary,
+                             Buchtitel = books.Titel,
+                             Beschreibung = books.Description,
+                             Zusammenfassung = books.Summary,
                              books.ISBN,
-                             books.PublicationYear,
-                             books.Edition,
-                             books.Language,
-                             books.PrintLenght,
-                             books.Authors.FullName,
-                             books.Publishers.PublisherName,
-                             books.TypesOfBooks.BookType,
-                             books.BooksByCategories.Category,
-                             books.Section.SectionName,
-                             books.IsActive,
+                             Erscheinungsjahr = books.PublicationYear,
+                             Auflage = books.Edition,
+                             Sprache = books.Language,
+                             Drucklänge = books.PrintLenght,
+                             Autor = books.Authors.FullName,
+                             Verlag = books.Publishers.PublisherName,
+                             Buchgenre = books.TypesOfBooks.BookType,
+                             Buchkategorie = books.BooksByCategories.Category,
+                             Abteilung = books.Section.SectionName,
+                             Status = books.IsActive,
                              books.Note
                          };
             gridControl1.DataSource = values.ToList();
@@ -116,15 +117,25 @@ namespace Bibliothek.Forms
         private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
-            txtBookName.Text = gridView1.GetFocusedRowCellValue("Titel").ToString();
-            txtDescription.Text = gridView1.GetFocusedRowCellValue("Description").ToString();
-            rtxtSummary.Text = gridView1.GetFocusedRowCellValue("Summary").ToString();
+            txtBookName.Text = gridView1.GetFocusedRowCellValue("Buchtitel").ToString();
+            txtDescription.Text = gridView1.GetFocusedRowCellValue("Beschreibung").ToString();
+            rtxtSummary.Text = gridView1.GetFocusedRowCellValue("Zusammenfassung").ToString();
             txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
-            txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("PublicationYear").ToString();
-            txtEdition.Text = gridView1.GetFocusedRowCellValue("Edition").ToString();
-            txtLanguage.Text = gridView1.GetFocusedRowCellValue("Language").ToString();
-            txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("PrintLenght").ToString();
+            txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("Erscheinungsjahr").ToString();
+            txtEdition.Text = gridView1.GetFocusedRowCellValue("Auflage").ToString();
+            txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
+            txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
             txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
+
+
+
+            //string selectSql = @"SELECT Id,FullName FROM [Authors]";
+            //DataTable dtDetail = db.getDataTable(selectSql, db);
+            //lueAuthor.Properties.DataSource = db.Authors;
+            //lueAuthor.Properties.DisplayMember = "FullName";
+            //lueType.Text = gridView1.GetFocusedRowCellValue("Autor").ToString();
+            //lueAuthor.Properties.NullText = "Lütfen seçiniz.";
+            //lueAuthor.Properties.ValueMember = "Id";
         }
     }
 }
