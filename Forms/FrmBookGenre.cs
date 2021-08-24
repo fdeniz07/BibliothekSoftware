@@ -12,9 +12,9 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
-        SqlConnection connection = new SqlConnection(@"Data Source=APACHIE;Initial Catalog=DamlaLibrary;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
+        private SqlConnection connection = new SqlConnection(@"Data Source=APACHIE;Initial Catalog=DamlaLibrary;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework");
 
         private void FrmBookGenre_Load(object sender, EventArgs e)
         {

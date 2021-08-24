@@ -149,6 +149,7 @@ namespace Bibliothek.Forms
             this.btnList.Size = new System.Drawing.Size(228, 37);
             this.btnList.TabIndex = 21;
             this.btnList.Text = "AUFLISTEN";
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // lueClass
             // 
@@ -169,6 +170,7 @@ namespace Bibliothek.Forms
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "LÖSCHEN";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -178,6 +180,7 @@ namespace Bibliothek.Forms
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "AKTUALISIEREN";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -187,6 +190,7 @@ namespace Bibliothek.Forms
             this.btnSave.Size = new System.Drawing.Size(228, 37);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "HINZUFÜGEN";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lueCountry
             // 

@@ -12,7 +12,7 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void BookList_Load(object sender, EventArgs e)
         {
@@ -26,13 +26,13 @@ namespace Bibliothek.Forms
             lueSection.Properties.DataSource = db.Section.ToList();
         }
 
-        void ToBookList()
+        private void ToBookList()
         {
             var values = from books in db.Books
                          select new
                          {
                              books.Id,
-                             Buchtitel = books.Titel,
+                             Buchtitel = books.Title,
                              Beschreibung = books.Description,
                              Zusammenfassung = books.Summary,
                              books.ISBN,
@@ -49,13 +49,12 @@ namespace Bibliothek.Forms
                              books.Note
                          };
             gridControl1.DataSource = values.ToList();
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             Books books = new Books();
-            books.Titel = txtBookName.Text;
+            books.Title = txtBookName.Text;
             books.Description = txtDescription.Text;
             books.Summary = rtxtSummary.Text;
             books.ISBN = txtISBN.Text;
@@ -85,7 +84,6 @@ namespace Bibliothek.Forms
             ToBookList();
         }
 
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = int.Parse(txtId.Text);
@@ -100,7 +98,7 @@ namespace Bibliothek.Forms
         {
             int id = int.Parse(txtId.Text);
             var value = db.Books.Find(id);
-            value.Titel = txtBookName.Text;
+            value.Title = txtBookName.Text;
             value.Description = txtDescription.Text;
             value.Summary = rtxtSummary.Text;
             value.ISBN = txtISBN.Text;
@@ -126,8 +124,6 @@ namespace Bibliothek.Forms
             txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
             txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
             txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
-
-
 
             //string selectSql = @"SELECT Id,FullName FROM [Authors]";
             //DataTable dtDetail = db.getDataTable(selectSql, db);

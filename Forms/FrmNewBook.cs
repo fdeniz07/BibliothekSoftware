@@ -12,7 +12,7 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -22,10 +22,9 @@ namespace Bibliothek.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
             Books books = new Books();
 
-            books.Titel = txtBookName.Text;
+            books.Title = txtBookName.Text;
             books.Description = txtDescription.Text;
             books.Summary = rtxtSummary.Text;
             books.ISBN = txtISBN.Text;
@@ -46,7 +45,6 @@ namespace Bibliothek.Forms
             db.SaveChanges();
             MessageBox.Show("Buch erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
         }
 
         private void NewBook_Load(object sender, EventArgs e)
@@ -59,28 +57,28 @@ namespace Bibliothek.Forms
             lueSection.Properties.DataSource = db.Section.ToList();
         }
 
-        void ToBookList()
+        private void ToBookList()
         {
             var values = from books in db.Books
-                select new
-                {
-                    books.Id,
-                    books.Titel,
-                    books.Description,
-                    books.Summary,
-                    books.ISBN,
-                    books.PublicationYear,
-                    books.Edition,
-                    books.Language,
-                    books.PrintLenght,
-                    books.Authors.FullName,
-                    books.Publishers.PublisherName,
-                    books.TypesOfBooks.BookType,
-                    books.BooksByCategories.Category,
-                    books.Section.SectionName,
-                    books.IsActive,
-                    books.Note
-                };
+                         select new
+                         {
+                             books.Id,
+                             books.Title,
+                             books.Description,
+                             books.Summary,
+                             books.ISBN,
+                             books.PublicationYear,
+                             books.Edition,
+                             books.Language,
+                             books.PrintLenght,
+                             books.Authors.FullName,
+                             books.Publishers.PublisherName,
+                             books.TypesOfBooks.BookType,
+                             books.BooksByCategories.Category,
+                             books.Section.SectionName,
+                             books.IsActive,
+                             books.Note
+                         };
         }
     }
 }

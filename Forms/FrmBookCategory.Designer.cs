@@ -114,7 +114,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl11.Location = new System.Drawing.Point(57, 210);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(67, 13);
+            this.labelControl11.Size = new System.Drawing.Size(60, 13);
             this.labelControl11.TabIndex = 13;
             this.labelControl11.Text = "Erläuterung :";
             // 
@@ -149,7 +149,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl2.Location = new System.Drawing.Point(50, 184);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 13);
+            this.labelControl2.Size = new System.Drawing.Size(71, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Beschreibung :";
             // 
@@ -165,7 +165,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl16.Location = new System.Drawing.Point(104, 132);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(16, 13);
+            this.labelControl16.Size = new System.Drawing.Size(15, 13);
             this.labelControl16.TabIndex = 3;
             this.labelControl16.Text = "Id :";
             // 
@@ -200,7 +200,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl1.Location = new System.Drawing.Point(65, 158);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(56, 13);
+            this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Catetgory :";
             // 

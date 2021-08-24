@@ -10,8 +10,6 @@ namespace Bibliothek
             InitializeComponent();
         }
 
-
-
         private void btnNewBook_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.FrmNewBook newBook = new FrmNewBook();
@@ -23,7 +21,6 @@ namespace Bibliothek
             Forms.FrmBookCategory bookCategory = new FrmBookCategory();
             bookCategory.MdiParent = this;
             bookCategory.Show();
-
         }
 
         private void btnNewCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -49,7 +46,6 @@ namespace Bibliothek
         private void bntQRCode_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.FrmQRCode qrCode = new FrmQRCode();
-            //qrCode.MdiParent = this;
             qrCode.Show();
         }
 
@@ -77,8 +73,50 @@ namespace Bibliothek
         private void btnBookGenreAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.FrmNewBookGenre bookGenre = new FrmNewBookGenre();
-            //bookGenre.MdiParent = this;
             bookGenre.Show();
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+        }
+
+        private void btnAuthorList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmAuthorList authorList = new FrmAuthorList();
+            authorList.MdiParent = this;
+            authorList.Show();
+        }
+
+        private void btnSectionList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmSectionList sectionList = new FrmSectionList();
+            sectionList.MdiParent = this;
+            sectionList.Show();
+        }
+
+        private void btnNewSection_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewSection section = new FrmNewSection();
+            section.Show();
+        }
+
+        private void btnNewAuthor_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewAuthor author = new FrmNewAuthor();
+            author.Show();
+        }
+
+        private void btnPublisherList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmPublisherList publisherList = new FrmPublisherList();
+            publisherList.MdiParent = this;
+            publisherList.Show();
+        }
+
+        private void btnNewPublisher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewPublisher publisher = new FrmNewPublisher();
+            publisher.Show();
         }
     }
 }

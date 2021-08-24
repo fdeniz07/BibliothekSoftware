@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace Bibliothek.Forms
@@ -12,7 +11,7 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void FrmBookStatistics_Load(object sender, EventArgs e)
         {
@@ -37,7 +36,7 @@ namespace Bibliothek.Forms
              *
              * 16- Özeti olan kitap sayisi - Anzahl Bücher mit Zusammenfassung - Number of books Summary
              * 17- Aktif olan kitap sayisi - Anzahl der aktiven Bücher - Number of active books
-             * 18- 
+             * 18-
              */
 
             lblTotalBook.Text = db.Books.Count().ToString(); //1
@@ -46,12 +45,10 @@ namespace Bibliothek.Forms
             lblTotalBookType.Text = db.TypesOfBooks.Count().ToString(); //4
             lblSectionTotals.Text = db.Section.Count().ToString(); //5
             lblTotalCategory.Text = db.BooksByCategories.Count().ToString(); //6
-            lblTotalDifferntBook.Text = (from x in db.Books select x.Titel).Distinct().Count().ToString(); //7
+            lblTotalDifferntBook.Text = (from x in db.Books select x.Title).Distinct().Count().ToString(); //7
             lblTotalNumberOfLanguages.Text = (from x in db.Books select x.Language).Distinct().Count().ToString(); //8
-            lblMostPages.Text = (from x in db.Books orderby x.PrintLenght descending select x.Titel).FirstOrDefault().ToString(); //9-1
+            lblMostPages.Text = (from x in db.Books orderby x.PrintLenght descending select x.Title).FirstOrDefault().ToString(); //9-1
             lblPageCount.Text = (from x in db.Books orderby x.PrintLenght descending select x.PrintLenght).FirstOrDefault().ToString(); //9-2
-            
-
 
             //lblMostBookGenres.Text = db.Books.OrderByDescending(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z =>
             //    new
@@ -64,22 +61,19 @@ namespace Bibliothek.Forms
             //    (from x in db.Books group x.Titel by x.TypeId).Count().ToString();
             //lblLeastBookGenres.Text=
 
-
             lblNumberOfBooksSummary.Text = db.Books.Count(x => x.Summary != "").ToString(); //16
 
-            //lblMaximumNumberOfYearsOfPublication.Text = 
+            //lblMaximumNumberOfYearsOfPublication.Text =
 
             //lblDepartmenrWithMostOfTheBooks.Text = db.Books.Count()
 
             // lblCategoryWithTheMostBooks.Text =(from x in db.Books orderby x.BookCategoryId descending select x.Titel).FirstOrDefault();
-
 
             //var values = db.Books.OrderBy(x => x.TypeId).GroupBy(y => y.TypesOfBooks.BookType).Select(z => new
             //{
             //    BookType = z.Key,
             //    Summe = z.Count()
             //});
-
         }
     }
 }

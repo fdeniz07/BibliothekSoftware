@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibliothek.Forms
@@ -17,7 +12,7 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void FrmNewBookGenre_Load(object sender, EventArgs e)
         {
@@ -38,16 +33,16 @@ namespace Bibliothek.Forms
             FrmNewBook newBook = new FrmNewBook();
         }
 
-        void BookgenresList()
+        private void BookgenresList()
         {
             var values = from types in db.TypesOfBooks
-                select new
-                {
-                    types.Id,
-                    types.BookType,
-                    types.IsActive,
-                    types.Note
-                };
+                         select new
+                         {
+                             types.Id,
+                             types.BookType,
+                             types.IsActive,
+                             types.Note
+                         };
         }
     }
 }

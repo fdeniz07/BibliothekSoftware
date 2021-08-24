@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DevExpress.Data.WcfLinq.Helpers;
+using System;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using DevExpress.Data.WcfLinq.Helpers;
 
 namespace Bibliothek.Forms
 {
@@ -13,7 +12,7 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void FrmBookType_Load(object sender, EventArgs e)
         {

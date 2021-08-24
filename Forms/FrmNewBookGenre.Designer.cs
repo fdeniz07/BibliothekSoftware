@@ -60,7 +60,7 @@ namespace Bibliothek.Forms
             // txtNote
             // 
             this.txtNote.EditValue = "Erläuterung";
-            this.txtNote.Location = new System.Drawing.Point(429, 207);
+            this.txtNote.Location = new System.Drawing.Point(605, 198);
             this.txtNote.Name = "txtNote";
             this.txtNote.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtNote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,7 +76,7 @@ namespace Bibliothek.Forms
             // 
             this.btnCancel.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Appearance.Options.UseFont = true;
-            this.btnCancel.Location = new System.Drawing.Point(541, 275);
+            this.btnCancel.Location = new System.Drawing.Point(717, 266);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(144, 47);
             this.btnCancel.TabIndex = 58;
@@ -88,7 +88,7 @@ namespace Bibliothek.Forms
             this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(385, 275);
+            this.btnSave.Location = new System.Drawing.Point(561, 266);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 47);
             this.btnSave.TabIndex = 57;
@@ -98,7 +98,7 @@ namespace Bibliothek.Forms
             // textEdit16
             // 
             this.textEdit16.EditValue = "NEUE BUCHGENRE";
-            this.textEdit16.Location = new System.Drawing.Point(480, 27);
+            this.textEdit16.Location = new System.Drawing.Point(656, 18);
             this.textEdit16.Name = "textEdit16";
             this.textEdit16.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.textEdit16.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,7 +113,7 @@ namespace Bibliothek.Forms
             // pictureEdit16
             // 
             this.pictureEdit16.EditValue = ((object)(resources.GetObject("pictureEdit16.EditValue")));
-            this.pictureEdit16.Location = new System.Drawing.Point(407, 16);
+            this.pictureEdit16.Location = new System.Drawing.Point(583, 7);
             this.pictureEdit16.Name = "pictureEdit16";
             this.pictureEdit16.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit16.Properties.Appearance.Options.UseBackColor = true;
@@ -125,7 +125,7 @@ namespace Bibliothek.Forms
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
-            this.panel15.Location = new System.Drawing.Point(429, 233);
+            this.panel15.Location = new System.Drawing.Point(605, 224);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(252, 3);
             this.panel15.TabIndex = 54;
@@ -133,7 +133,7 @@ namespace Bibliothek.Forms
             // pictureEdit15
             // 
             this.pictureEdit15.EditValue = ((object)(resources.GetObject("pictureEdit15.EditValue")));
-            this.pictureEdit15.Location = new System.Drawing.Point(391, 209);
+            this.pictureEdit15.Location = new System.Drawing.Point(567, 200);
             this.pictureEdit15.Name = "pictureEdit15";
             this.pictureEdit15.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit15.Properties.Appearance.Options.UseBackColor = true;
@@ -145,7 +145,7 @@ namespace Bibliothek.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(429, 181);
+            this.panel2.Location = new System.Drawing.Point(605, 172);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 3);
             this.panel2.TabIndex = 52;
@@ -153,7 +153,7 @@ namespace Bibliothek.Forms
             // txtDescription
             // 
             this.txtDescription.EditValue = "Beschreibung";
-            this.txtDescription.Location = new System.Drawing.Point(429, 155);
+            this.txtDescription.Location = new System.Drawing.Point(605, 146);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtDescription.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,7 +168,7 @@ namespace Bibliothek.Forms
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(391, 157);
+            this.pictureEdit2.Location = new System.Drawing.Point(567, 148);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -180,7 +180,7 @@ namespace Bibliothek.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(429, 130);
+            this.panel1.Location = new System.Drawing.Point(605, 121);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(252, 3);
             this.panel1.TabIndex = 49;
@@ -188,7 +188,7 @@ namespace Bibliothek.Forms
             // txtBookGenre
             // 
             this.txtBookGenre.EditValue = "Buchgenre";
-            this.txtBookGenre.Location = new System.Drawing.Point(429, 104);
+            this.txtBookGenre.Location = new System.Drawing.Point(605, 95);
             this.txtBookGenre.Name = "txtBookGenre";
             this.txtBookGenre.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtBookGenre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +203,7 @@ namespace Bibliothek.Forms
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(391, 106);
+            this.pictureEdit1.Location = new System.Drawing.Point(567, 97);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -218,7 +218,7 @@ namespace Bibliothek.Forms
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(354, 334);
+            this.panel3.Size = new System.Drawing.Size(512, 334);
             this.panel3.TabIndex = 60;
             // 
             // imageSlider1
@@ -228,7 +228,7 @@ namespace Bibliothek.Forms
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
             this.imageSlider1.Location = new System.Drawing.Point(0, 0);
             this.imageSlider1.Name = "imageSlider1";
-            this.imageSlider1.Size = new System.Drawing.Size(354, 334);
+            this.imageSlider1.Size = new System.Drawing.Size(512, 334);
             this.imageSlider1.TabIndex = 0;
             this.imageSlider1.Text = "imageSlider1";
             // 
@@ -237,7 +237,7 @@ namespace Bibliothek.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(721, 334);
+            this.ClientSize = new System.Drawing.Size(900, 334);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.btnCancel);
@@ -254,6 +254,7 @@ namespace Bibliothek.Forms
             this.Controls.Add(this.pictureEdit1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNewBookGenre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewBookGenre";
             this.Load += new System.EventHandler(this.FrmNewBookGenre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();

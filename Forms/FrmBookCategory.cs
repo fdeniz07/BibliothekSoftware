@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibliothek.Forms
@@ -17,40 +12,39 @@ namespace Bibliothek.Forms
             InitializeComponent();
         }
 
-        DamlaLibraryEntities db = new DamlaLibraryEntities();
+        private DamlaLibraryEntities db = new DamlaLibraryEntities();
 
         private void BookCategory_Load(object sender, EventArgs e)
         {
             ToCategoryList();
         }
 
-        void ToCategoryList()
+        private void ToCategoryList()
         {
             var values = from BookCategory in db.BooksByCategories
                          select new
                          {
                              BookCategory.Id,
-                             BookCategory.Category,
-                             BookCategory.Description,
-                             BookCategory.IsActive,
-                             BookCategory.Note
+                             Kategorie=BookCategory.Category,
+                             Beschreibung=BookCategory.Description,
+                             Status=BookCategory.IsActive,
+                             Erläuterung=BookCategory.Note
                          };
             gridControl1.DataSource = values.ToList();
-
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
-            txtBookCategory.Text = gridView1.GetFocusedRowCellValue("Category").ToString();
-            txtDescription.Text = gridView1.GetFocusedRowCellValue("Description").ToString();
-            txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
+            txtBookCategory.Text = gridView1.GetFocusedRowCellValue("Kategorie").ToString();
+            txtDescription.Text = gridView1.GetFocusedRowCellValue("Beschreibung").ToString();
+            txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Kaydederken ayni kategori adindan olup olmadigini denetliyoruz
-            
+
             int counter = 0;
 
             var query = (from x in db.BooksByCategories select x.Category).Distinct();
@@ -64,7 +58,6 @@ namespace Bibliothek.Forms
             if (counter != 0)
                 MessageBox.Show("Diese Kategorie ist existiert", "Warnung", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-
             else
             {
                 BooksByCategories booksByCategories = new BooksByCategories();

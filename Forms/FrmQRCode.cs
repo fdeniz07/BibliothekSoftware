@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MessagingToolkit.QRCode.Codec;
+using System;
 using System.Windows.Forms;
-using MessagingToolkit.QRCode.Codec;
 
 namespace Bibliothek.Forms
 {
