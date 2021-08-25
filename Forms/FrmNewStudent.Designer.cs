@@ -372,7 +372,6 @@ namespace Bibliothek.Forms
             this.lueGender.Name = "lueGender";
             this.lueGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueGender.Properties.DisplayMember = "Geschlecht";
             this.lueGender.Size = new System.Drawing.Size(252, 20);
             this.lueGender.TabIndex = 3;
             // 
@@ -397,7 +396,6 @@ namespace Bibliothek.Forms
             this.lueClass.Name = "lueClass";
             this.lueClass.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueClass.Properties.DisplayMember = "Klasse";
             this.lueClass.Size = new System.Drawing.Size(252, 20);
             this.lueClass.TabIndex = 6;
             // 
@@ -407,7 +405,6 @@ namespace Bibliothek.Forms
             this.lueSchool.Name = "lueSchool";
             this.lueSchool.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSchool.Properties.DisplayMember = "Schule";
             this.lueSchool.Size = new System.Drawing.Size(252, 20);
             this.lueSchool.TabIndex = 7;
             // 
@@ -417,7 +414,6 @@ namespace Bibliothek.Forms
             this.lueUserRole.Name = "lueUserRole";
             this.lueUserRole.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueUserRole.Properties.DisplayMember = "Benutzer-Rolle";
             this.lueUserRole.Size = new System.Drawing.Size(252, 20);
             this.lueUserRole.TabIndex = 8;
             // 
@@ -447,7 +443,6 @@ namespace Bibliothek.Forms
             this.lueCountry.Name = "lueCountry";
             this.lueCountry.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCountry.Properties.DisplayMember = "Land";
             this.lueCountry.Size = new System.Drawing.Size(252, 20);
             this.lueCountry.TabIndex = 9;
             // 

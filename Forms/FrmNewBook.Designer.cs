@@ -624,9 +624,9 @@ namespace Bibliothek.Forms
             this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(958, 202);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(102, 21);
+            this.labelControl3.Size = new System.Drawing.Size(74, 21);
             this.labelControl3.TabIndex = 220;
-            this.labelControl3.Text = "Art des Buches";
+            this.labelControl3.Text = "Buchgenre";
             // 
             // labelControl4
             // 
@@ -691,6 +691,7 @@ namespace Bibliothek.Forms
             this.lueType.Name = "lueType";
             this.lueType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueType.Properties.ValueMember = "Id";
             this.lueType.Size = new System.Drawing.Size(119, 20);
             this.lueType.TabIndex = 11;
             // 

@@ -16,11 +16,40 @@ namespace Bibliothek.Forms
         private void FrmStudent_Load(object sender, EventArgs e)
         {
             StudentList();
-            lueGender.Properties.DataSource = db.Gender.ToList();
-            lueClass.Properties.DataSource = db.CurrentClasses.ToList();
-            lueSchool.Properties.DataSource = db.Schools.ToList();
-            lueUserRole.Properties.DataSource = db.Roles.ToList();
-            lueCountry.Properties.DataSource = db.Countries.ToList();
+            lueGender.Properties.DataSource = (from x in db.Gender
+                select new
+                {
+                    x.Id,
+                    Geschlecht = x.Type
+                }).ToList();
+
+            lueClass.Properties.DataSource = (from x in db.CurrentClasses
+                select new
+                {
+                    x.Id,
+                    Klasse = x.ClassName
+                }).ToList();
+
+            lueSchool.Properties.DataSource = (from x in db.Schools
+                select new
+                {
+                    x.Id,
+                    Schule = x.SchoolName
+                }).ToList();
+
+            lueUserRole.Properties.DataSource = (from x in db.Roles
+                select new
+                {
+                    x.Id,
+                    BenutzerRolle = x.Name
+                }).ToList();
+
+            lueCountry.Properties.DataSource = (from x in db.Countries
+                select new
+                {
+                    x.Id,
+                    Land = x.CountryName
+                }).ToList();
 
             Students students = new Students();
             if (students.IsActive == true)

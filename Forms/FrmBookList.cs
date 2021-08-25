@@ -19,11 +19,36 @@ namespace Bibliothek.Forms
             //Listeleme
             //var values = db.Books.ToList();
             ToBookList();
-            lueAuthor.Properties.DataSource = db.Authors.ToList();
-            luePublisher.Properties.DataSource = db.Publishers.ToList();
-            lueType.Properties.DataSource = db.TypesOfBooks.ToList();
-            lueBookCategory.Properties.DataSource = db.BooksByCategories.ToList();
-            lueSection.Properties.DataSource = db.Section.ToList();
+            lueAuthor.Properties.DataSource = (from x in db.Authors
+                                               select new
+                                               {
+                                                   x.Id,
+                                                   Vollname = x.FullName
+                                               }).ToList();//db.Authors.ToList();
+            luePublisher.Properties.DataSource = (from x in db.Publishers
+                                                  select new
+                                                  {
+                                                      x.Id,
+                                                      Verlag = x.PublisherName
+                                                  }).ToList();//db.Publishers.ToList();
+            lueType.Properties.DataSource = (from x in db.TypesOfBooks
+                                             select new
+                                             {
+                                                 x.Id,
+                                                 Buchgenre = x.BookType
+                                             }).ToList();//db.TypesOfBooks.ToList();
+            lueBookCategory.Properties.DataSource = (from x in db.BooksByCategories
+                                                     select new
+                                                     {
+                                                         x.Id,
+                                                         Buchkategorie = x.Category
+                                                     }).ToList();//db.TypesOfBooks.ToList();
+            lueSection.Properties.DataSource = (from x in db.Section
+                                                select new
+                                                {
+                                                    x.Id,
+                                                    Abteilung = x.SectionName
+                                                }).ToList();//db.Section.ToList();
         }
 
         private void ToBookList()

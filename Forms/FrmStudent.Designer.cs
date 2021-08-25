@@ -157,8 +157,6 @@ namespace Bibliothek.Forms
             this.lueClass.Name = "lueClass";
             this.lueClass.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueClass.Properties.DisplayMember = "VollName";
-            this.lueClass.Properties.ValueMember = "Id";
             this.lueClass.Size = new System.Drawing.Size(227, 20);
             this.lueClass.TabIndex = 6;
             // 
@@ -198,8 +196,6 @@ namespace Bibliothek.Forms
             this.lueCountry.Name = "lueCountry";
             this.lueCountry.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCountry.Properties.DisplayMember = "Category";
-            this.lueCountry.Properties.ValueMember = "Id";
             this.lueCountry.Size = new System.Drawing.Size(227, 20);
             this.lueCountry.TabIndex = 9;
             // 
@@ -209,8 +205,6 @@ namespace Bibliothek.Forms
             this.lueUserRole.Name = "lueUserRole";
             this.lueUserRole.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueUserRole.Properties.DisplayMember = "TypesOfBook";
-            this.lueUserRole.Properties.ValueMember = "Id";
             this.lueUserRole.Size = new System.Drawing.Size(227, 20);
             this.lueUserRole.TabIndex = 8;
             // 
@@ -220,8 +214,6 @@ namespace Bibliothek.Forms
             this.lueSchool.Name = "lueSchool";
             this.lueSchool.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSchool.Properties.DisplayMember = "PublisherName";
-            this.lueSchool.Properties.ValueMember = "Id";
             this.lueSchool.Size = new System.Drawing.Size(227, 20);
             this.lueSchool.TabIndex = 7;
             // 
@@ -346,18 +338,16 @@ namespace Bibliothek.Forms
             this.lueGender.Name = "lueGender";
             this.lueGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueGender.Properties.DisplayMember = "VollName";
-            this.lueGender.Properties.ValueMember = "Id";
             this.lueGender.Size = new System.Drawing.Size(227, 20);
             this.lueGender.TabIndex = 3;
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(72, 134);
+            this.labelControl18.Location = new System.Drawing.Point(65, 134);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(54, 13);
+            this.labelControl18.Size = new System.Drawing.Size(60, 13);
             this.labelControl18.TabIndex = 38;
-            this.labelControl18.Text = "Geschlect :";
+            this.labelControl18.Text = "Geschlecht :";
             // 
             // labelControl12
             // 

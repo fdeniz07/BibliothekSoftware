@@ -164,8 +164,6 @@ namespace Bibliothek.Forms
             this.lueAuthor.Name = "lueAuthor";
             this.lueAuthor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueAuthor.Properties.DisplayMember = "VollName";
-            this.lueAuthor.Properties.ValueMember = "Id";
             this.lueAuthor.Size = new System.Drawing.Size(227, 20);
             this.lueAuthor.TabIndex = 9;
             // 
@@ -205,8 +203,6 @@ namespace Bibliothek.Forms
             this.lueSection.Name = "lueSection";
             this.lueSection.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueSection.Properties.DisplayMember = "SectionName";
-            this.lueSection.Properties.ValueMember = "Id";
             this.lueSection.Size = new System.Drawing.Size(227, 20);
             this.lueSection.TabIndex = 13;
             // 
@@ -216,8 +212,6 @@ namespace Bibliothek.Forms
             this.lueBookCategory.Name = "lueBookCategory";
             this.lueBookCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueBookCategory.Properties.DisplayMember = "Category";
-            this.lueBookCategory.Properties.ValueMember = "Id";
             this.lueBookCategory.Size = new System.Drawing.Size(227, 20);
             this.lueBookCategory.TabIndex = 12;
             // 
@@ -227,8 +221,6 @@ namespace Bibliothek.Forms
             this.lueType.Name = "lueType";
             this.lueType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueType.Properties.DisplayMember = "TypesOfBook";
-            this.lueType.Properties.ValueMember = "Id";
             this.lueType.Size = new System.Drawing.Size(227, 20);
             this.lueType.TabIndex = 11;
             // 
@@ -238,8 +230,6 @@ namespace Bibliothek.Forms
             this.luePublisher.Name = "luePublisher";
             this.luePublisher.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luePublisher.Properties.DisplayMember = "PublisherName";
-            this.luePublisher.Properties.ValueMember = "Id";
             this.luePublisher.Size = new System.Drawing.Size(227, 20);
             this.luePublisher.TabIndex = 10;
             // 

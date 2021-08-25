@@ -65,10 +65,40 @@ namespace Bibliothek.Forms
 
         private void FrmNewStudent_Load(object sender, EventArgs e)
         {
-            lueClass.Properties.DataSource = db.Students.ToList();
-            lueSchool.Properties.DataSource = db.Students.ToList();
-            lueUserRole.Properties.DataSource = db.Students.ToList();
-            lueCountry.Properties.DataSource = db.Students.ToList();
+            lueGender.Properties.DataSource = (from x in db.Gender
+                select new
+                {
+                    x.Id,
+                    Geschlecht = x.Type
+                }).ToList();
+
+            lueClass.Properties.DataSource = (from x in db.CurrentClasses
+                select new
+                {
+                    x.Id,
+                    Klasse = x.ClassName
+                }).ToList();
+
+            lueSchool.Properties.DataSource = (from x in db.Schools
+                select new
+                {
+                    x.Id,
+                    Schule = x.SchoolName
+                }).ToList();
+
+            lueUserRole.Properties.DataSource = (from x in db.Roles
+                select new
+                {
+                    x.Id,
+                    BenutzerRolle = x.Name
+                }).ToList();
+
+            lueCountry.Properties.DataSource = (from x in db.Countries
+                select new
+                {
+                    x.Id,
+                   Land = x.CountryName
+                }).ToList();
         }
     }
 }
