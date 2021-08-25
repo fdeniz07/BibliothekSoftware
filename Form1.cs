@@ -118,5 +118,11 @@ namespace Bibliothek
             Forms.FrmNewPublisher publisher = new FrmNewPublisher();
             publisher.Show();
         }
+
+        private void btnNewStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewStudent student = new FrmNewStudent();
+            student.Show();
+        }
     }
 }

@@ -38,18 +38,28 @@ namespace Bibliothek.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             Authors authors = new Authors();
-            authors.FirstName = txtFirstName.Text;
-            authors.LastName = txtLastName.Text;
-            authors.FullName = txtFirstName.Text + txtLastName.Text;
-            authors.AuthorAbout = txtDescription.Text;
-            authors.IsActive = true;
-            authors.IsDeleted = false;
-            authors.Note = rtxtNote.Text;
 
-            db.Authors.Add(authors);
-            db.SaveChanges();
-            MessageBox.Show("Author erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (txtFirstName.Text.Length <=50 && txtLastName.Text.Length<=50  )
+            {
+                authors.FirstName = txtFirstName.Text;
+                authors.LastName = txtLastName.Text;
+                authors.FullName = txtFirstName.Text + txtLastName.Text;
+                authors.AuthorAbout = txtDescription.Text;
+                authors.IsActive = true;
+                authors.IsDeleted = false;
+                authors.Note = rtxtNote.Text;
+
+                db.Authors.Add(authors);
+                db.SaveChanges();
+                MessageBox.Show("Author erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Author erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

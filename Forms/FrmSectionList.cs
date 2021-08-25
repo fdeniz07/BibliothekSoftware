@@ -21,14 +21,14 @@ namespace Bibliothek.Forms
         private void SectionList()
         {
             var values = from section in db.Section
-                select new
-                {
-                    section.Id,
-                    Abteilung = section.SectionName,
-                    Beschreibung = section.Details,
-                    Status = section.IsActive,
-                    Erläuterung=section.Note
-                };
+                         select new
+                         {
+                             section.Id,
+                             Abteilung = section.SectionName,
+                             Beschreibung = section.Details,
+                             Status = section.IsActive,
+                             Erläuterung = section.Note
+                         };
             gridControl1.DataSource = values.ToList();
         }
 
@@ -50,16 +50,24 @@ namespace Bibliothek.Forms
             else
             {
                 Section section = new Section();
-                section.SectionName = txtSectionName.Text;
-                section.Details = txtDescription.Text;
-                section.Note = txtNote.Text;
-                section.IsActive = true;
-                section.IsDeleted = false;
+                if (txtSectionName.Text.Length != null && txtSectionName.Text.Length <= 50 && txtDescription.Text.Length >= 250)
+                {
+                    section.SectionName = txtSectionName.Text;
+                    section.Details = txtDescription.Text;
+                    section.Note = txtNote.Text;
+                    section.IsActive = true;
+                    section.IsDeleted = false;
 
-                db.Section.Add(section);
-                db.SaveChanges();
-                MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                    db.Section.Add(section);
+                    db.SaveChanges();
+                    MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Abteilung erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 

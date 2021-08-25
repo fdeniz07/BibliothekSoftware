@@ -147,7 +147,7 @@ namespace Bibliothek.Forms
             this.btnList.Location = new System.Drawing.Point(142, 571);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(228, 37);
-            this.btnList.TabIndex = 21;
+            this.btnList.TabIndex = 16;
             this.btnList.Text = "AUFLISTEN";
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
@@ -160,7 +160,7 @@ namespace Bibliothek.Forms
             this.lueClass.Properties.DisplayMember = "VollName";
             this.lueClass.Properties.ValueMember = "Id";
             this.lueClass.Size = new System.Drawing.Size(227, 20);
-            this.lueClass.TabIndex = 20;
+            this.lueClass.TabIndex = 6;
             // 
             // btnDelete
             // 
@@ -168,7 +168,7 @@ namespace Bibliothek.Forms
             this.btnDelete.Location = new System.Drawing.Point(142, 528);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
-            this.btnDelete.TabIndex = 19;
+            this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "LÖSCHEN";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -178,7 +178,7 @@ namespace Bibliothek.Forms
             this.btnUpdate.Location = new System.Drawing.Point(142, 485);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
-            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "AKTUALISIEREN";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -188,7 +188,7 @@ namespace Bibliothek.Forms
             this.btnSave.Location = new System.Drawing.Point(143, 442);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 37);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "HINZUFÜGEN";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -201,7 +201,7 @@ namespace Bibliothek.Forms
             this.lueCountry.Properties.DisplayMember = "Category";
             this.lueCountry.Properties.ValueMember = "Id";
             this.lueCountry.Size = new System.Drawing.Size(227, 20);
-            this.lueCountry.TabIndex = 16;
+            this.lueCountry.TabIndex = 9;
             // 
             // lueUserRole
             // 
@@ -212,7 +212,7 @@ namespace Bibliothek.Forms
             this.lueUserRole.Properties.DisplayMember = "TypesOfBook";
             this.lueUserRole.Properties.ValueMember = "Id";
             this.lueUserRole.Size = new System.Drawing.Size(227, 20);
-            this.lueUserRole.TabIndex = 16;
+            this.lueUserRole.TabIndex = 8;
             // 
             // lueSchool
             // 
@@ -223,7 +223,7 @@ namespace Bibliothek.Forms
             this.lueSchool.Properties.DisplayMember = "PublisherName";
             this.lueSchool.Properties.ValueMember = "Id";
             this.lueSchool.Size = new System.Drawing.Size(227, 20);
-            this.lueSchool.TabIndex = 15;
+            this.lueSchool.TabIndex = 7;
             // 
             // labelControl10
             // 
@@ -237,7 +237,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl11.Location = new System.Drawing.Point(59, 360);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(67, 13);
+            this.labelControl11.Size = new System.Drawing.Size(60, 13);
             this.labelControl11.TabIndex = 13;
             this.labelControl11.Text = "Erläuterung :";
             // 
@@ -245,7 +245,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl14.Location = new System.Drawing.Point(93, 294);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(34, 13);
+            this.labelControl14.Size = new System.Drawing.Size(33, 13);
             this.labelControl14.TabIndex = 13;
             this.labelControl14.Text = "Land : ";
             // 
@@ -253,7 +253,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl13.Location = new System.Drawing.Point(46, 264);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(81, 13);
+            this.labelControl13.Size = new System.Drawing.Size(75, 13);
             this.labelControl13.TabIndex = 13;
             this.labelControl13.Text = "Benutzer-Rolle :";
             // 
@@ -300,8 +300,8 @@ namespace Bibliothek.Forms
             this.rbPassive.AutoSize = true;
             this.rbPassive.Location = new System.Drawing.Point(263, 323);
             this.rbPassive.Name = "rbPassive";
-            this.rbPassive.Size = new System.Drawing.Size(55, 17);
-            this.rbPassive.TabIndex = 43;
+            this.rbPassive.Size = new System.Drawing.Size(56, 17);
+            this.rbPassive.TabIndex = 11;
             this.rbPassive.TabStop = true;
             this.rbPassive.Text = "Passiv";
             this.rbPassive.UseVisualStyleBackColor = true;
@@ -311,8 +311,8 @@ namespace Bibliothek.Forms
             this.rbActive.AutoSize = true;
             this.rbActive.Location = new System.Drawing.Point(173, 323);
             this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(50, 17);
-            this.rbActive.TabIndex = 43;
+            this.rbActive.Size = new System.Drawing.Size(49, 17);
+            this.rbActive.TabIndex = 10;
             this.rbActive.TabStop = true;
             this.rbActive.Text = "Aktiv";
             this.rbActive.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl3.Location = new System.Drawing.Point(86, 323);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(41, 13);
+            this.labelControl3.Size = new System.Drawing.Size(39, 13);
             this.labelControl3.TabIndex = 41;
             this.labelControl3.Text = "Status : ";
             // 
@@ -337,7 +337,7 @@ namespace Bibliothek.Forms
             this.rtxtNote.Location = new System.Drawing.Point(142, 357);
             this.rtxtNote.Name = "rtxtNote";
             this.rtxtNote.Size = new System.Drawing.Size(227, 72);
-            this.rtxtNote.TabIndex = 40;
+            this.rtxtNote.TabIndex = 12;
             this.rtxtNote.Text = "Zusammenfassung";
             // 
             // lueGender
@@ -349,13 +349,13 @@ namespace Bibliothek.Forms
             this.lueGender.Properties.DisplayMember = "VollName";
             this.lueGender.Properties.ValueMember = "Id";
             this.lueGender.Size = new System.Drawing.Size(227, 20);
-            this.lueGender.TabIndex = 39;
+            this.lueGender.TabIndex = 3;
             // 
             // labelControl18
             // 
             this.labelControl18.Location = new System.Drawing.Point(72, 134);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(55, 13);
+            this.labelControl18.Size = new System.Drawing.Size(54, 13);
             this.labelControl18.TabIndex = 38;
             this.labelControl18.Text = "Geschlect :";
             // 
@@ -363,7 +363,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl12.Location = new System.Drawing.Point(87, 238);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(40, 13);
+            this.labelControl12.Size = new System.Drawing.Size(39, 13);
             this.labelControl12.TabIndex = 13;
             this.labelControl12.Text = "Schule :";
             // 
@@ -372,13 +372,13 @@ namespace Bibliothek.Forms
             this.txtDescription.Location = new System.Drawing.Point(143, 183);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(227, 20);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 5;
             // 
             // labelControl19
             // 
             this.labelControl19.Location = new System.Drawing.Point(51, 186);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(76, 13);
+            this.labelControl19.Size = new System.Drawing.Size(71, 13);
             this.labelControl19.TabIndex = 5;
             this.labelControl19.Text = "Beschreibung :";
             // 
@@ -387,13 +387,13 @@ namespace Bibliothek.Forms
             this.txtLastSchoolYear.Location = new System.Drawing.Point(143, 157);
             this.txtLastSchoolYear.Name = "txtLastSchoolYear";
             this.txtLastSchoolYear.Size = new System.Drawing.Size(227, 20);
-            this.txtLastSchoolYear.TabIndex = 6;
+            this.txtLastSchoolYear.TabIndex = 4;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(39, 160);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(88, 13);
+            this.labelControl2.Size = new System.Drawing.Size(84, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Letzes Schuljahr :";
             // 
@@ -409,7 +409,7 @@ namespace Bibliothek.Forms
             // 
             this.labelControl16.Location = new System.Drawing.Point(111, 60);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(16, 13);
+            this.labelControl16.Size = new System.Drawing.Size(15, 13);
             this.labelControl16.TabIndex = 3;
             this.labelControl16.Text = "Id :";
             // 
@@ -418,13 +418,13 @@ namespace Bibliothek.Forms
             this.txtLastName.Location = new System.Drawing.Point(143, 105);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(227, 20);
-            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TabIndex = 2;
             // 
             // labelControl17
             // 
             this.labelControl17.Location = new System.Drawing.Point(67, 108);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(60, 13);
+            this.labelControl17.Size = new System.Drawing.Size(58, 13);
             this.labelControl17.TabIndex = 3;
             this.labelControl17.Text = "Nachname :";
             // 
@@ -433,13 +433,13 @@ namespace Bibliothek.Forms
             this.txtFirstName.Location = new System.Drawing.Point(143, 83);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(227, 20);
-            this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(75, 86);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(52, 13);
+            this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Vorname :";
             // 

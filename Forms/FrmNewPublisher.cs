@@ -36,17 +36,27 @@ namespace Bibliothek.Forms
                     MessageBoxIcon.Warning);
             else
             {
-                Section section = new Section();
-                section.SectionName = txtPublisherName.Text;
-                section.Details = txtPublisherAbout.Text;
-                section.Note = txtNote.Text;
-                section.IsActive = true;
-                section.IsDeleted = false;
+                Publishers publishers = new Publishers();
 
-                db.Section.Add(section);
-                db.SaveChanges();
-                MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                if (txtPublisherName.Text.Length!=null && txtPublisherName.Text.Length<=50 && txtPublisherAbout.Text.Length<=250)
+                {
+                    publishers.PublisherName = txtPublisherName.Text;
+                    publishers.PublisherAbout = txtPublisherAbout.Text;
+                    publishers.Note = txtNote.Text;
+                    publishers.IsActive = true;
+                    publishers.IsDeleted = false;
+
+                    db.Publishers.Add(publishers);
+                    db.SaveChanges();
+                    MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Abteilung erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+               
             }
         }
 

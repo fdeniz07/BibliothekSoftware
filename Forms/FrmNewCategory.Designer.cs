@@ -45,7 +45,6 @@ namespace Bibliothek.Forms
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
-            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit16.Properties)).BeginInit();
@@ -56,7 +55,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNote
@@ -72,7 +70,7 @@ namespace Bibliothek.Forms
             this.txtNote.Properties.Appearance.Options.UseForeColor = true;
             this.txtNote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtNote.Size = new System.Drawing.Size(100, 26);
-            this.txtNote.TabIndex = 46;
+            this.txtNote.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -82,7 +80,7 @@ namespace Bibliothek.Forms
             this.btnCancel.Location = new System.Drawing.Point(552, 279);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(144, 47);
-            this.btnCancel.TabIndex = 45;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "ABBRECHEN";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -94,7 +92,7 @@ namespace Bibliothek.Forms
             this.btnSave.Location = new System.Drawing.Point(396, 279);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 47);
-            this.btnSave.TabIndex = 44;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "HINZUFÜGEN";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -166,7 +164,7 @@ namespace Bibliothek.Forms
             this.txtDescription.Properties.Appearance.Options.UseForeColor = true;
             this.txtDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtDescription.Size = new System.Drawing.Size(100, 26);
-            this.txtDescription.TabIndex = 37;
+            this.txtDescription.TabIndex = 2;
             // 
             // pictureEdit2
             // 
@@ -201,7 +199,7 @@ namespace Bibliothek.Forms
             this.txtBookCategory.Properties.Appearance.Options.UseForeColor = true;
             this.txtBookCategory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtBookCategory.Size = new System.Drawing.Size(100, 26);
-            this.txtBookCategory.TabIndex = 32;
+            this.txtBookCategory.TabIndex = 1;
             // 
             // pictureEdit1
             // 
@@ -235,27 +233,12 @@ namespace Bibliothek.Forms
             this.imageSlider1.TabIndex = 0;
             this.imageSlider1.Text = "imageSlider1";
             // 
-            // pictureEdit3
-            // 
-            this.pictureEdit3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(693, 0);
-            this.pictureEdit3.Name = "pictureEdit3";
-            this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit3.Size = new System.Drawing.Size(30, 29);
-            this.pictureEdit3.TabIndex = 48;
-            // 
             // FrmNewCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(724, 363);
-            this.Controls.Add(this.pictureEdit3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.btnCancel);
@@ -270,7 +253,7 @@ namespace Bibliothek.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBookCategory);
             this.Controls.Add(this.pictureEdit1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNewCategory";
@@ -286,7 +269,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +290,5 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit3;
     }
 }

@@ -23,9 +23,22 @@ namespace Bibliothek.Forms
         {
             TypesOfBooks types = new TypesOfBooks();
 
-            types.BookType = txtBookGenre.Text;
-            types.TypeDetails = txtDescription.Text;
-            types.Note = txtNote.Text;
+            if (txtBookGenre.Text.Length != null && txtBookGenre.Text.Length <= 50 && txtDescription.Text.Length <= 250)
+            {
+                types.BookType = txtBookGenre.Text;
+                types.TypeDetails = txtDescription.Text;
+                types.Note = txtNote.Text;
+
+                db.TypesOfBooks.Add(types);
+                db.SaveChanges();
+                MessageBox.Show("Buchgenre erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Buchgenre erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

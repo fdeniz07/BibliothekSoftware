@@ -69,29 +69,38 @@ namespace Bibliothek.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             Students students = new Students();
-            students.FirstName = txtFirstName.Text;
-            students.LastName = txtLastName.Text;
-            students.GenderId = byte.Parse(lueGender.EditValue.ToString());
-            students.LastSchoolYear = txtLastSchoolYear.Text;
-            students.ClassId = byte.Parse(lueClass.EditValue.ToString());
-            students.SchoolId = byte.Parse(lueSchool.EditValue.ToString());
-            students.RoleId = byte.Parse(lueUserRole.EditValue.ToString());
-            students.CountryId = byte.Parse(lueCountry.EditValue.ToString());
-            students.Note = rtxtNote.Text;
-
-            if (rbActive.Checked == true && rbPassive.Checked==false)
+            if (txtFirstName.Text.Length != null && txtFirstName.Text.Length <= 30 && txtLastName.Text.Length != null && txtLastName.Text.Length <= 30 && lueClass.Text.Length != null && lueSchool.Text.Length != null && lueUserRole.Text.Length != null && lueCountry.Text.Length != null && lueGender.Text.Length != null)
             {
-                students.IsActive = true;
+                students.FirstName = txtFirstName.Text;
+                students.LastName = txtLastName.Text;
+                students.GenderId = byte.Parse(lueGender.EditValue.ToString());
+                students.LastSchoolYear = txtLastSchoolYear.Text;
+                students.ClassId = byte.Parse(lueClass.EditValue.ToString());
+                students.SchoolId = byte.Parse(lueSchool.EditValue.ToString());
+                students.RoleId = byte.Parse(lueUserRole.EditValue.ToString());
+                students.CountryId = byte.Parse(lueCountry.EditValue.ToString());
+                students.Note = rtxtNote.Text;
+
+                if (rbActive.Checked == true && rbPassive.Checked == false)
+                {
+                    students.IsActive = true;
+                }
+                else
+                {
+                    students.IsActive = false;
+                }
+
+                db.Students.Add(students);
+                db.SaveChanges();
+                MessageBox.Show("Schüler/in erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             else
             {
-                students.IsActive = false;
-            }
+                MessageBox.Show("Schüler/in erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
-            db.Students.Add(students);
-            db.SaveChanges();
-            MessageBox.Show("Schüler/in erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

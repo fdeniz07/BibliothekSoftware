@@ -177,7 +177,7 @@ namespace Bibliothek.Forms
             this.txtDescription.Properties.Appearance.Options.UseForeColor = true;
             this.txtDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtDescription.Size = new System.Drawing.Size(100, 26);
-            this.txtDescription.TabIndex = 4;
+            this.txtDescription.TabIndex = 2;
             // 
             // pictureEdit2
             // 
@@ -232,7 +232,7 @@ namespace Bibliothek.Forms
             this.txtISBN.Properties.Appearance.Options.UseForeColor = true;
             this.txtISBN.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtISBN.Size = new System.Drawing.Size(100, 26);
-            this.txtISBN.TabIndex = 4;
+            this.txtISBN.TabIndex = 3;
             // 
             // pictureEdit4
             // 
@@ -266,7 +266,7 @@ namespace Bibliothek.Forms
             this.txtPublicationYear.Properties.Appearance.Options.UseFont = true;
             this.txtPublicationYear.Properties.Appearance.Options.UseForeColor = true;
             this.txtPublicationYear.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtPublicationYear.Size = new System.Drawing.Size(100, 26);
+            this.txtPublicationYear.Size = new System.Drawing.Size(140, 26);
             this.txtPublicationYear.TabIndex = 4;
             // 
             // pictureEdit5
@@ -302,7 +302,7 @@ namespace Bibliothek.Forms
             this.txtEdition.Properties.Appearance.Options.UseForeColor = true;
             this.txtEdition.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtEdition.Size = new System.Drawing.Size(100, 26);
-            this.txtEdition.TabIndex = 4;
+            this.txtEdition.TabIndex = 5;
             // 
             // pictureEdit6
             // 
@@ -337,7 +337,7 @@ namespace Bibliothek.Forms
             this.txtLanguage.Properties.Appearance.Options.UseForeColor = true;
             this.txtLanguage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtLanguage.Size = new System.Drawing.Size(100, 26);
-            this.txtLanguage.TabIndex = 4;
+            this.txtLanguage.TabIndex = 6;
             // 
             // pictureEdit7
             // 
@@ -372,7 +372,7 @@ namespace Bibliothek.Forms
             this.txtPrintLenght.Properties.Appearance.Options.UseForeColor = true;
             this.txtPrintLenght.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtPrintLenght.Size = new System.Drawing.Size(100, 26);
-            this.txtPrintLenght.TabIndex = 4;
+            this.txtPrintLenght.TabIndex = 7;
             // 
             // pictureEdit8
             // 
@@ -407,7 +407,7 @@ namespace Bibliothek.Forms
             this.txtQRCode.Properties.Appearance.Options.UseForeColor = true;
             this.txtQRCode.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtQRCode.Size = new System.Drawing.Size(100, 26);
-            this.txtQRCode.TabIndex = 7;
+            this.txtQRCode.TabIndex = 8;
             // 
             // pictureEdit9
             // 
@@ -551,7 +551,7 @@ namespace Bibliothek.Forms
             this.pictureEdit16.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit16.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit16.Size = new System.Drawing.Size(67, 51);
-            this.pictureEdit16.TabIndex = 15;
+            this.pictureEdit16.TabIndex = 150;
             // 
             // textEdit16
             // 
@@ -566,7 +566,7 @@ namespace Bibliothek.Forms
             this.textEdit16.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit16.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.textEdit16.Size = new System.Drawing.Size(113, 26);
-            this.textEdit16.TabIndex = 16;
+            this.textEdit16.TabIndex = 160;
             // 
             // btnSave
             // 
@@ -576,7 +576,7 @@ namespace Bibliothek.Forms
             this.btnSave.Location = new System.Drawing.Point(590, 519);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(274, 47);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 16;
             this.btnSave.Text = "HINZUFÜGEN";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -588,7 +588,7 @@ namespace Bibliothek.Forms
             this.btnCancel.Location = new System.Drawing.Point(900, 519);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(274, 47);
-            this.btnCancel.TabIndex = 18;
+            this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "ABBRECHEN";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -601,7 +601,7 @@ namespace Bibliothek.Forms
             this.labelControl1.Location = new System.Drawing.Point(958, 101);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(39, 21);
-            this.labelControl1.TabIndex = 20;
+            this.labelControl1.TabIndex = 200;
             this.labelControl1.Text = "Autor";
             // 
             // labelControl2
@@ -613,7 +613,7 @@ namespace Bibliothek.Forms
             this.labelControl2.Location = new System.Drawing.Point(958, 152);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(45, 21);
-            this.labelControl2.TabIndex = 21;
+            this.labelControl2.TabIndex = 210;
             this.labelControl2.Text = "Verlag";
             // 
             // labelControl3
@@ -625,7 +625,7 @@ namespace Bibliothek.Forms
             this.labelControl3.Location = new System.Drawing.Point(958, 202);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(102, 21);
-            this.labelControl3.TabIndex = 22;
+            this.labelControl3.TabIndex = 220;
             this.labelControl3.Text = "Art des Buches";
             // 
             // labelControl4
@@ -637,7 +637,7 @@ namespace Bibliothek.Forms
             this.labelControl4.Location = new System.Drawing.Point(961, 255);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(99, 21);
-            this.labelControl4.TabIndex = 23;
+            this.labelControl4.TabIndex = 230;
             this.labelControl4.Text = "Buchkategorie";
             // 
             // labelControl5
@@ -649,7 +649,7 @@ namespace Bibliothek.Forms
             this.labelControl5.Location = new System.Drawing.Point(958, 308);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(67, 21);
-            this.labelControl5.TabIndex = 24;
+            this.labelControl5.TabIndex = 240;
             this.labelControl5.Text = "Abteilung";
             // 
             // txtNote
@@ -664,8 +664,8 @@ namespace Bibliothek.Forms
             this.txtNote.Properties.Appearance.Options.UseFont = true;
             this.txtNote.Properties.Appearance.Options.UseForeColor = true;
             this.txtNote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtNote.Size = new System.Drawing.Size(100, 26);
-            this.txtNote.TabIndex = 30;
+            this.txtNote.Size = new System.Drawing.Size(249, 26);
+            this.txtNote.TabIndex = 14;
             // 
             // lueAuthor
             // 
@@ -674,7 +674,7 @@ namespace Bibliothek.Forms
             this.lueAuthor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueAuthor.Size = new System.Drawing.Size(119, 20);
-            this.lueAuthor.TabIndex = 31;
+            this.lueAuthor.TabIndex = 9;
             // 
             // luePublisher
             // 
@@ -683,7 +683,7 @@ namespace Bibliothek.Forms
             this.luePublisher.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luePublisher.Size = new System.Drawing.Size(119, 20);
-            this.luePublisher.TabIndex = 32;
+            this.luePublisher.TabIndex = 10;
             // 
             // lueType
             // 
@@ -692,7 +692,7 @@ namespace Bibliothek.Forms
             this.lueType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueType.Size = new System.Drawing.Size(119, 20);
-            this.lueType.TabIndex = 33;
+            this.lueType.TabIndex = 11;
             // 
             // lueBookCategory
             // 
@@ -701,7 +701,7 @@ namespace Bibliothek.Forms
             this.lueBookCategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueBookCategory.Size = new System.Drawing.Size(119, 20);
-            this.lueBookCategory.TabIndex = 34;
+            this.lueBookCategory.TabIndex = 12;
             // 
             // lueSection
             // 
@@ -710,14 +710,14 @@ namespace Bibliothek.Forms
             this.lueSection.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueSection.Size = new System.Drawing.Size(119, 20);
-            this.lueSection.TabIndex = 35;
+            this.lueSection.TabIndex = 13;
             // 
             // rtxtSummary
             // 
             this.rtxtSummary.Location = new System.Drawing.Point(961, 416);
             this.rtxtSummary.Name = "rtxtSummary";
             this.rtxtSummary.Size = new System.Drawing.Size(252, 72);
-            this.rtxtSummary.TabIndex = 36;
+            this.rtxtSummary.TabIndex = 15;
             this.rtxtSummary.Text = "Zusammenfassung";
             // 
             // panel16
@@ -737,7 +737,7 @@ namespace Bibliothek.Forms
             this.imageSlider1.Location = new System.Drawing.Point(0, 0);
             this.imageSlider1.Name = "imageSlider1";
             this.imageSlider1.Size = new System.Drawing.Size(528, 597);
-            this.imageSlider1.TabIndex = 0;
+            this.imageSlider1.TabIndex = 5000;
             this.imageSlider1.Text = "imageSlider1";
             // 
             // FrmNewBook
@@ -801,7 +801,7 @@ namespace Bibliothek.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBookName);
             this.Controls.Add(this.pictureEdit1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmNewBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewBook";

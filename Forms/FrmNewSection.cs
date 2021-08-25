@@ -37,22 +37,31 @@ namespace Bibliothek.Forms
             else
             {
                 Section section = new Section();
-                section.SectionName = txtSectionName.Text;
-                section.Details = txtDescription.Text;
-                section.Note = txtNote.Text;
-                section.IsActive = true;
-                section.IsDeleted = false;
 
-                db.Section.Add(section);
-                db.SaveChanges();
-                MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                if (txtSectionName.Text.Length!=null && txtSectionName.Text.Length<=50 && txtDescription.Text.Length>=250)
+                {
+                    section.SectionName = txtSectionName.Text;
+                    section.Details = txtDescription.Text;
+                    section.Note = txtNote.Text;
+                    section.IsActive = true;
+                    section.IsDeleted = false;
+
+                    db.Section.Add(section);
+                    db.SaveChanges();
+                    MessageBox.Show("Abteilung erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Abteilung erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FrmNewCategory newCategory = new FrmNewCategory();
+            FrmNewCategory category = new FrmNewCategory();
         }
 
         private void FrmNewSection_Load(object sender, EventArgs e)

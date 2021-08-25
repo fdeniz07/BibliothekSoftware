@@ -56,16 +56,26 @@ namespace Bibliothek.Forms
             else
             {
                 Publishers publishers = new Publishers();
-                publishers.PublisherName = txtPublisherName.Text;
-                publishers.PublisherAbout = txtPublisherAbout.Text;
-                publishers.Note = rtxtNote.Text;
-                publishers.IsActive = true;
-                publishers.IsDeleted = false;
 
-                db.Publishers.Add(publishers);
-                db.SaveChanges();
-                MessageBox.Show("Verlag erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                if (txtPublisherName.Text.Length != null && txtPublisherName.Text.Length<=50 && txtPublisherAbout.Text.Length<=250)
+                {
+                    publishers.PublisherName = txtPublisherName.Text;
+                    publishers.PublisherAbout = txtPublisherAbout.Text;
+                    publishers.Note = rtxtNote.Text;
+                    publishers.IsActive = true;
+                    publishers.IsDeleted = false;
+
+                    db.Publishers.Add(publishers);
+                    db.SaveChanges();
+                    MessageBox.Show("Verlag erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Verlag erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+               
             }
         }
 

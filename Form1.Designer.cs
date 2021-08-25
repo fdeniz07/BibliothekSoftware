@@ -121,6 +121,7 @@ namespace Bibliothek
             this.btnNewStudent.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewStudent.ImageOptions.Image")));
             this.btnNewStudent.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewStudent.ImageOptions.LargeImage")));
             this.btnNewStudent.Name = "btnNewStudent";
+            this.btnNewStudent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewStudent_ItemClick);
             // 
             // btnStudentList
             // 

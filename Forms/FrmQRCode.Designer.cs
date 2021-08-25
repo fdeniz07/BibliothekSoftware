@@ -46,11 +46,11 @@ namespace Bibliothek.Forms
             this.btnQRCode.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnQRCode.Appearance.Options.UseFont = true;
             this.btnQRCode.Appearance.Options.UseForeColor = true;
-            this.btnQRCode.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnQRCode.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQRCode.ImageOptions.Image")));
             this.btnQRCode.Location = new System.Drawing.Point(175, 116);
             this.btnQRCode.Name = "btnQRCode";
             this.btnQRCode.Size = new System.Drawing.Size(148, 43);
-            this.btnQRCode.TabIndex = 0;
+            this.btnQRCode.TabIndex = 2;
             this.btnQRCode.Text = "QR CODE";
             this.btnQRCode.Click += new System.EventHandler(this.btnQRCode_Click);
             // 
@@ -63,7 +63,7 @@ namespace Bibliothek.Forms
             this.labelControl1.Location = new System.Drawing.Point(105, 25);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(218, 25);
-            this.labelControl1.TabIndex = 1;
+            this.labelControl1.TabIndex = 10;
             this.labelControl1.Text = "QR CODE GENERIERUNG";
             // 
             // pictureEdit1
@@ -73,7 +73,7 @@ namespace Bibliothek.Forms
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(210, 158);
-            this.pictureEdit1.TabIndex = 2;
+            this.pictureEdit1.TabIndex = 3;
             // 
             // textEdit1
             // 
@@ -87,7 +87,7 @@ namespace Bibliothek.Forms
             this.textEdit1.Properties.Mask.EditMask = "AAAAA";
             this.textEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.textEdit1.Size = new System.Drawing.Size(210, 18);
-            this.textEdit1.TabIndex = 3;
+            this.textEdit1.TabIndex = 1;
             // 
             // labelControl2
             // 
@@ -121,7 +121,7 @@ namespace Bibliothek.Forms
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnQRCode);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmQRCode";
             this.Text = "FrmQRCode";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

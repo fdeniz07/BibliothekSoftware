@@ -70,7 +70,7 @@ namespace Bibliothek.Forms
             this.txtNote.Properties.Appearance.Options.UseForeColor = true;
             this.txtNote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtNote.Size = new System.Drawing.Size(100, 26);
-            this.txtNote.TabIndex = 59;
+            this.txtNote.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -79,7 +79,7 @@ namespace Bibliothek.Forms
             this.btnCancel.Location = new System.Drawing.Point(717, 266);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(144, 47);
-            this.btnCancel.TabIndex = 58;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "ABBRECHEN";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -91,7 +91,7 @@ namespace Bibliothek.Forms
             this.btnSave.Location = new System.Drawing.Point(561, 266);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(144, 47);
-            this.btnSave.TabIndex = 57;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "HINZUFÜGEN";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -163,7 +163,7 @@ namespace Bibliothek.Forms
             this.txtDescription.Properties.Appearance.Options.UseForeColor = true;
             this.txtDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtDescription.Size = new System.Drawing.Size(100, 26);
-            this.txtDescription.TabIndex = 51;
+            this.txtDescription.TabIndex = 2;
             // 
             // pictureEdit2
             // 
@@ -198,7 +198,7 @@ namespace Bibliothek.Forms
             this.txtBookGenre.Properties.Appearance.Options.UseForeColor = true;
             this.txtBookGenre.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtBookGenre.Size = new System.Drawing.Size(100, 26);
-            this.txtBookGenre.TabIndex = 48;
+            this.txtBookGenre.TabIndex = 1;
             // 
             // pictureEdit1
             // 
@@ -229,7 +229,7 @@ namespace Bibliothek.Forms
             this.imageSlider1.Location = new System.Drawing.Point(0, 0);
             this.imageSlider1.Name = "imageSlider1";
             this.imageSlider1.Size = new System.Drawing.Size(512, 334);
-            this.imageSlider1.TabIndex = 0;
+            this.imageSlider1.TabIndex = 100;
             this.imageSlider1.Text = "imageSlider1";
             // 
             // FrmNewBookGenre
@@ -252,7 +252,7 @@ namespace Bibliothek.Forms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBookGenre);
             this.Controls.Add(this.pictureEdit1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmNewBookGenre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewBookGenre";

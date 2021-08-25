@@ -69,7 +69,7 @@ namespace Bibliothek.Forms
             this.btnList.Location = new System.Drawing.Point(128, 384);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(228, 37);
-            this.btnList.TabIndex = 21;
+            this.btnList.TabIndex = 7;
             this.btnList.Text = "AUFLISTEN";
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
@@ -79,7 +79,7 @@ namespace Bibliothek.Forms
             this.btnDelete.Location = new System.Drawing.Point(128, 341);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
-            this.btnDelete.TabIndex = 19;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "LÖSCHEN";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -89,7 +89,7 @@ namespace Bibliothek.Forms
             this.btnUpdate.Location = new System.Drawing.Point(128, 298);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
-            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "AKTUALISIEREN";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -99,7 +99,7 @@ namespace Bibliothek.Forms
             this.btnSave.Location = new System.Drawing.Point(129, 255);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 37);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "HINZUFÜGEN";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -108,7 +108,7 @@ namespace Bibliothek.Forms
             this.txtNote.Location = new System.Drawing.Point(129, 207);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(227, 20);
-            this.txtNote.TabIndex = 14;
+            this.txtNote.TabIndex = 3;
             // 
             // labelControl11
             // 
@@ -134,7 +134,7 @@ namespace Bibliothek.Forms
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1210, 660);
-            this.gridControl1.TabIndex = 7;
+            this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -143,7 +143,7 @@ namespace Bibliothek.Forms
             this.txtDescription.Location = new System.Drawing.Point(129, 181);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(227, 20);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -174,7 +174,7 @@ namespace Bibliothek.Forms
             this.txtBookCategory.Location = new System.Drawing.Point(129, 155);
             this.txtBookCategory.Name = "txtBookCategory";
             this.txtBookCategory.Size = new System.Drawing.Size(227, 20);
-            this.txtBookCategory.TabIndex = 4;
+            this.txtBookCategory.TabIndex = 1;
             // 
             // groupControl1
             // 
