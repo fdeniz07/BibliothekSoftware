@@ -17,51 +17,40 @@ namespace Bibliothek.Forms
         {
             StudentList();
             lueGender.Properties.DataSource = (from x in db.Gender
-                select new
-                {
-                    x.Id,
-                    Geschlecht = x.Type
-                }).ToList();
+                                               select new
+                                               {
+                                                   x.Id,
+                                                   Geschlecht = x.Type
+                                               }).ToList();
 
             lueClass.Properties.DataSource = (from x in db.CurrentClasses
-                select new
-                {
-                    x.Id,
-                    Klasse = x.ClassName
-                }).ToList();
+                                              select new
+                                              {
+                                                  x.Id,
+                                                  Klasse = x.ClassName
+                                              }).ToList();
 
             lueSchool.Properties.DataSource = (from x in db.Schools
-                select new
-                {
-                    x.Id,
-                    Schule = x.SchoolName
-                }).ToList();
+                                               select new
+                                               {
+                                                   x.Id,
+                                                   Schule = x.SchoolName
+                                               }).ToList();
 
             lueUserRole.Properties.DataSource = (from x in db.Roles
-                select new
-                {
-                    x.Id,
-                    BenutzerRolle = x.Name
-                }).ToList();
+                                                 select new
+                                                 {
+                                                     x.Id,
+                                                     BenutzerRolle = x.Name
+                                                 }).ToList();
 
             lueCountry.Properties.DataSource = (from x in db.Countries
-                select new
-                {
-                    x.Id,
-                    Land = x.CountryName
-                }).ToList();
+                                                select new
+                                                {
+                                                    x.Id,
+                                                    Land = x.CountryName
+                                                }).ToList();
 
-            Students students = new Students();
-            if (students.IsActive == true)
-            {
-                rbActive.Checked = true;
-                rbPassive.Checked = false;
-            }
-            else
-            {
-                rbActive.Checked = false;
-                rbPassive.Checked = true;
-            }
         }
 
         private void StudentList()
@@ -90,9 +79,14 @@ namespace Bibliothek.Forms
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
             txtFirstName.Text = gridView1.GetFocusedRowCellValue("Vorname").ToString();
             txtLastName.Text = gridView1.GetFocusedRowCellValue("Nachname").ToString();
+            lueGender.EditValue = gridView1.GetFocusedRowCellValue("Geschlect").ToString();
             txtDescription.Text = gridView1.GetFocusedRowCellValue("Beschreibung").ToString();
             txtLastSchoolYear.Text = gridView1.GetFocusedRowCellValue("LetztesSchulJahr").ToString();
             rtxtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
+            lueClass.EditValue = gridView1.GetFocusedRowCellValue("Klasse").ToString();
+            lueCountry.EditValue = gridView1.GetFocusedRowCellValue("Land").ToString();
+            lueSchool.EditValue = gridView1.GetFocusedRowCellValue("Schule").ToString();
+            lueUserRole.EditValue = gridView1.GetFocusedRowCellValue("Rolle").ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -110,15 +104,6 @@ namespace Bibliothek.Forms
                 students.CountryId = byte.Parse(lueCountry.EditValue.ToString());
                 students.Note = rtxtNote.Text;
 
-                if (rbActive.Checked == true && rbPassive.Checked == false)
-                {
-                    students.IsActive = true;
-                }
-                else
-                {
-                    students.IsActive = false;
-                }
-
                 db.Students.Add(students);
                 db.SaveChanges();
                 MessageBox.Show("Schüler/in erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
@@ -134,17 +119,47 @@ namespace Bibliothek.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(txtId.Text);
+            var value = db.Students.Find(id);
 
+            if (txtFirstName.Text.Length != null && txtFirstName.Text.Length <= 30 && txtLastName.Text.Length != null && txtLastName.Text.Length <= 30 && lueClass.Text.Length != null && lueSchool.Text.Length != null && lueUserRole.Text.Length != null && lueCountry.Text.Length != null && lueGender.Text.Length != null)
+            {
+                value.FirstName = txtFirstName.Text;
+                value.LastName = txtLastName.Text;
+                //value.GenderId = byte.Parse(lueGender.EditValue.ToString());
+                value.LastSchoolYear = txtLastSchoolYear.Text;
+                value.Description = txtDescription.Text;
+                //value.ClassId = byte.Parse(lueClass.EditValue.ToString());
+                //value.SchoolId = byte.Parse(lueSchool.EditValue.ToString());
+                //value.RoleId = byte.Parse(lueUserRole.EditValue.ToString());
+                //value.CountryId = byte.Parse(lueCountry.EditValue.ToString());
+                value.IsActive = true;
+                value.Note = rtxtNote.Text;
+
+                db.SaveChanges();
+                MessageBox.Show("Schüler/in erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Schüler/in erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(txtId.Text);
+            var value = db.Students.Find(id);
+            db.Students.Remove(value);
 
+            db.SaveChanges();
+            MessageBox.Show("Buch erfolgreich gelöscht!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
 
         private void btnList_Click(object sender, EventArgs e)
         {
-
+            StudentList();
         }
     }
 }

@@ -49,10 +49,6 @@ namespace Bibliothek.Forms
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.rbPassive = new System.Windows.Forms.RadioButton();
-            this.rbActive = new System.Windows.Forms.RadioButton();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rtxtNote = new System.Windows.Forms.RichTextBox();
             this.lueGender = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
@@ -78,7 +74,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lueSchool.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSchoolYear.Properties)).BeginInit();
@@ -144,7 +139,7 @@ namespace Bibliothek.Forms
             // btnList
             // 
             this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
-            this.btnList.Location = new System.Drawing.Point(142, 571);
+            this.btnList.Location = new System.Drawing.Point(142, 531);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(228, 37);
             this.btnList.TabIndex = 16;
@@ -163,7 +158,7 @@ namespace Bibliothek.Forms
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(142, 528);
+            this.btnDelete.Location = new System.Drawing.Point(142, 488);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
             this.btnDelete.TabIndex = 15;
@@ -173,7 +168,7 @@ namespace Bibliothek.Forms
             // btnUpdate
             // 
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(142, 485);
+            this.btnUpdate.Location = new System.Drawing.Point(142, 445);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
             this.btnUpdate.TabIndex = 14;
@@ -183,7 +178,7 @@ namespace Bibliothek.Forms
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(143, 442);
+            this.btnSave.Location = new System.Drawing.Point(143, 402);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 37);
             this.btnSave.TabIndex = 13;
@@ -227,7 +222,7 @@ namespace Bibliothek.Forms
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(59, 360);
+            this.labelControl11.Location = new System.Drawing.Point(59, 320);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(60, 13);
             this.labelControl11.TabIndex = 13;
@@ -251,10 +246,6 @@ namespace Bibliothek.Forms
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.rbPassive);
-            this.groupControl1.Controls.Add(this.rbActive);
-            this.groupControl1.Controls.Add(this.radioGroup1);
-            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.rtxtNote);
             this.groupControl1.Controls.Add(this.lueGender);
             this.groupControl1.Controls.Add(this.labelControl18);
@@ -287,46 +278,9 @@ namespace Bibliothek.Forms
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "SCHÜLER/IN";
             // 
-            // rbPassive
-            // 
-            this.rbPassive.AutoSize = true;
-            this.rbPassive.Location = new System.Drawing.Point(263, 323);
-            this.rbPassive.Name = "rbPassive";
-            this.rbPassive.Size = new System.Drawing.Size(56, 17);
-            this.rbPassive.TabIndex = 11;
-            this.rbPassive.TabStop = true;
-            this.rbPassive.Text = "Passiv";
-            this.rbPassive.UseVisualStyleBackColor = true;
-            // 
-            // rbActive
-            // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Location = new System.Drawing.Point(173, 323);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(49, 17);
-            this.rbActive.TabIndex = 10;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Aktiv";
-            this.rbActive.UseVisualStyleBackColor = true;
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(142, 313);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Size = new System.Drawing.Size(227, 38);
-            this.radioGroup1.TabIndex = 42;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(86, 323);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(39, 13);
-            this.labelControl3.TabIndex = 41;
-            this.labelControl3.Text = "Status : ";
-            // 
             // rtxtNote
             // 
-            this.rtxtNote.Location = new System.Drawing.Point(142, 357);
+            this.rtxtNote.Location = new System.Drawing.Point(142, 317);
             this.rtxtNote.Name = "rtxtNote";
             this.rtxtNote.Size = new System.Drawing.Size(227, 72);
             this.rtxtNote.TabIndex = 12;
@@ -456,7 +410,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLastSchoolYear.Properties)).EndInit();
@@ -501,10 +454,6 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.TextEdit txtLastName;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private System.Windows.Forms.RadioButton rbPassive;
-        private System.Windows.Forms.RadioButton rbActive;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.RichTextBox rtxtNote;
     }
 }

@@ -35,6 +35,7 @@ namespace Bibliothek
         public virtual DbSet<CurrentClasses> CurrentClasses { get; set; }
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Notes> Notes { get; set; }
         public virtual DbSet<Penalties> Penalties { get; set; }
         public virtual DbSet<Publishers> Publishers { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }

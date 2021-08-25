@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="404c847f26324d17a930cb24a96fb853" Name="Diagram1">
+      <Diagram DiagramId="771f7f83a267412dba3f005b9512d1d7" Name="Diagram1">
         <EntityTypeShape EntityType="DamlaLibraryModel.Admins" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Authors" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Books" Width="1.5" PointX="8.25" PointY="27.25" IsExpanded="true" />
@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="DamlaLibraryModel.CurrentClasses" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Departments" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Gender" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Notes" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Penalties" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Publishers" Width="1.5" PointX="6" PointY="29.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Roles" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
@@ -25,8 +26,8 @@
         <EntityTypeShape EntityType="DamlaLibraryModel.States" Width="1.5" PointX="1.5" PointY="24.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Staves" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Students" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Tools" Width="1.5" PointX="8.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Tools" Width="1.5" PointX="8.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.TypesOfBooks" Width="1.5" PointX="6" PointY="37" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.TypesOfSchools" Width="1.5" PointX="1.5" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Users" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />

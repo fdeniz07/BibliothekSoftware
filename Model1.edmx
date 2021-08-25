@@ -46,7 +46,7 @@
           <Property Name="Language" Type="nvarchar" MaxLength="20" />
           <Property Name="PrintLenght" Type="int" />
           <Property Name="QRCode" Type="nvarchar" MaxLength="250" />
-          <Property Name="InnerBarcode" Type="nvarchar" MaxLength="250" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="250" />
           <Property Name="NumberOfRentals" Type="int" />
           <Property Name="AuthorId" Type="int" />
           <Property Name="PublisherId" Type="int" />
@@ -183,6 +183,21 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Heading" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContentValue" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="Penalties">
           <Key>
             <PropertyRef Name="Id" />
@@ -203,8 +218,8 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="PublisherName" Type="nvarchar(max)" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublisherName" Type="nvarchar" MaxLength="50" />
           <Property Name="PublisherAbout" Type="nvarchar" MaxLength="250" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
@@ -726,6 +741,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Penalties" EntityType="Self.Penalties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
@@ -909,7 +925,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PrintLenght" Type="Int32" />
           <Property Name="QRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="InnerBarcode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BarCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="NumberOfRentals" Type="Int32" />
           <Property Name="AuthorId" Type="Int32" />
           <Property Name="PublisherId" Type="Int32" />
@@ -1026,6 +1042,21 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_Gender" FromRole="Gender" ToRole="Students" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Gender" FromRole="Gender" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Heading" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContentValue" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Penalties">
           <Key>
             <PropertyRef Name="Id" />
@@ -1047,8 +1078,8 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="PublisherName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublisherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PublisherAbout" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDate" Type="DateTime" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
@@ -1636,6 +1667,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" />
           <EntitySet Name="Departments" EntityType="Self.Departments" />
           <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" />
           <EntitySet Name="Penalties" EntityType="Self.Penalties" />
           <EntitySet Name="Publishers" EntityType="Self.Publishers" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
@@ -1801,7 +1833,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
                 <ScalarProperty Name="Language" ColumnName="Language" />
                 <ScalarProperty Name="PrintLenght" ColumnName="PrintLenght" />
                 <ScalarProperty Name="QRCode" ColumnName="QRCode" />
-                <ScalarProperty Name="InnerBarcode" ColumnName="InnerBarcode" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
                 <ScalarProperty Name="NumberOfRentals" ColumnName="NumberOfRentals" />
                 <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
                 <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
@@ -1907,6 +1939,22 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.Notes">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="ContentValue" ColumnName="ContentValue" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

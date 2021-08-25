@@ -30,7 +30,7 @@ namespace Bibliothek
         public string Language { get; set; }
         public Nullable<int> PrintLenght { get; set; }
         public string QRCode { get; set; }
-        public string InnerBarcode { get; set; }
+        public string BarCode { get; set; }
         public Nullable<int> NumberOfRentals { get; set; }
         public Nullable<int> AuthorId { get; set; }
         public Nullable<int> PublisherId { get; set; }

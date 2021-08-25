@@ -204,7 +204,7 @@ namespace Bibliothek.Forms
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(388, 845);
             this.groupControl1.TabIndex = 38;
-            this.groupControl1.Text = "SCHÜLER/IN";
+            this.groupControl1.Text = "AUTOR/IN";
             // 
             // btnList
             // 

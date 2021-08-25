@@ -124,5 +124,60 @@ namespace Bibliothek
             Forms.FrmNewStudent student = new FrmNewStudent();
             student.Show();
         }
+
+        private void btnCalculator_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
+        }
+
+        private void btnSnippingTool_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("snippingtool.exe");
+        }
+
+        private void btnHomePage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmHomePage frmHomePage = new FrmHomePage();
+            frmHomePage.MdiParent = this;
+            frmHomePage.Show();
+        }
+
+        private void btnExchange_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmExchange exchange = new FrmExchange();
+            exchange.MdiParent = this;
+            exchange.Show();
+        }
+
+        private void btnWord_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("winword.exe");
+        }
+
+        private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("excel.exe");
+        }
+
+        private void btnExchange_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmExchange exchange = new FrmExchange();
+            exchange.MdiParent = this;
+            exchange.Show();
+        }
+
+        private void btnYoutube_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYoutube youtube = new FrmYoutube();
+            youtube.MdiParent = this;
+            youtube.Show();
+        }
+
+        private void btnNoteList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNote note = new FrmNote();
+            note.MdiParent = this;
+            note.Show();
+        }
     }
 }
