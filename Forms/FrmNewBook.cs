@@ -51,7 +51,7 @@ namespace Bibliothek.Forms
             }
             else
             {
-                MessageBox.Show("Buch erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                MessageBox.Show("Buch konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }

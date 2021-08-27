@@ -37,6 +37,7 @@ namespace Bibliothek.Forms
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.rtxtContent = new System.Windows.Forms.RichTextBox();
             this.btnList = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -48,16 +49,15 @@ namespace Bibliothek.Forms
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.txtTitle = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -77,6 +77,7 @@ namespace Bibliothek.Forms
             this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // labelControl1
             // 
@@ -136,6 +137,16 @@ namespace Bibliothek.Forms
             this.groupControl1.TabIndex = 39;
             this.groupControl1.Text = "AGENDA-AKTIONEN";
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(106, 198);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEdit1.Properties.Appearance.Options.UseFont = true;
+            this.checkEdit1.Properties.Caption = "Als gelesen markieren";
+            this.checkEdit1.Size = new System.Drawing.Size(151, 18);
+            this.checkEdit1.TabIndex = 14;
+            // 
             // rtxtContent
             // 
             this.rtxtContent.Location = new System.Drawing.Point(106, 111);
@@ -170,6 +181,7 @@ namespace Bibliothek.Forms
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "AKTUALISIEREN";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -179,6 +191,7 @@ namespace Bibliothek.Forms
             this.btnSave.Size = new System.Drawing.Size(228, 37);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "HINZUFÜGEN";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // labelControl11
             // 
@@ -235,16 +248,6 @@ namespace Bibliothek.Forms
             this.labelControl4.TabIndex = 3;
             this.labelControl4.Text = "Titel :";
             // 
-            // checkEdit1
-            // 
-            this.checkEdit1.Location = new System.Drawing.Point(106, 198);
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEdit1.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit1.Properties.Caption = "Als gelesen markieren";
-            this.checkEdit1.Size = new System.Drawing.Size(151, 18);
-            this.checkEdit1.TabIndex = 14;
-            // 
             // FrmNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,9 +268,9 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitle.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

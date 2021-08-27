@@ -56,7 +56,7 @@ namespace Bibliothek.Forms
             }
             else
             {
-                MessageBox.Show("Die Stadt erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                MessageBox.Show("Die Stadt konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }

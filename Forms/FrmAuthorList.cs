@@ -18,7 +18,6 @@ namespace Bibliothek.Forms
             AuthorList();
         }
 
-
         private void AuthorList()
         {
             var values = from authors in db.Authors
@@ -51,12 +50,12 @@ namespace Bibliothek.Forms
 
                 db.Authors.Add(authors);
                 db.SaveChanges();
-                MessageBox.Show("Author erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
+                MessageBox.Show("Author/in erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Author erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                MessageBox.Show("Author/in konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
            
@@ -73,7 +72,7 @@ namespace Bibliothek.Forms
             value.Note = rtxtNote.Text;
 
             db.SaveChanges();
-            MessageBox.Show("Author erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Author/in erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

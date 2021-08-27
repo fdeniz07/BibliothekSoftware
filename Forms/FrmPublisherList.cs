@@ -72,7 +72,7 @@ namespace Bibliothek.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Verlag erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBox.Show("Verlag konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
                

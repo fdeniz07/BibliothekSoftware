@@ -53,7 +53,7 @@ namespace Bibliothek.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Abteilung erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                    MessageBox.Show("Abteilung konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }

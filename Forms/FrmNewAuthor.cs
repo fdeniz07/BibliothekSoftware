@@ -37,8 +37,10 @@ namespace Bibliothek.Forms
             //    MessageBox.Show("Autor/in ist existiert", "Warnung", MessageBoxButtons.OK,
             //        MessageBoxIcon.Warning);
             //else
-            //{
-                Authors authors = new Authors();
+            //{}
+            Authors authors = new Authors();
+            if (txtFirstName.Text.Length <= 50 && txtLastName.Text.Length <= 50)
+            {
                 authors.FirstName = txtFirstName.Text;
                 authors.LastName = txtLastName.Text;
                 authors.FullName = txtFirstName.Text + txtLastName.Text;
@@ -51,7 +53,12 @@ namespace Bibliothek.Forms
                 db.SaveChanges();
                 MessageBox.Show("Autor/in erfolgreich gespeichert", "Information", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            //}
+            }
+            else
+            {
+                MessageBox.Show("Autor/in  konnte nicht gespeichert werden", "Information", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

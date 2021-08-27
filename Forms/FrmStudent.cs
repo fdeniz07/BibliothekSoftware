@@ -111,7 +111,7 @@ namespace Bibliothek.Forms
             }
             else
             {
-                MessageBox.Show("Schüler/in erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                MessageBox.Show("Schüler/in konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
             }
@@ -143,7 +143,6 @@ namespace Bibliothek.Forms
             {
                 MessageBox.Show("Schüler/in erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
             }
         }
 

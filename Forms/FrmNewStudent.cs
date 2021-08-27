@@ -23,7 +23,7 @@ namespace Bibliothek.Forms
         {
             Students students = new Students();
 
-            if (txtFirstName.Text.Length !=null && txtFirstName.Text.Length<=30 && txtLastName.Text.Length!=null && txtLastName.Text.Length<=30 && lueClass.Text.Length!=null && lueSchool.Text.Length!=null && lueUserRole.Text.Length!=null && lueCountry.Text.Length!=null && lueGender.Text.Length!=null)
+            if (txtFirstName.Text.Length != null && txtFirstName.Text.Length <= 30 && txtLastName.Text.Length != null && txtLastName.Text.Length <= 30 && lueClass.Text.Length != null && lueSchool.Text.Length != null && lueUserRole.Text.Length != null && lueCountry.Text.Length != null && lueGender.Text.Length != null)
             {
                 students.FirstName = txtFirstName.Text;
                 students.LastName = txtLastName.Text;
@@ -51,11 +51,11 @@ namespace Bibliothek.Forms
             }
             else
             {
-                MessageBox.Show("Schüler/in erfolgreich nicht gespeichert", "Fehler", MessageBoxButtons.OK,
+                MessageBox.Show("Schüler/in konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
             }
-           
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -66,39 +66,39 @@ namespace Bibliothek.Forms
         private void FrmNewStudent_Load(object sender, EventArgs e)
         {
             lueGender.Properties.DataSource = (from x in db.Gender
-                select new
-                {
-                    x.Id,
-                    Geschlecht = x.Type
-                }).ToList();
+                                               select new
+                                               {
+                                                   x.Id,
+                                                   Geschlecht = x.Type
+                                               }).ToList();
 
             lueClass.Properties.DataSource = (from x in db.CurrentClasses
-                select new
-                {
-                    x.Id,
-                    Klasse = x.ClassName
-                }).ToList();
+                                              select new
+                                              {
+                                                  x.Id,
+                                                  Klasse = x.ClassName
+                                              }).ToList();
 
             lueSchool.Properties.DataSource = (from x in db.Schools
-                select new
-                {
-                    x.Id,
-                    Schule = x.SchoolName
-                }).ToList();
+                                               select new
+                                               {
+                                                   x.Id,
+                                                   Schule = x.SchoolName
+                                               }).ToList();
 
             lueUserRole.Properties.DataSource = (from x in db.Roles
-                select new
-                {
-                    x.Id,
-                    BenutzerRolle = x.Name
-                }).ToList();
+                                                 select new
+                                                 {
+                                                     x.Id,
+                                                     BenutzerRolle = x.Name
+                                                 }).ToList();
 
             lueCountry.Properties.DataSource = (from x in db.Countries
-                select new
-                {
-                    x.Id,
-                   Land = x.CountryName
-                }).ToList();
+                                                select new
+                                                {
+                                                    x.Id,
+                                                    Land = x.CountryName
+                                                }).ToList();
         }
     }
 }
