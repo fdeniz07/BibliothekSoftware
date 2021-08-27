@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibliothek.Forms
@@ -21,21 +16,36 @@ namespace Bibliothek.Forms
 
         private void FrmNote_Load(object sender, EventArgs e)
         {
-            NoteList();
-            gridControl1.DataSource = db.Notes.Where(x => x.IsActive == false).ToList();
-            gridControl2.DataSource = db.Notes.Where(y => y.IsActive == true).ToList();
+            NoteList1();
+            NoteList2();
+            //gridControl1.DataSource = db.Notes.Where(x => x.IsActive == false).ToList();
+            //gridControl2.DataSource = db.Notes.Where(y => y.IsActive == true).ToList();
         }
 
-        private void NoteList()
+        private void NoteList1()
         {
-            var values = from notes in db.Notes
+            var values = from notes in db.Notes.Where(x => x.IsActive == false)
+                         select new
+                {
+                    notes.Id,
+                    Titel = notes.Heading,
+                    Inhalt = notes.ContentValue,
+                    Ungelesen = notes.IsActive
+                };
+            gridControl1.DataSource = values.ToList();
+        }
+
+        private void NoteList2()
+        {
+            var values2 = from notes in db.Notes.Where(y => y.IsActive == true)
                 select new
                 {
                     notes.Id,
                     Titel = notes.Heading,
-                    Inhalt = notes.ContentValue
+                    Inhalt = notes.ContentValue,
+                    Ungelesen = notes.IsActive
                 };
-            gridControl1.DataSource = values.ToList();
+            gridControl2.DataSource = values2.ToList();
         }
 
 
@@ -72,6 +82,8 @@ namespace Bibliothek.Forms
                     MessageBox.Show("Notizen konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+                NoteList1();
+                NoteList2();
             }
         }
 
