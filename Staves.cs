@@ -18,7 +18,6 @@ namespace Bibliothek
         public Staves()
         {
             this.BorrowingBookActivities = new HashSet<BorrowingBookActivities>();
-            this.BorrowingBooks = new HashSet<BorrowingBooks>();
         }
     
         public int Id { get; set; }
@@ -44,7 +43,5 @@ namespace Bibliothek
         public virtual Gender Gender { get; set; }
         public virtual StaffGroups StaffGroups { get; set; }
         public virtual StaffRoles StaffRoles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BorrowingBooks> BorrowingBooks { get; set; }
     }
 }

@@ -14,16 +14,15 @@ namespace Bibliothek
     
     public partial class BorrowingBookActivities
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BorrowingBookActivities()
-        {
-            this.BorrowingBooks = new HashSet<BorrowingBooks>();
-        }
-    
         public int Id { get; set; }
+        public int BorrowingBooksId { get; set; }
+        public int TransactionTypeId { get; set; }
+        public Nullable<int> StaffId { get; set; }
+        public Nullable<System.DateTime> DateOfBorrowing { get; set; }
+        public Nullable<System.DateTime> ReturnDate { get; set; }
+        public Nullable<int> Period { get; set; }
         public int DelayTime { get; set; }
         public bool IsRead { get; set; }
-        public Nullable<int> StaffId { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public System.DateTime ModifiedDate { get; set; }
         public bool IsDeleted { get; set; }
@@ -31,11 +30,10 @@ namespace Bibliothek
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
-        public bool StatusType { get; set; }
     
+        public virtual BookTransactionType BookTransactionType { get; set; }
+        public virtual BorrowingBooks BorrowingBooks { get; set; }
         public virtual Penalties Penalties { get; set; }
         public virtual Staves Staves { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BorrowingBooks> BorrowingBooks { get; set; }
     }
 }

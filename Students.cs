@@ -42,12 +42,12 @@ namespace Bibliothek
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BorrowingBooks> BorrowingBooks { get; set; }
         public virtual Countries Countries { get; set; }
         public virtual CurrentClasses CurrentClasses { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual Roles Roles { get; set; }
         public virtual Schools Schools { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BorrowingBooks> BorrowingBooks { get; set; }
     }
 }

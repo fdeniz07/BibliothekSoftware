@@ -37,6 +37,7 @@ namespace Bibliothek
         public Nullable<int> TypeId { get; set; }
         public Nullable<int> BookCategoryId { get; set; }
         public Nullable<int> SectionId { get; set; }
+        public Nullable<bool> BookState { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<bool> IsDeleted { get; set; }

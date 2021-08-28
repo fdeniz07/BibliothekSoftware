@@ -4,43 +4,46 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="771f7f83a267412dba3f005b9512d1d7" Name="Diagram1">
+      <Diagram DiagramId="8b0dccacd17840098fdffc421d03f4e5" Name="Diagram1">
         <EntityTypeShape EntityType="DamlaLibraryModel.Admins" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Authors" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Books" Width="1.5" PointX="8.25" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.BooksByCategories" Width="1.5" PointX="6" PointY="25.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.BorrowingBookActivities" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Authors" Width="1.5" PointX="6.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Books" Width="1.5" PointX="9" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.BooksByCategories" Width="1.5" PointX="6.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.BookTransactionType" Width="1.5" PointX="6" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.BorrowingBookActivities" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.BorrowingBooks" Width="1.5" PointX="11.25" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Cities" Width="1.5" PointX="1.5" PointY="21.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Countries" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.CurrentClasses" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Departments" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Departments" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Gender" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Notes" Width="1.5" PointX="8.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Penalties" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Publishers" Width="1.5" PointX="6" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Penalties" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Publishers" Width="1.5" PointX="6.75" PointY="29.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Roles" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Schools" Width="1.5" PointX="3.75" PointY="21.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Section" Width="1.5" PointX="6" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Section" Width="1.5" PointX="6.75" PointY="33.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.StaffGroups" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.StaffRoles" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.StaffRoles" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.States" Width="1.5" PointX="1.5" PointY="24.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Staves" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Students" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.Tools" Width="1.5" PointX="8.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.TypesOfBooks" Width="1.5" PointX="6" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.Tools" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DamlaLibraryModel.TypesOfBooks" Width="1.5" PointX="6.75" PointY="37.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.TypesOfSchools" Width="1.5" PointX="1.5" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DamlaLibraryModel.Users" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DamlaLibraryModel.BorrowingBooks" Width="1.5" PointX="10.5" PointY="11.125" IsExpanded="true" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Books_Authors" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Books_BooksByCategories" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Books_Publishers" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Books_Section" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Books_TypesOfBooks" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBooks_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBookActivities_BookTransactionType" ManuallyRouted="false" />
+        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBookActivities_BorrowingBooks" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBookActivities_Penalties" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBookActivities_Staves" ManuallyRouted="false" />
-        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBooks_BorrowingBookActivities" ManuallyRouted="false" />
+        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBooks_Students" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Cities_States" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Schools_Cities" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Students_Countries" ManuallyRouted="false" />
@@ -55,8 +58,6 @@
         <AssociationConnector Association="DamlaLibraryModel.FK_Students_Schools" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_Staves_StaffGroups" ManuallyRouted="false" />
         <AssociationConnector Association="DamlaLibraryModel.FK_StaffRoles_Staves" ManuallyRouted="false" />
-        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBooks_Staves" ManuallyRouted="false" />
-        <AssociationConnector Association="DamlaLibraryModel.FK_BorrowingBooks_Students" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DamlaLibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -53,6 +53,7 @@
           <Property Name="TypeId" Type="int" />
           <Property Name="BookCategoryId" Type="int" />
           <Property Name="SectionId" Type="int" />
+          <Property Name="BookState" Type="bit" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
           <Property Name="IsDeleted" Type="bit" />
@@ -76,14 +77,27 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="BookTransactionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Details" Type="nvarchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="BorrowingBookActivities">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BorrowingBooksId" Type="int" Nullable="false" />
+          <Property Name="TransactionTypeId" Type="int" Nullable="false" />
+          <Property Name="StaffId" Type="int" />
+          <Property Name="DateOfBorrowing" Type="datetime2" Precision="7" />
+          <Property Name="ReturnDate" Type="datetime2" Precision="7" />
+          <Property Name="Period" Type="int" />
           <Property Name="DelayTime" Type="int" Nullable="false" />
           <Property Name="IsRead" Type="bit" Nullable="false" />
-          <Property Name="StaffId" Type="int" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
@@ -91,43 +105,20 @@
           <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
-          <Property Name="StatusType" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BorrowingBooks">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="IssueDate" />
-            <PropertyRef Name="Period" />
-            <PropertyRef Name="ReturningDate" />
-            <PropertyRef Name="NumberOfRentals" />
-            <PropertyRef Name="BorrowingBookActivityId" />
-            <PropertyRef Name="StudentId" />
-            <PropertyRef Name="BookId" />
-            <PropertyRef Name="StaffId" />
-            <PropertyRef Name="CreatedDate" />
-            <PropertyRef Name="ModifiedDate" />
-            <PropertyRef Name="IsDeleted" />
-            <PropertyRef Name="IsActive" />
-            <PropertyRef Name="CreatedByName" />
-            <PropertyRef Name="ModifiedByName" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="IssueDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="Period" Type="int" Nullable="false" />
-          <Property Name="ReturningDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="NumberOfRentals" Type="int" Nullable="false" />
-          <Property Name="BorrowingBookActivityId" Type="int" Nullable="false" />
-          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BookId" Type="int" Nullable="false" />
-          <Property Name="StaffId" Type="int" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Cities">
@@ -490,6 +481,30 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_BorrowingBookActivities_BookTransactionType">
+          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="1" />
+          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookTransactionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BorrowingBookActivities">
+              <PropertyRef Name="TransactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BorrowingBookActivities_BorrowingBooks">
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="1" />
+          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BorrowingBooks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BorrowingBookActivities">
+              <PropertyRef Name="BorrowingBooksId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BorrowingBookActivities_Penalties">
           <End Role="Penalties" Type="Self.Penalties" Multiplicity="1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="0..1" />
@@ -523,30 +538,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             </Principal>
             <Dependent Role="BorrowingBooks">
               <PropertyRef Name="BookId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BorrowingBooks_BorrowingBookActivities">
-          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BorrowingBookActivities">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="BorrowingBookActivityId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BorrowingBooks_Staves">
-          <End Role="Staves" Type="Self.Staves" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staves">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="StaffId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -735,7 +726,9 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BooksByCategories" EntityType="Self.BooksByCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookTransactionType" EntityType="Self.BookTransactionType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BorrowingBookActivities" EntityType="Self.BorrowingBookActivities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" Schema="dbo" store:Type="Tables" />
@@ -757,26 +750,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <EntitySet Name="TypesOfBooks" EntityType="Self.TypesOfBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypesOfSchools" EntityType="Self.TypesOfSchools" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [BorrowingBooks].[Id] AS [Id], 
-    [BorrowingBooks].[IssueDate] AS [IssueDate], 
-    [BorrowingBooks].[Period] AS [Period], 
-    [BorrowingBooks].[ReturningDate] AS [ReturningDate], 
-    [BorrowingBooks].[NumberOfRentals] AS [NumberOfRentals], 
-    [BorrowingBooks].[BorrowingBookActivityId] AS [BorrowingBookActivityId], 
-    [BorrowingBooks].[StudentId] AS [StudentId], 
-    [BorrowingBooks].[BookId] AS [BookId], 
-    [BorrowingBooks].[StaffId] AS [StaffId], 
-    [BorrowingBooks].[CreatedDate] AS [CreatedDate], 
-    [BorrowingBooks].[ModifiedDate] AS [ModifiedDate], 
-    [BorrowingBooks].[IsDeleted] AS [IsDeleted], 
-    [BorrowingBooks].[IsActive] AS [IsActive], 
-    [BorrowingBooks].[CreatedByName] AS [CreatedByName], 
-    [BorrowingBooks].[ModifiedByName] AS [ModifiedByName], 
-    [BorrowingBooks].[Note] AS [Note]
-    FROM [dbo].[BorrowingBooks] AS [BorrowingBooks]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
@@ -797,6 +770,14 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             <End Role="TypesOfBooks" EntitySet="TypesOfBooks" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
+          <AssociationSet Name="FK_BorrowingBookActivities_BookTransactionType" Association="Self.FK_BorrowingBookActivities_BookTransactionType">
+            <End Role="BookTransactionType" EntitySet="BookTransactionType" />
+            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BorrowingBookActivities_BorrowingBooks" Association="Self.FK_BorrowingBookActivities_BorrowingBooks">
+            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
+            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
+          </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_Penalties" Association="Self.FK_BorrowingBookActivities_Penalties">
             <End Role="Penalties" EntitySet="Penalties" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
@@ -807,14 +788,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           </AssociationSet>
           <AssociationSet Name="FK_BorrowingBooks_Books" Association="Self.FK_BorrowingBooks_Books">
             <End Role="Books" EntitySet="Books" />
-            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_BorrowingBookActivities" Association="Self.FK_BorrowingBooks_BorrowingBookActivities">
-            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
-            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_Staves" Association="Self.FK_BorrowingBooks_Staves">
-            <End Role="Staves" EntitySet="Staves" />
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
           </AssociationSet>
           <AssociationSet Name="FK_BorrowingBooks_Students" Association="Self.FK_BorrowingBooks_Students">
@@ -878,7 +851,8 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DamlaLibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -931,6 +905,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="TypeId" Type="Int32" />
           <Property Name="BookCategoryId" Type="Int32" />
           <Property Name="SectionId" Type="Int32" />
+          <Property Name="BookState" Type="Boolean" />
           <Property Name="CreatedDate" Type="DateTime" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
           <Property Name="IsDeleted" Type="Boolean" />
@@ -961,14 +936,28 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Books_BooksByCategories" FromRole="BooksByCategories" ToRole="Books" />
         </EntityType>
+        <EntityType Name="BookTransactionType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_BookTransactionType" FromRole="BookTransactionType" ToRole="BorrowingBookActivities" />
+        </EntityType>
         <EntityType Name="BorrowingBookActivities">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BorrowingBooksId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionTypeId" Type="Int32" Nullable="false" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="DateOfBorrowing" Type="DateTime" Precision="7" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="7" />
+          <Property Name="Period" Type="Int32" />
           <Property Name="DelayTime" Type="Int32" Nullable="false" />
           <Property Name="IsRead" Type="Boolean" Nullable="false" />
-          <Property Name="StaffId" Type="Int32" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
@@ -976,10 +965,28 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="StatusType" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BookTransactionType" Relationship="Self.FK_BorrowingBookActivities_BookTransactionType" FromRole="BorrowingBookActivities" ToRole="BookTransactionType" />
+          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBookActivities_BorrowingBooks" FromRole="BorrowingBookActivities" ToRole="BorrowingBooks" />
           <NavigationProperty Name="Penalties" Relationship="Self.FK_BorrowingBookActivities_Penalties" FromRole="BorrowingBookActivities" ToRole="Penalties" />
           <NavigationProperty Name="Staves" Relationship="Self.FK_BorrowingBookActivities_Staves" FromRole="BorrowingBookActivities" ToRole="Staves" />
-          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_BorrowingBookActivities" FromRole="BorrowingBookActivities" ToRole="BorrowingBooks" />
+        </EntityType>
+        <EntityType Name="BorrowingBooks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="Int32" Nullable="false" />
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_BorrowingBooks_Books" FromRole="BorrowingBooks" ToRole="Books" />
+          <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_BorrowingBooks" FromRole="BorrowingBooks" ToRole="BorrowingBookActivities" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_BorrowingBooks_Students" FromRole="BorrowingBooks" ToRole="Students" />
         </EntityType>
         <EntityType Name="Cities">
           <Key>
@@ -1208,7 +1215,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <NavigationProperty Name="Gender" Relationship="Self.FK_Staves_Gender" FromRole="Staves" ToRole="Gender" />
           <NavigationProperty Name="StaffGroups" Relationship="Self.FK_Staves_StaffGroups" FromRole="Staves" ToRole="StaffGroups" />
           <NavigationProperty Name="StaffRoles" Relationship="Self.FK_StaffRoles_Staves" FromRole="Staves" ToRole="StaffRoles" />
-          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Staves" FromRole="Staves" ToRole="BorrowingBooks" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -1235,12 +1241,12 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Students" FromRole="Students" ToRole="BorrowingBooks" />
           <NavigationProperty Name="Countries" Relationship="Self.FK_Students_Countries" FromRole="Students" ToRole="Countries" />
           <NavigationProperty Name="CurrentClasses" Relationship="Self.FK_Students_CurrentClasses" FromRole="Students" ToRole="CurrentClasses" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Students_Gender" FromRole="Students" ToRole="Gender" />
           <NavigationProperty Name="Roles" Relationship="Self.FK_Students_Roles" FromRole="Students" ToRole="Roles" />
           <NavigationProperty Name="Schools" Relationship="Self.FK_Students_Schools" FromRole="Students" ToRole="Schools" />
-          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Students" FromRole="Students" ToRole="BorrowingBooks" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -1316,45 +1322,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <NavigationProperty Name="Gender" Relationship="Self.FK_Users_Gender" FromRole="Users" ToRole="Gender" />
           <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
-        <EntityType Name="BorrowingBooks">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="IssueDate" />
-            <PropertyRef Name="Period" />
-            <PropertyRef Name="ReturningDate" />
-            <PropertyRef Name="NumberOfRentals" />
-            <PropertyRef Name="BorrowingBookActivityId" />
-            <PropertyRef Name="StudentId" />
-            <PropertyRef Name="BookId" />
-            <PropertyRef Name="StaffId" />
-            <PropertyRef Name="CreatedDate" />
-            <PropertyRef Name="ModifiedDate" />
-            <PropertyRef Name="IsDeleted" />
-            <PropertyRef Name="IsActive" />
-            <PropertyRef Name="CreatedByName" />
-            <PropertyRef Name="ModifiedByName" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Period" Type="Int32" Nullable="false" />
-          <Property Name="ReturningDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="NumberOfRentals" Type="Int32" Nullable="false" />
-          <Property Name="BorrowingBookActivityId" Type="Int32" Nullable="false" />
-          <Property Name="StudentId" Type="Int32" Nullable="false" />
-          <Property Name="BookId" Type="Int32" Nullable="false" />
-          <Property Name="StaffId" Type="Int32" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_BorrowingBooks_Books" FromRole="BorrowingBooks" ToRole="Books" />
-          <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBooks_BorrowingBookActivities" FromRole="BorrowingBooks" ToRole="BorrowingBookActivities" />
-          <NavigationProperty Name="Staves" Relationship="Self.FK_BorrowingBooks_Staves" FromRole="BorrowingBooks" ToRole="Staves" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_BorrowingBooks_Students" FromRole="BorrowingBooks" ToRole="Students" />
-        </EntityType>
         <Association Name="FK_Books_Authors">
           <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
@@ -1427,6 +1394,30 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_BorrowingBookActivities_BookTransactionType">
+          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="1" />
+          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookTransactionType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BorrowingBookActivities">
+              <PropertyRef Name="TransactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BorrowingBookActivities_BorrowingBooks">
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="1" />
+          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BorrowingBooks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BorrowingBookActivities">
+              <PropertyRef Name="BorrowingBooksId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BorrowingBookActivities_Penalties">
           <End Role="Penalties" Type="Self.Penalties" Multiplicity="1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="0..1" />
@@ -1451,15 +1442,15 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BorrowingBooks_BorrowingBookActivities">
-          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="1" />
+        <Association Name="FK_BorrowingBooks_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
           <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="BorrowingBookActivities">
+            <Principal Role="Students">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="BorrowingBookActivityId" />
+              <PropertyRef Name="StudentId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1631,36 +1622,14 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BorrowingBooks_Staves">
-          <End Role="Staves" Type="Self.Staves" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staves">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="StaffId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BorrowingBooks_Students">
-          <End Role="Students" Type="Self.Students" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Students">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="StudentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DamlaLibraryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admins" />
           <EntitySet Name="Authors" EntityType="Self.Authors" />
           <EntitySet Name="Books" EntityType="Self.Books" />
           <EntitySet Name="BooksByCategories" EntityType="Self.BooksByCategories" />
+          <EntitySet Name="BookTransactionType" EntityType="Self.BookTransactionType" />
           <EntitySet Name="BorrowingBookActivities" EntityType="Self.BorrowingBookActivities" />
+          <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" />
           <EntitySet Name="Cities" EntityType="Self.Cities" />
           <EntitySet Name="Countries" EntityType="Self.Countries" />
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" />
@@ -1682,7 +1651,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
           <EntitySet Name="TypesOfBooks" EntityType="Self.TypesOfBooks" />
           <EntitySet Name="TypesOfSchools" EntityType="Self.TypesOfSchools" />
           <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" />
           <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
@@ -1707,6 +1675,14 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             <End Role="Books" EntitySet="Books" />
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
           </AssociationSet>
+          <AssociationSet Name="FK_BorrowingBookActivities_BookTransactionType" Association="Self.FK_BorrowingBookActivities_BookTransactionType">
+            <End Role="BookTransactionType" EntitySet="BookTransactionType" />
+            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BorrowingBookActivities_BorrowingBooks" Association="Self.FK_BorrowingBookActivities_BorrowingBooks">
+            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
+            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
+          </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_Penalties" Association="Self.FK_BorrowingBookActivities_Penalties">
             <End Role="Penalties" EntitySet="Penalties" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
@@ -1715,8 +1691,8 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             <End Role="Staves" EntitySet="Staves" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
           </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_BorrowingBookActivities" Association="Self.FK_BorrowingBooks_BorrowingBookActivities">
-            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
+          <AssociationSet Name="FK_BorrowingBooks_Students" Association="Self.FK_BorrowingBooks_Students">
+            <End Role="Students" EntitySet="Students" />
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
           </AssociationSet>
           <AssociationSet Name="FK_Cities_States" Association="Self.FK_Cities_States">
@@ -1775,14 +1751,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
             <End Role="Staves" EntitySet="Staves" />
             <End Role="StaffRoles" EntitySet="StaffRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_Staves" Association="Self.FK_BorrowingBooks_Staves">
-            <End Role="Staves" EntitySet="Staves" />
-            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_Students" Association="Self.FK_BorrowingBooks_Students">
-            <End Role="Students" EntitySet="Students" />
-            <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -1839,6 +1807,7 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
                 <ScalarProperty Name="BookCategoryId" ColumnName="BookCategoryId" />
                 <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+                <ScalarProperty Name="BookState" ColumnName="BookState" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
@@ -1865,13 +1834,27 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BookTransactionType">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.BookTransactionType">
+              <MappingFragment StoreEntitySet="BookTransactionType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BorrowingBookActivities">
             <EntityTypeMapping TypeName="DamlaLibraryModel.BorrowingBookActivities">
               <MappingFragment StoreEntitySet="BorrowingBookActivities">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BorrowingBooksId" ColumnName="BorrowingBooksId" />
+                <ScalarProperty Name="TransactionTypeId" ColumnName="TransactionTypeId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="DateOfBorrowing" ColumnName="DateOfBorrowing" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
                 <ScalarProperty Name="DelayTime" ColumnName="DelayTime" />
                 <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
@@ -1879,7 +1862,22 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
                 <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
                 <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BorrowingBooks">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.BorrowingBooks">
+              <MappingFragment StoreEntitySet="BorrowingBooks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2198,28 +2196,6 @@ warning 6002: The table/view 'DamlaLibrary.dbo.BorrowingBooks' does not have a p
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
-                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
-                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BorrowingBooks">
-            <EntityTypeMapping TypeName="DamlaLibraryModel.BorrowingBooks">
-              <MappingFragment StoreEntitySet="BorrowingBooks">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="Period" ColumnName="Period" />
-                <ScalarProperty Name="ReturningDate" ColumnName="ReturningDate" />
-                <ScalarProperty Name="NumberOfRentals" ColumnName="NumberOfRentals" />
-                <ScalarProperty Name="BorrowingBookActivityId" ColumnName="BorrowingBookActivityId" />
-                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-                <ScalarProperty Name="BookId" ColumnName="BookId" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
                 <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
                 <ScalarProperty Name="Note" ColumnName="Note" />

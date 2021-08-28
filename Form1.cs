@@ -179,5 +179,12 @@ namespace Bibliothek
             note.MdiParent = this;
             note.Show();
         }
+
+        private void btnBorrowingBooks_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmBorrowingBooksList borrowingBooksList = new FrmBorrowingBooksList();
+            borrowingBooksList.MdiParent = this;
+            borrowingBooksList.Show();
+        }
     }
 }

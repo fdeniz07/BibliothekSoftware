@@ -29,7 +29,9 @@ namespace Bibliothek
         public virtual DbSet<Authors> Authors { get; set; }
         public virtual DbSet<Books> Books { get; set; }
         public virtual DbSet<BooksByCategories> BooksByCategories { get; set; }
+        public virtual DbSet<BookTransactionType> BookTransactionType { get; set; }
         public virtual DbSet<BorrowingBookActivities> BorrowingBookActivities { get; set; }
+        public virtual DbSet<BorrowingBooks> BorrowingBooks { get; set; }
         public virtual DbSet<Cities> Cities { get; set; }
         public virtual DbSet<Countries> Countries { get; set; }
         public virtual DbSet<CurrentClasses> CurrentClasses { get; set; }
@@ -51,6 +53,5 @@ namespace Bibliothek
         public virtual DbSet<TypesOfBooks> TypesOfBooks { get; set; }
         public virtual DbSet<TypesOfSchools> TypesOfSchools { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<BorrowingBooks> BorrowingBooks { get; set; }
     }
 }

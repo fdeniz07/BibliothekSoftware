@@ -12,28 +12,19 @@ namespace Bibliothek
     using System;
     using System.Collections.Generic;
     
-    public partial class BorrowingBooks
+    public partial class BookTransactionType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BorrowingBooks()
+        public BookTransactionType()
         {
             this.BorrowingBookActivities = new HashSet<BorrowingBookActivities>();
         }
     
         public int Id { get; set; }
-        public int BookId { get; set; }
-        public int StudentId { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
-        public bool IsActive { get; set; }
-        public string CreatedByName { get; set; }
-        public string ModifiedByName { get; set; }
-        public string Note { get; set; }
+        public string Type { get; set; }
+        public string Details { get; set; }
     
-        public virtual Books Books { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BorrowingBookActivities> BorrowingBookActivities { get; set; }
-        public virtual Students Students { get; set; }
     }
 }
