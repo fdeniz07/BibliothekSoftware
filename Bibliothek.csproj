@@ -150,11 +150,23 @@
     <Compile Include="Forms\FrmBookType.Designer.cs">
       <DependentUpon>FrmBookType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmBorrowingBookActivityList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowingBookActivityList.Designer.cs">
+      <DependentUpon>FrmBorrowingBookActivityList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmBorrowingBooksList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmBorrowingBooksList.Designer.cs">
       <DependentUpon>FrmBorrowingBooksList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowingBookStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowingBookStatistic.Designer.cs">
+      <DependentUpon>FrmBorrowingBookStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmCityList.cs">
       <SubType>Form</SubType>
@@ -191,6 +203,12 @@
     </Compile>
     <Compile Include="Forms\FrmNewBookGenre.Designer.cs">
       <DependentUpon>FrmNewBookGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNewBorrowingBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNewBorrowingBook.Designer.cs">
+      <DependentUpon>FrmNewBorrowingBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmNewCategory.cs">
       <SubType>Form</SubType>
@@ -341,8 +359,14 @@
     <EmbeddedResource Include="Forms\FrmBookType.resx">
       <DependentUpon>FrmBookType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBorrowingBookActivityList.resx">
+      <DependentUpon>FrmBorrowingBookActivityList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBorrowingBooksList.resx">
       <DependentUpon>FrmBorrowingBooksList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBorrowingBookStatistic.resx">
+      <DependentUpon>FrmBorrowingBookStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCityList.resx">
       <DependentUpon>FrmCityList.cs</DependentUpon>
@@ -362,6 +386,9 @@
     <EmbeddedResource Include="Forms\FrmNewBookGenre.resx">
       <DependentUpon>FrmNewBookGenre.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNewBorrowingBook.resx">
+      <DependentUpon>FrmNewBorrowingBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmNewCategory.resx">
       <DependentUpon>FrmNewCategory.cs</DependentUpon>

@@ -34,8 +34,9 @@ namespace Bibliothek
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnBorrowingBooks = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBorrowingBooksActivity = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBorrowing = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookDelivery = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -93,47 +94,47 @@ namespace Bibliothek
             this.btnBookListForm = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTeachingMaterial = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewTeachingMaterial = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnBookGenreList2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookGenreAdd2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnCategoryList2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewCategory2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnLevelList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewLevelList = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup26 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnLehrMaterialStatistic = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookGenreStatistic = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOtherStatistic = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnSectionList2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewSection2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bntQRCode2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBarcode2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnCalculator = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNoteList = new DevExpress.XtraBars.BarButtonItem();
             this.btnNotepad = new DevExpress.XtraBars.BarButtonItem();
             this.btnWord = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSnippingTool = new DevExpress.XtraBars.BarButtonItem();
             this.btnHomePage = new DevExpress.XtraBars.BarButtonItem();
-            this.btnE = new DevExpress.XtraBars.BarButtonItem();
-            this.btnY = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnExchange = new DevExpress.XtraBars.BarButtonItem();
             this.btnYoutube = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNoteList = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTeachingMaterial = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewTeachingMaterial = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBookGenreList2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBookGenreAdd2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCategoryList2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewCategory2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLevelList = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewLevelList = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLehrMaterialStatistic = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBookGenreStatistic = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSectionList2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewSection2 = new DevExpress.XtraBars.BarButtonItem();
-            this.bntQRCode2 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBarcode2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSnippingTool = new DevExpress.XtraBars.BarButtonItem();
+            this.btnE = new DevExpress.XtraBars.BarButtonItem();
+            this.btnY = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.btnOtherStatistic = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup26 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup27 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup28 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -154,35 +155,43 @@ namespace Bibliothek
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnBorrowingBooks);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnBorrowingBooksActivity);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnBorrowing);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnBookDelivery);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
-            // btnBorrowingBooks
+            // btnBorrowingBooksActivity
             // 
-            this.btnBorrowingBooks.Caption = "Ausleihenliste";
-            this.btnBorrowingBooks.Id = 47;
-            this.btnBorrowingBooks.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.Image")));
-            this.btnBorrowingBooks.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.LargeImage")));
-            this.btnBorrowingBooks.Name = "btnBorrowingBooks";
-            this.btnBorrowingBooks.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowingBooks_ItemClick);
+            this.btnBorrowingBooksActivity.Caption = "Ausleihenliste (Detailliert)";
+            this.btnBorrowingBooksActivity.Id = 47;
+            this.btnBorrowingBooksActivity.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.Image")));
+            this.btnBorrowingBooksActivity.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.LargeImage")));
+            this.btnBorrowingBooksActivity.Name = "btnBorrowingBooksActivity";
+            this.btnBorrowingBooksActivity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowingBooks_ItemClick);
             // 
-            // barButtonItem3
+            // btnBorrowing
             // 
-            this.barButtonItem3.Caption = "Abgaben";
-            this.barButtonItem3.Id = 48;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btnBorrowing.Caption = "Ausleihe";
+            this.btnBorrowing.Id = 48;
+            this.btnBorrowing.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrowing.ImageOptions.Image")));
+            this.btnBorrowing.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrowing.ImageOptions.LargeImage")));
+            this.btnBorrowing.Name = "btnBorrowing";
+            this.btnBorrowing.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowing_ItemClick);
+            // 
+            // btnBookDelivery
+            // 
+            this.btnBookDelivery.Caption = "Abgabe";
+            this.btnBookDelivery.Id = 49;
+            this.btnBookDelivery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookDelivery.ImageOptions.Image")));
+            this.btnBookDelivery.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookDelivery.ImageOptions.LargeImage")));
+            this.btnBookDelivery.Name = "btnBookDelivery";
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 49;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Caption = "btn";
+            this.barButtonItem2.Id = 68;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
             // ribbonPageGroup21
@@ -625,77 +634,13 @@ namespace Bibliothek
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.ExpandCollapseItem.Id = 67;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1,
-            this.btnCategoryList,
-            this.btnNewCategory,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.btnBookListForm,
-            this.btnNewBook,
-            this.barButtonItem8,
-            this.barButtonItem9,
-            this.btnAuthorList,
-            this.btnNewAuthor,
-            this.btnPublisherList,
-            this.btnNewPublisher,
-            this.btnBookStatistics,
-            this.barButtonItem15,
-            this.btnBookType,
-            this.bntQRCode,
-            this.btnBarcode,
-            this.btnBookList,
-            this.btnNewStudent,
-            this.btnStudentList,
-            this.btnStudentStatistics,
-            this.btnBookGenreList,
-            this.btnBookGenreAdd,
-            this.btnSectionList,
-            this.btnNewSection,
-            this.btnCalculator,
-            this.btnNotepad,
-            this.btnWord,
-            this.btnExcel,
-            this.barButtonItem10,
-            this.barButtonItem11,
-            this.btnSnippingTool,
-            this.btnHomePage,
-            this.btnE,
-            this.btnY,
-            this.btnExchange,
-            this.btnYoutube,
-            this.btnCity,
-            this.btnCountry,
-            this.btnSchool,
-            this.btnClass,
-            this.btnState,
-            this.btnSchoolType,
-            this.btnGender,
-            this.btnBorrowingBooks,
-            this.barButtonItem3,
-            this.barButtonItem2,
-            this.btnNoteList,
-            this.btnTeachingMaterial,
-            this.btnNewTeachingMaterial,
-            this.btnBookGenreList2,
-            this.btnBookGenreAdd2,
-            this.btnCategoryList2,
-            this.btnNewCategory2,
-            this.btnLevelList,
-            this.btnNewLevelList,
-            this.btnLehrMaterialStatistic,
-            this.btnBookGenreStatistic,
-            this.btnSectionList2,
-            this.btnNewSection2,
-            this.bntQRCode2,
-            this.btnBarcode2,
-            this.barToggleSwitchItem1,
-            this.btnOtherStatistic});
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 67;
+            this.ribbonControl1.MaxItemId = 69;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -706,8 +651,213 @@ namespace Bibliothek
             this.ribbonPage6,
             this.ribbonPage3,
             this.ribbonPage7});
-            this.ribbonControl1.Size = new System.Drawing.Size(1584, 169);
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.Size = new System.Drawing.Size(1584, 161);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
+            // 
+            // ribbonPage8
+            // 
+            this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup22,
+            this.ribbonPageGroup23,
+            this.ribbonPageGroup24,
+            this.ribbonPageGroup25,
+            this.ribbonPageGroup26,
+            this.ribbonPageGroup27,
+            this.ribbonPageGroup28});
+            this.ribbonPage8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage8.ImageOptions.Image")));
+            this.ribbonPage8.Name = "ribbonPage8";
+            this.ribbonPage8.Text = "Lehrmaterial";
+            // 
+            // ribbonPageGroup22
+            // 
+            this.ribbonPageGroup22.ItemLinks.Add(this.btnTeachingMaterial);
+            this.ribbonPageGroup22.ItemLinks.Add(this.btnNewTeachingMaterial);
+            this.ribbonPageGroup22.Name = "ribbonPageGroup22";
+            this.ribbonPageGroup22.Text = "Lehrmaterial";
+            // 
+            // btnTeachingMaterial
+            // 
+            this.btnTeachingMaterial.Caption = "Lehrmaterialliste";
+            this.btnTeachingMaterial.Id = 51;
+            this.btnTeachingMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.Image")));
+            this.btnTeachingMaterial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.LargeImage")));
+            this.btnTeachingMaterial.Name = "btnTeachingMaterial";
+            // 
+            // btnNewTeachingMaterial
+            // 
+            this.btnNewTeachingMaterial.Caption = "neues Lehrmaterial";
+            this.btnNewTeachingMaterial.Id = 52;
+            this.btnNewTeachingMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewTeachingMaterial.ImageOptions.Image")));
+            this.btnNewTeachingMaterial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewTeachingMaterial.ImageOptions.LargeImage")));
+            this.btnNewTeachingMaterial.Name = "btnNewTeachingMaterial";
+            // 
+            // ribbonPageGroup23
+            // 
+            this.ribbonPageGroup23.ItemLinks.Add(this.btnBookGenreList2);
+            this.ribbonPageGroup23.ItemLinks.Add(this.btnBookGenreAdd2);
+            this.ribbonPageGroup23.Name = "ribbonPageGroup23";
+            this.ribbonPageGroup23.Text = "Buchgenre";
+            // 
+            // btnBookGenreList2
+            // 
+            this.btnBookGenreList2.Caption = "Buchgenreliste";
+            this.btnBookGenreList2.Id = 53;
+            this.btnBookGenreList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreList2.ImageOptions.Image")));
+            this.btnBookGenreList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreList2.ImageOptions.LargeImage")));
+            this.btnBookGenreList2.Name = "btnBookGenreList2";
+            // 
+            // btnBookGenreAdd2
+            // 
+            this.btnBookGenreAdd2.Caption = "Neue Buchgenre";
+            this.btnBookGenreAdd2.Id = 54;
+            this.btnBookGenreAdd2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreAdd2.ImageOptions.Image")));
+            this.btnBookGenreAdd2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreAdd2.ImageOptions.LargeImage")));
+            this.btnBookGenreAdd2.Name = "btnBookGenreAdd2";
+            // 
+            // ribbonPageGroup24
+            // 
+            this.ribbonPageGroup24.ItemLinks.Add(this.btnCategoryList2);
+            this.ribbonPageGroup24.ItemLinks.Add(this.btnNewCategory2);
+            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
+            this.ribbonPageGroup24.Text = "Kategorie";
+            // 
+            // btnCategoryList2
+            // 
+            this.btnCategoryList2.Caption = "Kategorieliste";
+            this.btnCategoryList2.Id = 55;
+            this.btnCategoryList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoryList2.ImageOptions.Image")));
+            this.btnCategoryList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCategoryList2.ImageOptions.LargeImage")));
+            this.btnCategoryList2.Name = "btnCategoryList2";
+            // 
+            // btnNewCategory2
+            // 
+            this.btnNewCategory2.Caption = "Neue Kategorie";
+            this.btnNewCategory2.Id = 56;
+            this.btnNewCategory2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCategory2.ImageOptions.Image")));
+            this.btnNewCategory2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewCategory2.ImageOptions.LargeImage")));
+            this.btnNewCategory2.Name = "btnNewCategory2";
+            // 
+            // ribbonPageGroup25
+            // 
+            this.ribbonPageGroup25.ItemLinks.Add(this.btnLevelList);
+            this.ribbonPageGroup25.ItemLinks.Add(this.btnNewLevelList);
+            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
+            this.ribbonPageGroup25.Text = "Niveau";
+            // 
+            // btnLevelList
+            // 
+            this.btnLevelList.Caption = "Niveauliste";
+            this.btnLevelList.Id = 57;
+            this.btnLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.Image")));
+            this.btnLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.LargeImage")));
+            this.btnLevelList.Name = "btnLevelList";
+            // 
+            // btnNewLevelList
+            // 
+            this.btnNewLevelList.Caption = "Neues Niveau";
+            this.btnNewLevelList.Id = 58;
+            this.btnNewLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.Image")));
+            this.btnNewLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.LargeImage")));
+            this.btnNewLevelList.Name = "btnNewLevelList";
+            // 
+            // ribbonPageGroup26
+            // 
+            this.ribbonPageGroup26.ItemLinks.Add(this.btnLehrMaterialStatistic);
+            this.ribbonPageGroup26.ItemLinks.Add(this.btnBookGenreStatistic);
+            this.ribbonPageGroup26.ItemLinks.Add(this.btnOtherStatistic);
+            this.ribbonPageGroup26.Name = "ribbonPageGroup26";
+            this.ribbonPageGroup26.Text = "Statistik";
+            // 
+            // btnLehrMaterialStatistic
+            // 
+            this.btnLehrMaterialStatistic.Caption = "Lehramaterial Statistik";
+            this.btnLehrMaterialStatistic.Id = 59;
+            this.btnLehrMaterialStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLehrMaterialStatistic.ImageOptions.Image")));
+            this.btnLehrMaterialStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLehrMaterialStatistic.ImageOptions.LargeImage")));
+            this.btnLehrMaterialStatistic.Name = "btnLehrMaterialStatistic";
+            // 
+            // btnBookGenreStatistic
+            // 
+            this.btnBookGenreStatistic.Caption = "Buchgenre-Statistiken";
+            this.btnBookGenreStatistic.Id = 60;
+            this.btnBookGenreStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreStatistic.ImageOptions.Image")));
+            this.btnBookGenreStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreStatistic.ImageOptions.LargeImage")));
+            this.btnBookGenreStatistic.Name = "btnBookGenreStatistic";
+            // 
+            // btnOtherStatistic
+            // 
+            this.btnOtherStatistic.Caption = "Andere-Statistiken";
+            this.btnOtherStatistic.Id = 66;
+            this.btnOtherStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherStatistic.ImageOptions.Image")));
+            this.btnOtherStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOtherStatistic.ImageOptions.LargeImage")));
+            this.btnOtherStatistic.Name = "btnOtherStatistic";
+            // 
+            // ribbonPageGroup27
+            // 
+            this.ribbonPageGroup27.ItemLinks.Add(this.btnSectionList2);
+            this.ribbonPageGroup27.ItemLinks.Add(this.btnNewSection2);
+            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
+            this.ribbonPageGroup27.Text = "Abteilung";
+            // 
+            // btnSectionList2
+            // 
+            this.btnSectionList2.Caption = "Abteilungliste";
+            this.btnSectionList2.Id = 61;
+            this.btnSectionList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSectionList2.ImageOptions.Image")));
+            this.btnSectionList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSectionList2.ImageOptions.LargeImage")));
+            this.btnSectionList2.Name = "btnSectionList2";
+            // 
+            // btnNewSection2
+            // 
+            this.btnNewSection2.Caption = "Neue Abteilung";
+            this.btnNewSection2.Id = 62;
+            this.btnNewSection2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSection2.ImageOptions.Image")));
+            this.btnNewSection2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewSection2.ImageOptions.LargeImage")));
+            this.btnNewSection2.Name = "btnNewSection2";
+            // 
+            // ribbonPageGroup28
+            // 
+            this.ribbonPageGroup28.ItemLinks.Add(this.bntQRCode2);
+            this.ribbonPageGroup28.ItemLinks.Add(this.btnBarcode2);
+            this.ribbonPageGroup28.Name = "ribbonPageGroup28";
+            this.ribbonPageGroup28.Text = "Ordnung";
+            // 
+            // bntQRCode2
+            // 
+            this.bntQRCode2.Caption = "QR Code Generierung";
+            this.bntQRCode2.Id = 63;
+            this.bntQRCode2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntQRCode2.ImageOptions.Image")));
+            this.bntQRCode2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntQRCode2.ImageOptions.LargeImage")));
+            this.bntQRCode2.Name = "bntQRCode2";
+            // 
+            // btnBarcode2
+            // 
+            this.btnBarcode2.Caption = "Barcode Generierung";
+            this.btnBarcode2.Id = 64;
+            this.btnBarcode2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBarcode2.ImageOptions.Image")));
+            this.btnBarcode2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBarcode2.ImageOptions.LargeImage")));
+            this.btnBarcode2.Name = "btnBarcode2";
+            // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup15,
+            this.ribbonPageGroup16,
+            this.ribbonPageGroup17});
+            this.ribbonPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage7.ImageOptions.Image")));
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "Tools";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnCalculator);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnNoteList);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnNotepad);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnWord);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnExcel);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "ribbonPageGroup15";
             // 
             // btnCalculator
             // 
@@ -717,6 +867,15 @@ namespace Bibliothek
             this.btnCalculator.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCalculator.ImageOptions.LargeImage")));
             this.btnCalculator.Name = "btnCalculator";
             this.btnCalculator.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCalculator_ItemClick);
+            // 
+            // btnNoteList
+            // 
+            this.btnNoteList.Caption = "Agenda";
+            this.btnNoteList.Id = 50;
+            this.btnNoteList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNoteList.ImageOptions.Image")));
+            this.btnNoteList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNoteList.ImageOptions.LargeImage")));
+            this.btnNoteList.Name = "btnNoteList";
+            this.btnNoteList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNoteList_ItemClick);
             // 
             // btnNotepad
             // 
@@ -744,6 +903,13 @@ namespace Bibliothek
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnHomePage);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "ribbonPageGroup16";
+            // 
             // barButtonItem10
             // 
             this.barButtonItem10.Caption = "Hilfe";
@@ -751,24 +917,6 @@ namespace Bibliothek
             this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
             this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
             this.barButtonItem10.Name = "barButtonItem10";
-            // 
-            // barButtonItem11
-            // 
-            this.barButtonItem11.Caption = "Webseite";
-            this.barButtonItem11.Id = 32;
-            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
-            this.barButtonItem11.Name = "barButtonItem11";
-            // 
-            // btnSnippingTool
-            // 
-            this.btnSnippingTool.Caption = "SnippingTool";
-            this.btnSnippingTool.Id = 33;
-            this.btnSnippingTool.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSnippingTool.ImageOptions.Image")));
-            this.btnSnippingTool.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSnippingTool.ImageOptions.LargeImage")));
-            this.btnSnippingTool.Name = "btnSnippingTool";
-            this.btnSnippingTool.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnSnippingTool.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSnippingTool_ItemClick);
             // 
             // btnHomePage
             // 
@@ -779,21 +927,12 @@ namespace Bibliothek
             this.btnHomePage.Name = "btnHomePage";
             this.btnHomePage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHomePage_ItemClick);
             // 
-            // btnE
+            // ribbonPageGroup17
             // 
-            this.btnE.Caption = "Börse";
-            this.btnE.Id = 35;
-            this.btnE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnE.ImageOptions.Image")));
-            this.btnE.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnE.ImageOptions.LargeImage")));
-            this.btnE.Name = "btnE";
-            // 
-            // btnY
-            // 
-            this.btnY.Caption = "YouTube";
-            this.btnY.Id = 36;
-            this.btnY.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnY.ImageOptions.Image")));
-            this.btnY.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnY.ImageOptions.LargeImage")));
-            this.btnY.Name = "btnY";
+            this.ribbonPageGroup17.ItemLinks.Add(this.btnExchange);
+            this.ribbonPageGroup17.ItemLinks.Add(this.btnYoutube);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
             // 
             // btnExchange
             // 
@@ -813,238 +952,45 @@ namespace Bibliothek
             this.btnYoutube.Name = "btnYoutube";
             this.btnYoutube.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYoutube_ItemClick_1);
             // 
-            // btnNoteList
+            // barButtonItem11
             // 
-            this.btnNoteList.Caption = "Agenda";
-            this.btnNoteList.Id = 50;
-            this.btnNoteList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNoteList.ImageOptions.Image")));
-            this.btnNoteList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNoteList.ImageOptions.LargeImage")));
-            this.btnNoteList.Name = "btnNoteList";
-            this.btnNoteList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNoteList_ItemClick);
+            this.barButtonItem11.Caption = "Webseite";
+            this.barButtonItem11.Id = 32;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.barButtonItem11.Name = "barButtonItem11";
             // 
-            // btnTeachingMaterial
+            // btnSnippingTool
             // 
-            this.btnTeachingMaterial.Caption = "Lehrmaterialliste";
-            this.btnTeachingMaterial.Id = 51;
-            this.btnTeachingMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.Image")));
-            this.btnTeachingMaterial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.LargeImage")));
-            this.btnTeachingMaterial.Name = "btnTeachingMaterial";
+            this.btnSnippingTool.Caption = "SnippingTool";
+            this.btnSnippingTool.Id = 33;
+            this.btnSnippingTool.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSnippingTool.ImageOptions.Image")));
+            this.btnSnippingTool.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSnippingTool.ImageOptions.LargeImage")));
+            this.btnSnippingTool.Name = "btnSnippingTool";
+            this.btnSnippingTool.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSnippingTool.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSnippingTool_ItemClick);
             // 
-            // btnNewTeachingMaterial
+            // btnE
             // 
-            this.btnNewTeachingMaterial.Caption = "neues Lehrmaterial";
-            this.btnNewTeachingMaterial.Id = 52;
-            this.btnNewTeachingMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewTeachingMaterial.ImageOptions.Image")));
-            this.btnNewTeachingMaterial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewTeachingMaterial.ImageOptions.LargeImage")));
-            this.btnNewTeachingMaterial.Name = "btnNewTeachingMaterial";
+            this.btnE.Caption = "Börse";
+            this.btnE.Id = 35;
+            this.btnE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnE.ImageOptions.Image")));
+            this.btnE.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnE.ImageOptions.LargeImage")));
+            this.btnE.Name = "btnE";
             // 
-            // btnBookGenreList2
+            // btnY
             // 
-            this.btnBookGenreList2.Caption = "Buchgenreliste";
-            this.btnBookGenreList2.Id = 53;
-            this.btnBookGenreList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreList2.ImageOptions.Image")));
-            this.btnBookGenreList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreList2.ImageOptions.LargeImage")));
-            this.btnBookGenreList2.Name = "btnBookGenreList2";
-            // 
-            // btnBookGenreAdd2
-            // 
-            this.btnBookGenreAdd2.Caption = "Neue Buchgenre";
-            this.btnBookGenreAdd2.Id = 54;
-            this.btnBookGenreAdd2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreAdd2.ImageOptions.Image")));
-            this.btnBookGenreAdd2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreAdd2.ImageOptions.LargeImage")));
-            this.btnBookGenreAdd2.Name = "btnBookGenreAdd2";
-            // 
-            // btnCategoryList2
-            // 
-            this.btnCategoryList2.Caption = "Kategorieliste";
-            this.btnCategoryList2.Id = 55;
-            this.btnCategoryList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoryList2.ImageOptions.Image")));
-            this.btnCategoryList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCategoryList2.ImageOptions.LargeImage")));
-            this.btnCategoryList2.Name = "btnCategoryList2";
-            // 
-            // btnNewCategory2
-            // 
-            this.btnNewCategory2.Caption = "Neue Kategorie";
-            this.btnNewCategory2.Id = 56;
-            this.btnNewCategory2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCategory2.ImageOptions.Image")));
-            this.btnNewCategory2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewCategory2.ImageOptions.LargeImage")));
-            this.btnNewCategory2.Name = "btnNewCategory2";
-            // 
-            // btnLevelList
-            // 
-            this.btnLevelList.Caption = "Niveauliste";
-            this.btnLevelList.Id = 57;
-            this.btnLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.Image")));
-            this.btnLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.LargeImage")));
-            this.btnLevelList.Name = "btnLevelList";
-            // 
-            // btnNewLevelList
-            // 
-            this.btnNewLevelList.Caption = "Neues Niveau";
-            this.btnNewLevelList.Id = 58;
-            this.btnNewLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.Image")));
-            this.btnNewLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.LargeImage")));
-            this.btnNewLevelList.Name = "btnNewLevelList";
-            // 
-            // btnLehrMaterialStatistic
-            // 
-            this.btnLehrMaterialStatistic.Caption = "Lehramaterial Statistik";
-            this.btnLehrMaterialStatistic.Id = 59;
-            this.btnLehrMaterialStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLehrMaterialStatistic.ImageOptions.Image")));
-            this.btnLehrMaterialStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLehrMaterialStatistic.ImageOptions.LargeImage")));
-            this.btnLehrMaterialStatistic.Name = "btnLehrMaterialStatistic";
-            // 
-            // btnBookGenreStatistic
-            // 
-            this.btnBookGenreStatistic.Caption = "Buchgenre-Statistiken";
-            this.btnBookGenreStatistic.Id = 60;
-            this.btnBookGenreStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBookGenreStatistic.ImageOptions.Image")));
-            this.btnBookGenreStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBookGenreStatistic.ImageOptions.LargeImage")));
-            this.btnBookGenreStatistic.Name = "btnBookGenreStatistic";
-            // 
-            // btnSectionList2
-            // 
-            this.btnSectionList2.Caption = "Abteilungliste";
-            this.btnSectionList2.Id = 61;
-            this.btnSectionList2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSectionList2.ImageOptions.Image")));
-            this.btnSectionList2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSectionList2.ImageOptions.LargeImage")));
-            this.btnSectionList2.Name = "btnSectionList2";
-            // 
-            // btnNewSection2
-            // 
-            this.btnNewSection2.Caption = "Neue Abteilung";
-            this.btnNewSection2.Id = 62;
-            this.btnNewSection2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSection2.ImageOptions.Image")));
-            this.btnNewSection2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewSection2.ImageOptions.LargeImage")));
-            this.btnNewSection2.Name = "btnNewSection2";
-            // 
-            // bntQRCode2
-            // 
-            this.bntQRCode2.Caption = "QR Code Generierung";
-            this.bntQRCode2.Id = 63;
-            this.bntQRCode2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntQRCode2.ImageOptions.Image")));
-            this.bntQRCode2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntQRCode2.ImageOptions.LargeImage")));
-            this.bntQRCode2.Name = "bntQRCode2";
-            // 
-            // btnBarcode2
-            // 
-            this.btnBarcode2.Caption = "Barcode Generierung";
-            this.btnBarcode2.Id = 64;
-            this.btnBarcode2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBarcode2.ImageOptions.Image")));
-            this.btnBarcode2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBarcode2.ImageOptions.LargeImage")));
-            this.btnBarcode2.Name = "btnBarcode2";
+            this.btnY.Caption = "YouTube";
+            this.btnY.Id = 36;
+            this.btnY.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnY.ImageOptions.Image")));
+            this.btnY.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnY.ImageOptions.LargeImage")));
+            this.btnY.Name = "btnY";
             // 
             // barToggleSwitchItem1
             // 
             this.barToggleSwitchItem1.Caption = "barToggleSwitchItem1";
             this.barToggleSwitchItem1.Id = 65;
             this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
-            // 
-            // btnOtherStatistic
-            // 
-            this.btnOtherStatistic.Caption = "Andere-Statistiken";
-            this.btnOtherStatistic.Id = 66;
-            this.btnOtherStatistic.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOtherStatistic.ImageOptions.Image")));
-            this.btnOtherStatistic.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOtherStatistic.ImageOptions.LargeImage")));
-            this.btnOtherStatistic.Name = "btnOtherStatistic";
-            // 
-            // ribbonPage8
-            // 
-            this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup22,
-            this.ribbonPageGroup23,
-            this.ribbonPageGroup24,
-            this.ribbonPageGroup25,
-            this.ribbonPageGroup26,
-            this.ribbonPageGroup27,
-            this.ribbonPageGroup28});
-            this.ribbonPage8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage8.ImageOptions.Image")));
-            this.ribbonPage8.Name = "ribbonPage8";
-            this.ribbonPage8.Text = "Lehrmaterial";
-            // 
-            // ribbonPageGroup22
-            // 
-            this.ribbonPageGroup22.ItemLinks.Add(this.btnTeachingMaterial);
-            this.ribbonPageGroup22.ItemLinks.Add(this.btnNewTeachingMaterial);
-            this.ribbonPageGroup22.Name = "ribbonPageGroup22";
-            this.ribbonPageGroup22.Text = "Lehrmaterial";
-            // 
-            // ribbonPageGroup23
-            // 
-            this.ribbonPageGroup23.ItemLinks.Add(this.btnBookGenreList2);
-            this.ribbonPageGroup23.ItemLinks.Add(this.btnBookGenreAdd2);
-            this.ribbonPageGroup23.Name = "ribbonPageGroup23";
-            this.ribbonPageGroup23.Text = "Buchgenre";
-            // 
-            // ribbonPageGroup24
-            // 
-            this.ribbonPageGroup24.ItemLinks.Add(this.btnCategoryList2);
-            this.ribbonPageGroup24.ItemLinks.Add(this.btnNewCategory2);
-            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
-            this.ribbonPageGroup24.Text = "Kategorie";
-            // 
-            // ribbonPageGroup25
-            // 
-            this.ribbonPageGroup25.ItemLinks.Add(this.btnLevelList);
-            this.ribbonPageGroup25.ItemLinks.Add(this.btnNewLevelList);
-            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
-            this.ribbonPageGroup25.Text = "Niveau";
-            // 
-            // ribbonPageGroup26
-            // 
-            this.ribbonPageGroup26.ItemLinks.Add(this.btnLehrMaterialStatistic);
-            this.ribbonPageGroup26.ItemLinks.Add(this.btnBookGenreStatistic);
-            this.ribbonPageGroup26.ItemLinks.Add(this.btnOtherStatistic);
-            this.ribbonPageGroup26.Name = "ribbonPageGroup26";
-            this.ribbonPageGroup26.Text = "Statistik";
-            // 
-            // ribbonPageGroup27
-            // 
-            this.ribbonPageGroup27.ItemLinks.Add(this.btnSectionList2);
-            this.ribbonPageGroup27.ItemLinks.Add(this.btnNewSection2);
-            this.ribbonPageGroup27.Name = "ribbonPageGroup27";
-            this.ribbonPageGroup27.Text = "Abteilung";
-            // 
-            // ribbonPageGroup28
-            // 
-            this.ribbonPageGroup28.ItemLinks.Add(this.bntQRCode2);
-            this.ribbonPageGroup28.ItemLinks.Add(this.btnBarcode2);
-            this.ribbonPageGroup28.Name = "ribbonPageGroup28";
-            this.ribbonPageGroup28.Text = "Ordnung";
-            // 
-            // ribbonPage7
-            // 
-            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup15,
-            this.ribbonPageGroup16,
-            this.ribbonPageGroup17});
-            this.ribbonPage7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage7.ImageOptions.Image")));
-            this.ribbonPage7.Name = "ribbonPage7";
-            this.ribbonPage7.Text = "Tools";
-            // 
-            // ribbonPageGroup15
-            // 
-            this.ribbonPageGroup15.ItemLinks.Add(this.btnCalculator);
-            this.ribbonPageGroup15.ItemLinks.Add(this.btnNoteList);
-            this.ribbonPageGroup15.ItemLinks.Add(this.btnNotepad);
-            this.ribbonPageGroup15.ItemLinks.Add(this.btnWord);
-            this.ribbonPageGroup15.ItemLinks.Add(this.btnExcel);
-            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            this.ribbonPageGroup15.Text = "ribbonPageGroup15";
-            // 
-            // ribbonPageGroup16
-            // 
-            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem10);
-            this.ribbonPageGroup16.ItemLinks.Add(this.btnHomePage);
-            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
-            this.ribbonPageGroup16.Text = "ribbonPageGroup16";
-            // 
-            // ribbonPageGroup17
-            // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.btnExchange);
-            this.ribbonPageGroup17.ItemLinks.Add(this.btnYoutube);
-            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
             // 
             // barButtonItem6
             // 
@@ -1060,9 +1006,10 @@ namespace Bibliothek
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 881);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
-            this.Text = "^2314";
+            this.Text = "DAMLA NACHHILFE BIBLIOTHEK";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -1144,9 +1091,9 @@ namespace Bibliothek
         private DevExpress.XtraBars.BarButtonItem btnState;
         private DevExpress.XtraBars.BarButtonItem btnSchoolType;
         private DevExpress.XtraBars.BarButtonItem btnGender;
-        private DevExpress.XtraBars.BarButtonItem btnBorrowingBooks;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnBorrowingBooksActivity;
+        private DevExpress.XtraBars.BarButtonItem btnBorrowing;
+        private DevExpress.XtraBars.BarButtonItem btnBookDelivery;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
@@ -1177,6 +1124,7 @@ namespace Bibliothek
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup28;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
         private DevExpress.XtraBars.BarButtonItem btnOtherStatistic;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
 

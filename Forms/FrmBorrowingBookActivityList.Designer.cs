@@ -1,7 +1,7 @@
 ﻿
 namespace Bibliothek.Forms
 {
-    partial class FrmBorrowingBooksList
+    partial class FrmBorrowingBookActivityList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Bibliothek.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBorrowingBooksList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBorrowingBookActivityList));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,19 +54,18 @@ namespace Bibliothek.Forms
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1326, 852);
-            this.gridControl1.TabIndex = 13;
+            this.gridControl1.TabIndex = 18;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(160)))));
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // panel3
             // 
@@ -78,7 +77,7 @@ namespace Bibliothek.Forms
             this.panel3.Location = new System.Drawing.Point(1332, 19);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 138);
-            this.panel3.TabIndex = 17;
+            this.panel3.TabIndex = 19;
             // 
             // pictureEdit4
             // 
@@ -123,7 +122,7 @@ namespace Bibliothek.Forms
             this.panel5.Location = new System.Drawing.Point(1333, 163);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(251, 138);
-            this.panel5.TabIndex = 17;
+            this.panel5.TabIndex = 20;
             // 
             // pictureEdit7
             // 
@@ -158,17 +157,16 @@ namespace Bibliothek.Forms
             this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "Gesamtzahl der Verlage : ";
             // 
-            // FrmBorrowingBooksList
+            // FrmBorrowingBookActivityList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.Name = "FrmBorrowingBooksList";
-            this.Text = "FrmBorrowingBooksList";
-            this.Load += new System.EventHandler(this.FrmBorrowingBooksList_Load);
+            this.Controls.Add(this.panel5);
+            this.Name = "FrmBorrowingBookActivityList";
+            this.Text = "FrmBorrowingBookActivityList";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -182,6 +180,7 @@ namespace Bibliothek.Forms
         }
 
         #endregion
+
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Panel panel3;

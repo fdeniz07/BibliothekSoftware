@@ -186,5 +186,10 @@ namespace Bibliothek
             borrowingBooksList.MdiParent = this;
             borrowingBooksList.Show();
         }
+
+        private void btnBorrowing_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
