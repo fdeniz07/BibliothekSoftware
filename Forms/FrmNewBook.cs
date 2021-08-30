@@ -17,8 +17,7 @@ namespace Bibliothek.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            FrmNewBook newBook = new FrmNewBook();
-            //newBook.Hide();
+            this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
