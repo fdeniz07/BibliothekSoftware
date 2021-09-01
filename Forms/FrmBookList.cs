@@ -70,6 +70,7 @@ namespace Bibliothek.Forms
                              Buchgenre = books.TypesOfBooks.BookType,
                              Buchkategorie = books.BooksByCategories.Category,
                              Abteilung = books.Section.SectionName,
+                             QRCode = books.BarCode,
                              Status = books.IsActive,
                              Erläuterung = books.Note
                          };
@@ -80,7 +81,7 @@ namespace Bibliothek.Forms
         {
             Books books = new Books();
 
-            if (txtBookName.Text.Length !=null && txtBookName.Text.Length<=50 && txtDescription.Text.Length<=250 && lueAuthor.Text.Length!=null && lueType.Text.Length!=null && luePublisher.Text.Length!=null && lueBookCategory.Text.Length!=null && lueSection.Text.Length!=null)
+            if (txtBookName.Text.Length != null && txtBookName.Text.Length <= 50 && txtDescription.Text.Length <= 250 && lueAuthor.Text.Length != null && lueType.Text.Length != null && luePublisher.Text.Length != null && lueBookCategory.Text.Length != null && lueSection.Text.Length != null)
             {
                 books.Title = txtBookName.Text;
                 books.Description = txtDescription.Text;
@@ -95,6 +96,7 @@ namespace Bibliothek.Forms
                 books.TypeId = byte.Parse(lueType.EditValue.ToString());
                 books.BookCategoryId = byte.Parse(lueBookCategory.EditValue.ToString());
                 books.SectionId = byte.Parse(lueSection.EditValue.ToString());
+                books.QRCode = txtQRCode.Text;
                 books.Note = txtNote.Text;
                 books.IsActive = true;
                 books.IsDeleted = false;
@@ -109,7 +111,7 @@ namespace Bibliothek.Forms
                 MessageBox.Show("Buch konnte nicht gespeichert werden", "Fehler", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -141,6 +143,7 @@ namespace Bibliothek.Forms
             value.Edition = txtEdition.Text;
             value.Language = txtLanguage.Text;
             value.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
+            value.QRCode = txtQRCode.Text;
             value.Note = txtNote.Text;
 
             db.SaveChanges();
@@ -158,6 +161,7 @@ namespace Bibliothek.Forms
             txtEdition.Text = gridView1.GetFocusedRowCellValue("Auflage").ToString();
             txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
             txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
+            txtQRCode.Text = gridView1.GetFocusedRowCellValue("QRCode").ToString();
             txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();
 
             //string selectSql = @"SELECT Id,FullName FROM [Authors]";

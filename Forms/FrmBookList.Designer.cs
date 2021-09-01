@@ -44,7 +44,7 @@ namespace Bibliothek.Forms
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtNote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.txtInnerBarkod = new DevExpress.XtraEditors.TextEdit();
+            this.txtQRCode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtPrintLenght = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -80,7 +80,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lueType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePublisher.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInnerBarkod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQRCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintLenght.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLanguage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).BeginInit();
@@ -111,7 +111,7 @@ namespace Bibliothek.Forms
             this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.txtNote);
             this.groupControl1.Controls.Add(this.labelControl11);
-            this.groupControl1.Controls.Add(this.txtInnerBarkod);
+            this.groupControl1.Controls.Add(this.txtQRCode);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.txtPrintLenght);
             this.groupControl1.Controls.Add(this.labelControl8);
@@ -256,20 +256,20 @@ namespace Bibliothek.Forms
             this.labelControl11.TabIndex = 13;
             this.labelControl11.Text = "Erläuterung :";
             // 
-            // txtInnerBarkod
+            // txtQRCode
             // 
-            this.txtInnerBarkod.Location = new System.Drawing.Point(143, 503);
-            this.txtInnerBarkod.Name = "txtInnerBarkod";
-            this.txtInnerBarkod.Size = new System.Drawing.Size(227, 20);
-            this.txtInnerBarkod.TabIndex = 15;
+            this.txtQRCode.Location = new System.Drawing.Point(143, 503);
+            this.txtQRCode.Name = "txtQRCode";
+            this.txtQRCode.Size = new System.Drawing.Size(227, 20);
+            this.txtQRCode.TabIndex = 15;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(50, 506);
+            this.labelControl9.Location = new System.Drawing.Point(79, 506);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(82, 13);
+            this.labelControl9.Size = new System.Drawing.Size(50, 13);
             this.labelControl9.TabIndex = 13;
-            this.labelControl9.Text = "Innerer Barcode :";
+            this.labelControl9.Text = "QR Code :";
             // 
             // txtPrintLenght
             // 
@@ -501,7 +501,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lueType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luePublisher.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInnerBarkod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQRCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintLenght.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLanguage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).EndInit();
@@ -526,7 +526,7 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.LookUpEdit lueType;
         private DevExpress.XtraEditors.LookUpEdit luePublisher;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit txtInnerBarkod;
+        private DevExpress.XtraEditors.TextEdit txtQRCode;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtPrintLenght;
         private DevExpress.XtraEditors.LabelControl labelControl8;
