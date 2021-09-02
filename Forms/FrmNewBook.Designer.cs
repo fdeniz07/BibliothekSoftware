@@ -86,6 +86,7 @@ namespace Bibliothek.Forms
             this.rtxtSummary = new System.Windows.Forms.RichTextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
+            this.pictureEdit17 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescription.Properties)).BeginInit();
@@ -119,6 +120,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lueSection.Properties)).BeginInit();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit17.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit1
@@ -741,12 +743,22 @@ namespace Bibliothek.Forms
             this.imageSlider1.TabIndex = 5000;
             this.imageSlider1.Text = "imageSlider1";
             // 
+            // pictureEdit17
+            // 
+            this.pictureEdit17.Location = new System.Drawing.Point(1253, 101);
+            this.pictureEdit17.Name = "pictureEdit17";
+            this.pictureEdit17.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit17.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit17.Size = new System.Drawing.Size(236, 214);
+            this.pictureEdit17.TabIndex = 241;
+            // 
             // FrmNewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1246, 597);
+            this.ClientSize = new System.Drawing.Size(1525, 597);
+            this.Controls.Add(this.pictureEdit17);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.rtxtSummary);
             this.Controls.Add(this.lueSection);
@@ -840,6 +852,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lueSection.Properties)).EndInit();
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit17.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -903,5 +916,6 @@ namespace Bibliothek.Forms
         private System.Windows.Forms.RichTextBox rtxtSummary;
         private System.Windows.Forms.Panel panel16;
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit17;
     }
 }

@@ -72,6 +72,7 @@ namespace Bibliothek.Forms
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueAuthor.Properties)).BeginInit();
@@ -94,10 +95,12 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.pictureEdit1);
             this.groupControl1.Controls.Add(this.rtxtSummary);
             this.groupControl1.Controls.Add(this.btnList);
             this.groupControl1.Controls.Add(this.lueAuthor);
@@ -151,7 +154,7 @@ namespace Bibliothek.Forms
             // btnList
             // 
             this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
-            this.btnList.Location = new System.Drawing.Point(142, 668);
+            this.btnList.Location = new System.Drawing.Point(142, 800);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(228, 37);
             this.btnList.TabIndex = 19;
@@ -170,7 +173,7 @@ namespace Bibliothek.Forms
             // btnDelete
             // 
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(142, 625);
+            this.btnDelete.Location = new System.Drawing.Point(142, 757);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(228, 37);
             this.btnDelete.TabIndex = 18;
@@ -180,7 +183,7 @@ namespace Bibliothek.Forms
             // btnUpdate
             // 
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(142, 582);
+            this.btnUpdate.Location = new System.Drawing.Point(142, 714);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(228, 37);
             this.btnUpdate.TabIndex = 17;
@@ -190,7 +193,7 @@ namespace Bibliothek.Forms
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(143, 539);
+            this.btnSave.Location = new System.Drawing.Point(143, 671);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 37);
             this.btnSave.TabIndex = 16;
@@ -477,6 +480,15 @@ namespace Bibliothek.Forms
             this.winExplorerView1.GridControl = this.gridControl1;
             this.winExplorerView1.Name = "winExplorerView1";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(193, 529);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(130, 130);
+            this.pictureEdit1.TabIndex = 20;
+            // 
             // FrmBookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,6 +527,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,5 +575,6 @@ namespace Bibliothek.Forms
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView winExplorerView1;
         private System.Windows.Forms.RichTextBox rtxtSummary;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using MessagingToolkit.QRCode.Codec;
 
 namespace Bibliothek.Forms
 {
@@ -163,6 +164,8 @@ namespace Bibliothek.Forms
             txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
             txtQRCode.Text = gridView1.GetFocusedRowCellValue("QRCode").ToString();
             txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();
+            QRCodeEncoder encoder = new QRCodeEncoder();
+            pictureEdit1.Image = encoder.Encode(txtQRCode.Text);
 
             //string selectSql = @"SELECT Id,FullName FROM [Authors]";
             //DataTable dtDetail = db.getDataTable(selectSql, db);
