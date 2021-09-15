@@ -15,17 +15,15 @@ namespace Bibliothek
     public partial class Penalties
     {
         public int Id { get; set; }
-        public decimal PenaltyAmount { get; set; }
+        public Nullable<decimal> PenaltyAmount { get; set; }
         public string Details { get; set; }
-        public int BorrowingBookActivityId { get; set; }
-        public System.DateTime CreatedDate { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<int> BorrowingBookActivityId { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<bool> IsActive { get; set; }
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
-    
-        public virtual BorrowingBookActivities BorrowingBookActivities { get; set; }
     }
 }

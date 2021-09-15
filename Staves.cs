@@ -29,11 +29,11 @@ namespace Bibliothek
         public int StaffGroupId { get; set; }
         public string UserName { get; set; }
         public byte[] PasswordHash { get; set; }
-        public System.DateTime CreatedDate { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }
-        public bool IsArchived { get; set; }
+        public Nullable<bool> IsArchived { get; set; }
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }

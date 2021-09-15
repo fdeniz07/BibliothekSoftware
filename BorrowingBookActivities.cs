@@ -15,25 +15,24 @@ namespace Bibliothek
     public partial class BorrowingBookActivities
     {
         public int Id { get; set; }
-        public int BorrowingBooksId { get; set; }
-        public int TransactionTypeId { get; set; }
+        public Nullable<int> BorrowingBooksId { get; set; }
+        public Nullable<int> TransactionTypeId { get; set; }
         public Nullable<int> StaffId { get; set; }
         public Nullable<System.DateTime> DateOfBorrowing { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
         public Nullable<int> Period { get; set; }
-        public int DelayTime { get; set; }
-        public bool IsRead { get; set; }
-        public System.DateTime CreatedDate { get; set; }
-        public System.DateTime ModifiedDate { get; set; }
-        public bool IsDeleted { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<int> DelayTime { get; set; }
+        public Nullable<bool> IsRead { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<bool> IsActive { get; set; }
         public string CreatedByName { get; set; }
         public string ModifiedByName { get; set; }
         public string Note { get; set; }
     
         public virtual BookTransactionType BookTransactionType { get; set; }
         public virtual BorrowingBooks BorrowingBooks { get; set; }
-        public virtual Penalties Penalties { get; set; }
         public virtual Staves Staves { get; set; }
     }
 }

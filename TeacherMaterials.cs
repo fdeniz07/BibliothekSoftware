@@ -12,7 +12,7 @@ namespace Bibliothek
     using System;
     using System.Collections.Generic;
     
-    public partial class Books
+    public partial class TeacherMaterials
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -25,13 +25,13 @@ namespace Bibliothek
         public Nullable<int> PrintLenght { get; set; }
         public string QRCode { get; set; }
         public string BarCode { get; set; }
-        public Nullable<int> NumberOfRentals { get; set; }
         public Nullable<int> AuthorId { get; set; }
         public Nullable<int> PublisherId { get; set; }
-        public Nullable<int> TypeId { get; set; }
+        public Nullable<int> LessonId { get; set; }
+        public Nullable<int> BookClassId { get; set; }
         public Nullable<int> BookCategoryId { get; set; }
         public Nullable<int> SectionId { get; set; }
-        public Nullable<bool> BookState { get; set; }
+        public Nullable<int> BookCategoryTypeId { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
@@ -42,10 +42,11 @@ namespace Bibliothek
     
         public virtual Authors Authors { get; set; }
         public virtual BooksByCategories BooksByCategories { get; set; }
+        public virtual ClassesOfBooks ClassesOfBooks { get; set; }
         public virtual Languages Languages { get; set; }
+        public virtual Lessons Lessons { get; set; }
         public virtual Publishers Publishers { get; set; }
         public virtual Section Section { get; set; }
-        public virtual TypesOfBooks TypesOfBooks { get; set; }
-        public virtual BorrowingBooks BorrowingBooks { get; set; }
+        public virtual TypesOfBookCategories TypesOfBookCategories { get; set; }
     }
 }

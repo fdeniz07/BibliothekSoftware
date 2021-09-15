@@ -50,6 +50,12 @@ namespace Bibliothek.Forms
                                                     x.Id,
                                                     Abteilung = x.SectionName
                                                 }).ToList();//db.Section.ToList();
+            lueLanguage.Properties.DataSource = (from x in db.Languages
+                                                 select new
+                                                 {
+                                                     x.Id,
+                                                     Sprache = x.Language
+                                                 }).ToList();
         }
 
         private void ToBookList()
@@ -64,7 +70,7 @@ namespace Bibliothek.Forms
                              books.ISBN,
                              Erscheinungsjahr = books.PublicationYear,
                              Auflage = books.Edition,
-                             Sprache = books.Language,
+                             Sprache = books.Languages.Language,
                              Drucklänge = books.PrintLenght,
                              Autor = books.Authors.FullName,
                              Verlag = books.Publishers.PublisherName,
@@ -90,7 +96,7 @@ namespace Bibliothek.Forms
                 books.ISBN = txtISBN.Text;
                 books.PublicationYear = txtPublicationYear.Text;
                 books.Edition = txtEdition.Text;
-                books.Language = txtLanguage.Text;
+                books.LanguageId = byte.Parse(lueLanguage.EditValue.ToString());
                 books.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
                 books.AuthorId = byte.Parse(lueAuthor.EditValue.ToString());
                 books.PublisherId = byte.Parse(luePublisher.EditValue.ToString());
@@ -142,7 +148,6 @@ namespace Bibliothek.Forms
             value.ISBN = txtISBN.Text;
             value.PublicationYear = txtPublicationYear.Text;
             value.Edition = txtEdition.Text;
-            value.Language = txtLanguage.Text;
             value.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
             value.QRCode = txtQRCode.Text;
             value.Note = txtNote.Text;
@@ -160,7 +165,7 @@ namespace Bibliothek.Forms
             txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
             txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("Erscheinungsjahr").ToString();
             txtEdition.Text = gridView1.GetFocusedRowCellValue("Auflage").ToString();
-            txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
+            //txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
             txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
             txtQRCode.Text = gridView1.GetFocusedRowCellValue("QRCode").ToString();
             txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();

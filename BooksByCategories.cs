@@ -18,6 +18,7 @@ namespace Bibliothek
         public BooksByCategories()
         {
             this.Books = new HashSet<Books>();
+            this.TeacherMaterials = new HashSet<TeacherMaterials>();
         }
     
         public int Id { get; set; }
@@ -33,5 +34,7 @@ namespace Bibliothek
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books> Books { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TeacherMaterials> TeacherMaterials { get; set; }
     }
 }

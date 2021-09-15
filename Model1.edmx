@@ -43,7 +43,37 @@
           <Property Name="ISBN" Type="nvarchar" MaxLength="25" />
           <Property Name="PublicationYear" Type="nvarchar" MaxLength="4" />
           <Property Name="Edition" Type="nvarchar" MaxLength="20" />
-          <Property Name="Language" Type="nvarchar" MaxLength="20" />
+          <Property Name="LanguageId" Type="int" />
+          <Property Name="PrintLenght" Type="int" />
+          <Property Name="QRCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="NumberOfRentals" Type="int" />
+          <Property Name="AuthorId" Type="int" />
+          <Property Name="PublisherId" Type="int" />
+          <Property Name="TypeId" Type="int" />
+          <Property Name="BookCategoryId" Type="int" />
+          <Property Name="SectionId" Type="int" />
+          <Property Name="BookState" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Books2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="25" />
+          <Property Name="PublicationYear" Type="nvarchar" MaxLength="4" />
+          <Property Name="Edition" Type="nvarchar" MaxLength="20" />
+          <Property Name="LanguageId" Type="nvarchar" MaxLength="20" />
           <Property Name="PrintLenght" Type="int" />
           <Property Name="QRCode" Type="nvarchar" MaxLength="250" />
           <Property Name="BarCode" Type="nvarchar" MaxLength="250" />
@@ -82,7 +112,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
           <Property Name="Details" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="BorrowingBookActivities">
@@ -90,20 +120,20 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BorrowingBooksId" Type="int" Nullable="false" />
-          <Property Name="TransactionTypeId" Type="int" Nullable="false" />
+          <Property Name="BorrowingBooksId" Type="int" />
+          <Property Name="TransactionTypeId" Type="int" />
           <Property Name="StaffId" Type="int" />
           <Property Name="DateOfBorrowing" Type="datetime2" Precision="7" />
           <Property Name="ReturnDate" Type="datetime2" Precision="7" />
           <Property Name="Period" Type="int" />
-          <Property Name="DelayTime" Type="int" Nullable="false" />
-          <Property Name="IsRead" Type="bit" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="IsDeleted" Type="bit" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DelayTime" Type="int" />
+          <Property Name="IsRead" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="BorrowingBooks">
@@ -111,12 +141,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BookId" Type="int" Nullable="false" />
-          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="BookId" Type="int" />
+          <Property Name="StudentId" Type="int" />
           <Property Name="CreatedDate" Type="datetime2" Precision="7" />
           <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
-          <Property Name="IsDeleted" Type="bit" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
           <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
@@ -129,6 +159,21 @@
           <Property Name="CityName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PostCode" Type="nvarchar" MaxLength="5" Nullable="false" />
           <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClassesOfBooks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Countries">
           <Key>
@@ -174,6 +219,37 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Lessons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lesson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="Notes">
           <Key>
             <PropertyRef Name="Id" />
@@ -194,15 +270,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PenaltyAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PenaltyAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Details" Type="nvarchar" MaxLength="250" />
-          <Property Name="BorrowingBookActivityId" Type="int" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="IsDeleted" Type="bit" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BorrowingBookActivityId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Publishers">
@@ -314,15 +390,15 @@
           <Property Name="Picture" Type="nvarchar" MaxLength="500" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="StaffGroupId" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="PasswordHash" Type="varbinary" MaxLength="500" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="PasswordHash" Type="varbinary" MaxLength="500" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="IsArchived" Type="bit" Nullable="false" />
-          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsArchived" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Students">
@@ -361,12 +437,57 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TeacherMaterials">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="25" />
+          <Property Name="PublicationYear" Type="nvarchar" MaxLength="4" />
+          <Property Name="Edition" Type="nvarchar" MaxLength="20" />
+          <Property Name="LanguageId" Type="int" />
+          <Property Name="PrintLenght" Type="int" />
+          <Property Name="QRCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="BarCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="AuthorId" Type="int" />
+          <Property Name="PublisherId" Type="int" />
+          <Property Name="LessonId" Type="int" />
+          <Property Name="BookClassId" Type="int" />
+          <Property Name="BookCategoryId" Type="int" />
+          <Property Name="SectionId" Type="int" />
+          <Property Name="BookCategoryTypeId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="Tools">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TypesOfBookCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="25" />
+          <Property Name="Details" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TypesOfBooks">
           <Key>
@@ -421,7 +542,7 @@
           <Property Name="ModifiedByName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
         </EntityType>
-        <Association Name="FK_Books_Authors">
+        <Association Name="FK_Books_Authors1">
           <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -433,7 +554,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_BooksByCategories">
+        <Association Name="FK_Books_BooksByCategories1">
           <End Role="BooksByCategories" Type="Self.BooksByCategories" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +566,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_Publishers">
+        <Association Name="FK_Books_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Publishers1">
           <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,7 +590,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_Section">
+        <Association Name="FK_Books_Section1">
           <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -469,7 +602,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_TypesOfBooks">
+        <Association Name="FK_Books_TypesOfBooks1">
           <End Role="TypesOfBooks" Type="Self.TypesOfBooks" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -482,7 +615,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBookActivities_BookTransactionType">
-          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="1" />
+          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="0..1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BookTransactionType">
@@ -494,7 +627,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBookActivities_BorrowingBooks">
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="1" />
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="0..1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BorrowingBooks">
@@ -502,18 +635,6 @@
             </Principal>
             <Dependent Role="BorrowingBookActivities">
               <PropertyRef Name="BorrowingBooksId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BorrowingBookActivities_Penalties">
-          <End Role="Penalties" Type="Self.Penalties" Multiplicity="1" />
-          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Penalties">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBookActivities">
-              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -529,20 +650,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BorrowingBooks_Books">
+        <Association Name="FK_BorrowingBooks_Books1">
           <End Role="Books" Type="Self.Books" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="BookId" />
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBooks_Students">
-          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -697,6 +818,102 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TeacherMaterials_Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_BooksByCategories">
+          <End Role="BooksByCategories" Type="Self.BooksByCategories" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BooksByCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_ClassesOfBooks">
+          <End Role="ClassesOfBooks" Type="Self.ClassesOfBooks" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassesOfBooks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Lessons">
+          <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lessons">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Publishers">
+          <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publishers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="PublisherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="SectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_TypesOfBookCategories">
+          <End Role="TypesOfBookCategories" Type="Self.TypesOfBookCategories" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypesOfBookCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookCategoryTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -725,15 +942,19 @@
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Books2" EntityType="Self.Books2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BooksByCategories" EntityType="Self.BooksByCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookTransactionType" EntityType="Self.BookTransactionType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BorrowingBookActivities" EntityType="Self.BorrowingBookActivities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassesOfBooks" EntityType="Self.ClassesOfBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lessons" EntityType="Self.Lessons" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Penalties" EntityType="Self.Penalties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
@@ -746,27 +967,33 @@
           <EntitySet Name="Staves" EntityType="Self.Staves" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherMaterials" EntityType="Self.TeacherMaterials" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tools" EntityType="Self.Tools" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypesOfBookCategories" EntityType="Self.TypesOfBookCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypesOfBooks" EntityType="Self.TypesOfBooks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypesOfSchools" EntityType="Self.TypesOfSchools" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
+          <AssociationSet Name="FK_Books_Authors1" Association="Self.FK_Books_Authors1">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_BooksByCategories" Association="Self.FK_Books_BooksByCategories">
+          <AssociationSet Name="FK_Books_BooksByCategories1" Association="Self.FK_Books_BooksByCategories1">
             <End Role="BooksByCategories" EntitySet="BooksByCategories" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_Publishers" Association="Self.FK_Books_Publishers">
+          <AssociationSet Name="FK_Books_Languages" Association="Self.FK_Books_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Books" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Publishers1" Association="Self.FK_Books_Publishers1">
             <End Role="Publishers" EntitySet="Publishers" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_Section" Association="Self.FK_Books_Section">
+          <AssociationSet Name="FK_Books_Section1" Association="Self.FK_Books_Section1">
             <End Role="Section" EntitySet="Section" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_TypesOfBooks" Association="Self.FK_Books_TypesOfBooks">
+          <AssociationSet Name="FK_Books_TypesOfBooks1" Association="Self.FK_Books_TypesOfBooks1">
             <End Role="TypesOfBooks" EntitySet="TypesOfBooks" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
@@ -778,15 +1005,11 @@
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
           </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBookActivities_Penalties" Association="Self.FK_BorrowingBookActivities_Penalties">
-            <End Role="Penalties" EntitySet="Penalties" />
-            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
-          </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_Staves" Association="Self.FK_BorrowingBookActivities_Staves">
             <End Role="Staves" EntitySet="Staves" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
           </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_Books" Association="Self.FK_BorrowingBooks_Books">
+          <AssociationSet Name="FK_BorrowingBooks_Books1" Association="Self.FK_BorrowingBooks_Books1">
             <End Role="Books" EntitySet="Books" />
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
           </AssociationSet>
@@ -842,6 +1065,38 @@
             <End Role="Schools" EntitySet="Schools" />
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Authors" Association="Self.FK_TeacherMaterials_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_BooksByCategories" Association="Self.FK_TeacherMaterials_BooksByCategories">
+            <End Role="BooksByCategories" EntitySet="BooksByCategories" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_ClassesOfBooks" Association="Self.FK_TeacherMaterials_ClassesOfBooks">
+            <End Role="ClassesOfBooks" EntitySet="ClassesOfBooks" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Languages" Association="Self.FK_TeacherMaterials_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Lessons" Association="Self.FK_TeacherMaterials_Lessons">
+            <End Role="Lessons" EntitySet="Lessons" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Publishers" Association="Self.FK_TeacherMaterials_Publishers">
+            <End Role="Publishers" EntitySet="Publishers" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Section" Association="Self.FK_TeacherMaterials_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_TypesOfBookCategories" Association="Self.FK_TeacherMaterials_TypesOfBookCategories">
+            <End Role="TypesOfBookCategories" EntitySet="TypesOfBookCategories" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
           <AssociationSet Name="FK_Users_Gender" Association="Self.FK_Users_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Users" EntitySet="Users" />
@@ -882,7 +1137,8 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors1" FromRole="Authors" ToRole="Books" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_Authors" FromRole="Authors" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="Books">
           <Key>
@@ -895,7 +1151,44 @@
           <Property Name="ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="PublicationYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="Edition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Language" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="Int32" />
+          <Property Name="PrintLenght" Type="Int32" />
+          <Property Name="QRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BarCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfRentals" Type="Int32" />
+          <Property Name="AuthorId" Type="Int32" />
+          <Property Name="PublisherId" Type="Int32" />
+          <Property Name="TypeId" Type="Int32" />
+          <Property Name="BookCategoryId" Type="Int32" />
+          <Property Name="SectionId" Type="Int32" />
+          <Property Name="BookState" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Authors" Relationship="Self.FK_Books_Authors1" FromRole="Books" ToRole="Authors" />
+          <NavigationProperty Name="BooksByCategories" Relationship="Self.FK_Books_BooksByCategories1" FromRole="Books" ToRole="BooksByCategories" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Books_Languages" FromRole="Books" ToRole="Languages" />
+          <NavigationProperty Name="Publishers" Relationship="Self.FK_Books_Publishers1" FromRole="Books" ToRole="Publishers" />
+          <NavigationProperty Name="Section" Relationship="Self.FK_Books_Section1" FromRole="Books" ToRole="Section" />
+          <NavigationProperty Name="TypesOfBooks" Relationship="Self.FK_Books_TypesOfBooks1" FromRole="Books" ToRole="TypesOfBooks" />
+          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Books1" FromRole="Books" ToRole="BorrowingBooks" />
+        </EntityType>
+        <EntityType Name="Books2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PublicationYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Edition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PrintLenght" Type="Int32" />
           <Property Name="QRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="BarCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -913,12 +1206,6 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Authors" Relationship="Self.FK_Books_Authors" FromRole="Books" ToRole="Authors" />
-          <NavigationProperty Name="BooksByCategories" Relationship="Self.FK_Books_BooksByCategories" FromRole="Books" ToRole="BooksByCategories" />
-          <NavigationProperty Name="Publishers" Relationship="Self.FK_Books_Publishers" FromRole="Books" ToRole="Publishers" />
-          <NavigationProperty Name="Section" Relationship="Self.FK_Books_Section" FromRole="Books" ToRole="Section" />
-          <NavigationProperty Name="TypesOfBooks" Relationship="Self.FK_Books_TypesOfBooks" FromRole="Books" ToRole="TypesOfBooks" />
-          <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBooks_Books" FromRole="Books" ToRole="BorrowingBooks" />
         </EntityType>
         <EntityType Name="BooksByCategories">
           <Key>
@@ -934,14 +1221,15 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_Books_BooksByCategories" FromRole="BooksByCategories" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_BooksByCategories1" FromRole="BooksByCategories" ToRole="Books" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_BooksByCategories" FromRole="BooksByCategories" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="BookTransactionType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_BookTransactionType" FromRole="BookTransactionType" ToRole="BorrowingBookActivities" />
         </EntityType>
@@ -950,24 +1238,23 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BorrowingBooksId" Type="Int32" Nullable="false" />
-          <Property Name="TransactionTypeId" Type="Int32" Nullable="false" />
+          <Property Name="BorrowingBooksId" Type="Int32" />
+          <Property Name="TransactionTypeId" Type="Int32" />
           <Property Name="StaffId" Type="Int32" />
           <Property Name="DateOfBorrowing" Type="DateTime" Precision="7" />
           <Property Name="ReturnDate" Type="DateTime" Precision="7" />
           <Property Name="Period" Type="Int32" />
-          <Property Name="DelayTime" Type="Int32" Nullable="false" />
-          <Property Name="IsRead" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DelayTime" Type="Int32" />
+          <Property Name="IsRead" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BookTransactionType" Relationship="Self.FK_BorrowingBookActivities_BookTransactionType" FromRole="BorrowingBookActivities" ToRole="BookTransactionType" />
           <NavigationProperty Name="BorrowingBooks" Relationship="Self.FK_BorrowingBookActivities_BorrowingBooks" FromRole="BorrowingBookActivities" ToRole="BorrowingBooks" />
-          <NavigationProperty Name="Penalties" Relationship="Self.FK_BorrowingBookActivities_Penalties" FromRole="BorrowingBookActivities" ToRole="Penalties" />
           <NavigationProperty Name="Staves" Relationship="Self.FK_BorrowingBookActivities_Staves" FromRole="BorrowingBookActivities" ToRole="Staves" />
         </EntityType>
         <EntityType Name="BorrowingBooks">
@@ -975,16 +1262,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BookId" Type="Int32" Nullable="false" />
-          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="StudentId" Type="Int32" />
           <Property Name="CreatedDate" Type="DateTime" Precision="7" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_BorrowingBooks_Books" FromRole="BorrowingBooks" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_BorrowingBooks_Books1" FromRole="BorrowingBooks" ToRole="Books" />
           <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_BorrowingBooks" FromRole="BorrowingBooks" ToRole="BorrowingBookActivities" />
           <NavigationProperty Name="Students" Relationship="Self.FK_BorrowingBooks_Students" FromRole="BorrowingBooks" ToRole="Students" />
         </EntityType>
@@ -998,6 +1285,22 @@
           <Property Name="StateId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="States" Relationship="Self.FK_Cities_States" FromRole="Cities" ToRole="States" />
           <NavigationProperty Name="Schools" Relationship="Self.FK_Schools_Cities" FromRole="Cities" ToRole="Schools" />
+        </EntityType>
+        <EntityType Name="ClassesOfBooks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_ClassesOfBooks" FromRole="ClassesOfBooks" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="Countries">
           <Key>
@@ -1048,6 +1351,40 @@
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_Gender" FromRole="Gender" ToRole="Students" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Gender" FromRole="Gender" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Languages" FromRole="Languages" ToRole="Books" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_Languages" FromRole="Languages" ToRole="TeacherMaterials" />
+        </EntityType>
+        <EntityType Name="Lessons">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lesson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_Lessons" FromRole="Lessons" ToRole="TeacherMaterials" />
+        </EntityType>
         <EntityType Name="Notes">
           <Key>
             <PropertyRef Name="Id" />
@@ -1068,17 +1405,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PenaltyAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PenaltyAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="BorrowingBookActivityId" Type="Int32" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BorrowingBookActivityId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_Penalties" FromRole="Penalties" ToRole="BorrowingBookActivities" />
         </EntityType>
         <EntityType Name="Publishers">
           <Key>
@@ -1094,7 +1430,8 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Publishers" FromRole="Publishers" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Publishers1" FromRole="Publishers" ToRole="Books" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_Publishers" FromRole="Publishers" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -1153,7 +1490,8 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Section" FromRole="Section" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_Section1" FromRole="Section" ToRole="Books" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_Section" FromRole="Section" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="StaffGroups">
           <Key>
@@ -1201,15 +1539,15 @@
           <Property Name="Picture" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="StaffGroupId" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PasswordHash" Type="Binary" MaxLength="500" FixedLength="false" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="Binary" MaxLength="500" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="IsArchived" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsArchived" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BorrowingBookActivities" Relationship="Self.FK_BorrowingBookActivities_Staves" FromRole="Staves" ToRole="BorrowingBookActivities" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Staves_Gender" FromRole="Staves" ToRole="Gender" />
@@ -1258,12 +1596,66 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="TeacherMaterials">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PublicationYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Edition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="Int32" />
+          <Property Name="PrintLenght" Type="Int32" />
+          <Property Name="QRCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BarCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorId" Type="Int32" />
+          <Property Name="PublisherId" Type="Int32" />
+          <Property Name="LessonId" Type="Int32" />
+          <Property Name="BookClassId" Type="Int32" />
+          <Property Name="BookCategoryId" Type="Int32" />
+          <Property Name="SectionId" Type="Int32" />
+          <Property Name="BookCategoryTypeId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Authors" Relationship="Self.FK_TeacherMaterials_Authors" FromRole="TeacherMaterials" ToRole="Authors" />
+          <NavigationProperty Name="BooksByCategories" Relationship="Self.FK_TeacherMaterials_BooksByCategories" FromRole="TeacherMaterials" ToRole="BooksByCategories" />
+          <NavigationProperty Name="ClassesOfBooks" Relationship="Self.FK_TeacherMaterials_ClassesOfBooks" FromRole="TeacherMaterials" ToRole="ClassesOfBooks" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_TeacherMaterials_Languages" FromRole="TeacherMaterials" ToRole="Languages" />
+          <NavigationProperty Name="Lessons" Relationship="Self.FK_TeacherMaterials_Lessons" FromRole="TeacherMaterials" ToRole="Lessons" />
+          <NavigationProperty Name="Publishers" Relationship="Self.FK_TeacherMaterials_Publishers" FromRole="TeacherMaterials" ToRole="Publishers" />
+          <NavigationProperty Name="Section" Relationship="Self.FK_TeacherMaterials_Section" FromRole="TeacherMaterials" ToRole="Section" />
+          <NavigationProperty Name="TypesOfBookCategories" Relationship="Self.FK_TeacherMaterials_TypesOfBookCategories" FromRole="TeacherMaterials" ToRole="TypesOfBookCategories" />
+        </EntityType>
         <EntityType Name="Tools">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TypesOfBookCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TeacherMaterials" Relationship="Self.FK_TeacherMaterials_TypesOfBookCategories" FromRole="TypesOfBookCategories" ToRole="TeacherMaterials" />
         </EntityType>
         <EntityType Name="TypesOfBooks">
           <Key>
@@ -1279,7 +1671,7 @@
           <Property Name="CreatedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedByName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_Books_TypesOfBooks" FromRole="TypesOfBooks" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_Books_TypesOfBooks1" FromRole="TypesOfBooks" ToRole="Books" />
         </EntityType>
         <EntityType Name="TypesOfSchools">
           <Key>
@@ -1322,7 +1714,7 @@
           <NavigationProperty Name="Gender" Relationship="Self.FK_Users_Gender" FromRole="Users" ToRole="Gender" />
           <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
-        <Association Name="FK_Books_Authors">
+        <Association Name="FK_Books_Authors1">
           <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1334,7 +1726,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_BooksByCategories">
+        <Association Name="FK_TeacherMaterials_Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_BooksByCategories1">
           <End Role="BooksByCategories" Type="Self.BooksByCategories" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1346,7 +1750,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_Publishers">
+        <Association Name="FK_Books_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Books">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Books_Publishers1">
           <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1358,7 +1774,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_Section">
+        <Association Name="FK_Books_Section1">
           <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1370,7 +1786,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Books_TypesOfBooks">
+        <Association Name="FK_Books_TypesOfBooks1">
           <End Role="TypesOfBooks" Type="Self.TypesOfBooks" Multiplicity="0..1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1382,20 +1798,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_BorrowingBooks_Books">
+        <Association Name="FK_BorrowingBooks_Books1">
           <End Role="Books" Type="Self.Books" Multiplicity="1" />
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="BorrowingBooks">
-              <PropertyRef Name="BookId" />
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_BooksByCategories">
+          <End Role="BooksByCategories" Type="Self.BooksByCategories" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BooksByCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookCategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBookActivities_BookTransactionType">
-          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="1" />
+          <End Role="BookTransactionType" Type="Self.BookTransactionType" Multiplicity="0..1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BookTransactionType">
@@ -1407,7 +1835,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBookActivities_BorrowingBooks">
-          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="1" />
+          <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="0..1" />
           <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BorrowingBooks">
@@ -1415,18 +1843,6 @@
             </Principal>
             <Dependent Role="BorrowingBookActivities">
               <PropertyRef Name="BorrowingBooksId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BorrowingBookActivities_Penalties">
-          <End Role="Penalties" Type="Self.Penalties" Multiplicity="1" />
-          <End Role="BorrowingBookActivities" Type="Self.BorrowingBookActivities" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Penalties">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BorrowingBookActivities">
-              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1443,7 +1859,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BorrowingBooks_Students">
-          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="BorrowingBooks" Type="Self.BorrowingBooks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Students">
@@ -1475,6 +1891,18 @@
             </Principal>
             <Dependent Role="Schools">
               <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_ClassesOfBooks">
+          <End Role="ClassesOfBooks" Type="Self.ClassesOfBooks" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassesOfBooks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookClassId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1538,6 +1966,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TeacherMaterials_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Lessons">
+          <End Role="Lessons" Type="Self.Lessons" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lessons">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherMaterials_Publishers">
+          <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publishers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="PublisherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_StaffRoles_Roles">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="StaffRoles" Type="Self.StaffRoles" Multiplicity="*" />
@@ -1598,6 +2062,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TeacherMaterials_Section">
+          <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="SectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Staves_StaffGroups">
           <End Role="StaffGroups" Type="Self.StaffGroups" Multiplicity="1" />
           <End Role="Staves" Type="Self.Staves" Multiplicity="*" />
@@ -1622,19 +2098,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TeacherMaterials_TypesOfBookCategories">
+          <End Role="TypesOfBookCategories" Type="Self.TypesOfBookCategories" Multiplicity="0..1" />
+          <End Role="TeacherMaterials" Type="Self.TeacherMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypesOfBookCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeacherMaterials">
+              <PropertyRef Name="BookCategoryTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DamlaLibraryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admins" />
           <EntitySet Name="Authors" EntityType="Self.Authors" />
           <EntitySet Name="Books" EntityType="Self.Books" />
+          <EntitySet Name="Books2" EntityType="Self.Books2" />
           <EntitySet Name="BooksByCategories" EntityType="Self.BooksByCategories" />
           <EntitySet Name="BookTransactionType" EntityType="Self.BookTransactionType" />
           <EntitySet Name="BorrowingBookActivities" EntityType="Self.BorrowingBookActivities" />
           <EntitySet Name="BorrowingBooks" EntityType="Self.BorrowingBooks" />
           <EntitySet Name="Cities" EntityType="Self.Cities" />
+          <EntitySet Name="ClassesOfBooks" EntityType="Self.ClassesOfBooks" />
           <EntitySet Name="Countries" EntityType="Self.Countries" />
           <EntitySet Name="CurrentClasses" EntityType="Self.CurrentClasses" />
           <EntitySet Name="Departments" EntityType="Self.Departments" />
           <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" />
+          <EntitySet Name="Lessons" EntityType="Self.Lessons" />
           <EntitySet Name="Notes" EntityType="Self.Notes" />
           <EntitySet Name="Penalties" EntityType="Self.Penalties" />
           <EntitySet Name="Publishers" EntityType="Self.Publishers" />
@@ -1647,33 +2139,47 @@
           <EntitySet Name="Staves" EntityType="Self.Staves" />
           <EntitySet Name="Students" EntityType="Self.Students" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TeacherMaterials" EntityType="Self.TeacherMaterials" />
           <EntitySet Name="Tools" EntityType="Self.Tools" />
+          <EntitySet Name="TypesOfBookCategories" EntityType="Self.TypesOfBookCategories" />
           <EntitySet Name="TypesOfBooks" EntityType="Self.TypesOfBooks" />
           <EntitySet Name="TypesOfSchools" EntityType="Self.TypesOfSchools" />
           <EntitySet Name="Users" EntityType="Self.Users" />
-          <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
+          <AssociationSet Name="FK_Books_Authors1" Association="Self.FK_Books_Authors1">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_BooksByCategories" Association="Self.FK_Books_BooksByCategories">
+          <AssociationSet Name="FK_TeacherMaterials_Authors" Association="Self.FK_TeacherMaterials_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_BooksByCategories1" Association="Self.FK_Books_BooksByCategories1">
             <End Role="BooksByCategories" EntitySet="BooksByCategories" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_Publishers" Association="Self.FK_Books_Publishers">
+          <AssociationSet Name="FK_Books_Languages" Association="Self.FK_Books_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Books" EntitySet="Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Books_Publishers1" Association="Self.FK_Books_Publishers1">
             <End Role="Publishers" EntitySet="Publishers" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_Section" Association="Self.FK_Books_Section">
+          <AssociationSet Name="FK_Books_Section1" Association="Self.FK_Books_Section1">
             <End Role="Section" EntitySet="Section" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_Books_TypesOfBooks" Association="Self.FK_Books_TypesOfBooks">
+          <AssociationSet Name="FK_Books_TypesOfBooks1" Association="Self.FK_Books_TypesOfBooks1">
             <End Role="TypesOfBooks" EntitySet="TypesOfBooks" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBooks_Books" Association="Self.FK_BorrowingBooks_Books">
+          <AssociationSet Name="FK_BorrowingBooks_Books1" Association="Self.FK_BorrowingBooks_Books1">
             <End Role="Books" EntitySet="Books" />
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_BooksByCategories" Association="Self.FK_TeacherMaterials_BooksByCategories">
+            <End Role="BooksByCategories" EntitySet="BooksByCategories" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
           </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_BookTransactionType" Association="Self.FK_BorrowingBookActivities_BookTransactionType">
             <End Role="BookTransactionType" EntitySet="BookTransactionType" />
@@ -1681,10 +2187,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_BorrowingBooks" Association="Self.FK_BorrowingBookActivities_BorrowingBooks">
             <End Role="BorrowingBooks" EntitySet="BorrowingBooks" />
-            <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BorrowingBookActivities_Penalties" Association="Self.FK_BorrowingBookActivities_Penalties">
-            <End Role="Penalties" EntitySet="Penalties" />
             <End Role="BorrowingBookActivities" EntitySet="BorrowingBookActivities" />
           </AssociationSet>
           <AssociationSet Name="FK_BorrowingBookActivities_Staves" Association="Self.FK_BorrowingBookActivities_Staves">
@@ -1702,6 +2204,10 @@
           <AssociationSet Name="FK_Schools_Cities" Association="Self.FK_Schools_Cities">
             <End Role="Cities" EntitySet="Cities" />
             <End Role="Schools" EntitySet="Schools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_ClassesOfBooks" Association="Self.FK_TeacherMaterials_ClassesOfBooks">
+            <End Role="ClassesOfBooks" EntitySet="ClassesOfBooks" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
           </AssociationSet>
           <AssociationSet Name="FK_Students_Countries" Association="Self.FK_Students_Countries">
             <End Role="Countries" EntitySet="Countries" />
@@ -1723,6 +2229,18 @@
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Languages" Association="Self.FK_TeacherMaterials_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Lessons" Association="Self.FK_TeacherMaterials_Lessons">
+            <End Role="Lessons" EntitySet="Lessons" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Publishers" Association="Self.FK_TeacherMaterials_Publishers">
+            <End Role="Publishers" EntitySet="Publishers" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
           <AssociationSet Name="FK_StaffRoles_Roles" Association="Self.FK_StaffRoles_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="StaffRoles" EntitySet="StaffRoles" />
@@ -1743,6 +2261,10 @@
             <End Role="Schools" EntitySet="Schools" />
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_Section" Association="Self.FK_TeacherMaterials_Section">
+            <End Role="Section" EntitySet="Section" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
+          </AssociationSet>
           <AssociationSet Name="FK_Staves_StaffGroups" Association="Self.FK_Staves_StaffGroups">
             <End Role="StaffGroups" EntitySet="StaffGroups" />
             <End Role="Staves" EntitySet="Staves" />
@@ -1750,6 +2272,10 @@
           <AssociationSet Name="FK_StaffRoles_Staves" Association="Self.FK_StaffRoles_Staves">
             <End Role="Staves" EntitySet="Staves" />
             <End Role="StaffRoles" EntitySet="StaffRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherMaterials_TypesOfBookCategories" Association="Self.FK_TeacherMaterials_TypesOfBookCategories">
+            <End Role="TypesOfBookCategories" EntitySet="TypesOfBookCategories" />
+            <End Role="TeacherMaterials" EntitySet="TeacherMaterials" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1797,7 +2323,38 @@
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
                 <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
                 <ScalarProperty Name="Edition" ColumnName="Edition" />
-                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="PrintLenght" ColumnName="PrintLenght" />
+                <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="NumberOfRentals" ColumnName="NumberOfRentals" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="BookCategoryId" ColumnName="BookCategoryId" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+                <ScalarProperty Name="BookState" ColumnName="BookState" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books2">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.Books2">
+              <MappingFragment StoreEntitySet="Books2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
                 <ScalarProperty Name="PrintLenght" ColumnName="PrintLenght" />
                 <ScalarProperty Name="QRCode" ColumnName="QRCode" />
                 <ScalarProperty Name="BarCode" ColumnName="BarCode" />
@@ -1891,6 +2448,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ClassesOfBooks">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.ClassesOfBooks">
+              <MappingFragment StoreEntitySet="ClassesOfBooks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Countries">
             <EntityTypeMapping TypeName="DamlaLibraryModel.Countries">
               <MappingFragment StoreEntitySet="Countries">
@@ -1936,6 +2509,39 @@
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.Languages">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lessons">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.Lessons">
+              <MappingFragment StoreEntitySet="Lessons">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Lesson" ColumnName="Lesson" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2138,11 +2744,58 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TeacherMaterials">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.TeacherMaterials">
+              <MappingFragment StoreEntitySet="TeacherMaterials">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="PrintLenght" ColumnName="PrintLenght" />
+                <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
+                <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+                <ScalarProperty Name="BookClassId" ColumnName="BookClassId" />
+                <ScalarProperty Name="BookCategoryId" ColumnName="BookCategoryId" />
+                <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+                <ScalarProperty Name="BookCategoryTypeId" ColumnName="BookCategoryTypeId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Tools">
             <EntityTypeMapping TypeName="DamlaLibraryModel.Tools">
               <MappingFragment StoreEntitySet="Tools">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypesOfBookCategories">
+            <EntityTypeMapping TypeName="DamlaLibraryModel.TypesOfBookCategories">
+              <MappingFragment StoreEntitySet="TypesOfBookCategories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedByName" ColumnName="CreatedByName" />
+                <ScalarProperty Name="ModifiedByName" ColumnName="ModifiedByName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

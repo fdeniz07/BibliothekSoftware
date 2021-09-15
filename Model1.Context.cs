@@ -28,15 +28,19 @@ namespace Bibliothek
         public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Authors> Authors { get; set; }
         public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<Books2> Books2 { get; set; }
         public virtual DbSet<BooksByCategories> BooksByCategories { get; set; }
         public virtual DbSet<BookTransactionType> BookTransactionType { get; set; }
         public virtual DbSet<BorrowingBookActivities> BorrowingBookActivities { get; set; }
         public virtual DbSet<BorrowingBooks> BorrowingBooks { get; set; }
         public virtual DbSet<Cities> Cities { get; set; }
+        public virtual DbSet<ClassesOfBooks> ClassesOfBooks { get; set; }
         public virtual DbSet<Countries> Countries { get; set; }
         public virtual DbSet<CurrentClasses> CurrentClasses { get; set; }
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Languages> Languages { get; set; }
+        public virtual DbSet<Lessons> Lessons { get; set; }
         public virtual DbSet<Notes> Notes { get; set; }
         public virtual DbSet<Penalties> Penalties { get; set; }
         public virtual DbSet<Publishers> Publishers { get; set; }
@@ -49,7 +53,9 @@ namespace Bibliothek
         public virtual DbSet<Staves> Staves { get; set; }
         public virtual DbSet<Students> Students { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TeacherMaterials> TeacherMaterials { get; set; }
         public virtual DbSet<Tools> Tools { get; set; }
+        public virtual DbSet<TypesOfBookCategories> TypesOfBookCategories { get; set; }
         public virtual DbSet<TypesOfBooks> TypesOfBooks { get; set; }
         public virtual DbSet<TypesOfSchools> TypesOfSchools { get; set; }
         public virtual DbSet<Users> Users { get; set; }

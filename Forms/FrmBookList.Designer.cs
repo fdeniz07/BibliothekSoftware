@@ -31,6 +31,7 @@ namespace Bibliothek.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookList));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.rtxtSummary = new System.Windows.Forms.RichTextBox();
             this.btnList = new DevExpress.XtraEditors.SimpleButton();
             this.lueAuthor = new DevExpress.XtraEditors.LookUpEdit();
@@ -52,7 +53,6 @@ namespace Bibliothek.Forms
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLanguage = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtEdition = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -72,9 +72,10 @@ namespace Bibliothek.Forms
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.winExplorerView1 = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.lueLanguage = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAuthor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSection.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBookCategory.Properties)).BeginInit();
@@ -83,7 +84,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQRCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintLenght.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLanguage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPublicationYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtISBN.Properties)).BeginInit();
@@ -95,11 +95,12 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueLanguage.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lueLanguage);
             this.groupControl1.Controls.Add(this.pictureEdit1);
             this.groupControl1.Controls.Add(this.rtxtSummary);
             this.groupControl1.Controls.Add(this.btnList);
@@ -122,7 +123,6 @@ namespace Bibliothek.Forms
             this.groupControl1.Controls.Add(this.labelControl14);
             this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.labelControl12);
-            this.groupControl1.Controls.Add(this.txtLanguage);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.txtEdition);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -142,6 +142,15 @@ namespace Bibliothek.Forms
             this.groupControl1.Size = new System.Drawing.Size(388, 845);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "BUCHTRANSAKTIONEN";
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(193, 529);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(130, 130);
+            this.pictureEdit1.TabIndex = 20;
             // 
             // rtxtSummary
             // 
@@ -321,13 +330,6 @@ namespace Bibliothek.Forms
             this.labelControl12.TabIndex = 13;
             this.labelControl12.Text = "Verlag :";
             // 
-            // txtLanguage
-            // 
-            this.txtLanguage.Location = new System.Drawing.Point(143, 295);
-            this.txtLanguage.Name = "txtLanguage";
-            this.txtLanguage.Size = new System.Drawing.Size(227, 20);
-            this.txtLanguage.TabIndex = 7;
-            // 
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(89, 298);
@@ -480,14 +482,14 @@ namespace Bibliothek.Forms
             this.winExplorerView1.GridControl = this.gridControl1;
             this.winExplorerView1.Name = "winExplorerView1";
             // 
-            // pictureEdit1
+            // lueLanguage
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(193, 529);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(130, 130);
-            this.pictureEdit1.TabIndex = 20;
+            this.lueLanguage.Location = new System.Drawing.Point(144, 295);
+            this.lueLanguage.Name = "lueLanguage";
+            this.lueLanguage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueLanguage.Size = new System.Drawing.Size(227, 20);
+            this.lueLanguage.TabIndex = 21;
             // 
             // FrmBookList
             // 
@@ -507,6 +509,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueAuthor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueSection.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBookCategory.Properties)).EndInit();
@@ -515,7 +518,6 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQRCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrintLenght.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLanguage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEdition.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPublicationYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtISBN.Properties)).EndInit();
@@ -527,7 +529,7 @@ namespace Bibliothek.Forms
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winExplorerView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueLanguage.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,7 +549,6 @@ namespace Bibliothek.Forms
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit txtLanguage;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txtEdition;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -576,5 +577,6 @@ namespace Bibliothek.Forms
         private DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView winExplorerView1;
         private System.Windows.Forms.RichTextBox rtxtSummary;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.LookUpEdit lueLanguage;
     }
 }

@@ -46,7 +46,7 @@ namespace Bibliothek.Forms
             lblSectionTotals.Text = db.Section.Count().ToString(); //5
             lblTotalCategory.Text = db.BooksByCategories.Count().ToString(); //6
             lblTotalDifferntBook.Text = (from x in db.Books select x.Title).Distinct().Count().ToString(); //7
-            lblTotalNumberOfLanguages.Text = (from x in db.Books select x.Language).Distinct().Count().ToString(); //8
+            lblTotalNumberOfLanguages.Text = (from x in db.Books select x.Languages.Language).Distinct().Count().ToString(); //8
             lblMostPages.Text = (from x in db.Books orderby x.PrintLenght descending select x.Title).FirstOrDefault().ToString(); //9-1
             lblPageCount.Text = (from x in db.Books orderby x.PrintLenght descending select x.PrintLenght).FirstOrDefault().ToString(); //9-2
 

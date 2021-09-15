@@ -32,7 +32,7 @@ namespace Bibliothek.Forms
                 books.ISBN = txtISBN.Text;
                 books.PublicationYear = txtPublicationYear.Text;
                 books.Edition = txtEdition.Text;
-                books.Language = txtLanguage.Text;
+               // books.Language = txtLanguage.Text;
                 books.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
                 books.AuthorId = byte.Parse(lueAuthor.EditValue.ToString());
                 books.PublisherId = byte.Parse(luePublisher.EditValue.ToString());
@@ -102,7 +102,7 @@ namespace Bibliothek.Forms
                              books.ISBN,
                              books.PublicationYear,
                              books.Edition,
-                             books.Language,
+                             books.Languages.Language,
                              books.PrintLenght,
                              books.Authors.FullName,
                              books.Publishers.PublisherName,

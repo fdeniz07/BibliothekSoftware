@@ -33,7 +33,7 @@ namespace Bibliothek.Forms
                 chartControl1.Series["Series 1"].Points.AddPoint(item.Buchgenre, item.Summe);
             }
 
-            var values2 = db.Books.OrderBy(x => x.Language).GroupBy(y => y.Language).Select(z => new
+            var values2 = db.Books.OrderBy(x => x.Languages.Language).GroupBy(y => y.Languages.Language).Select(z => new
             {
                 Sprache = z.Key,
                 Summe = z.Count()
