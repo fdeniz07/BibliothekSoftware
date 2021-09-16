@@ -166,8 +166,8 @@ namespace Bibliothek
             // 
             this.btnBorrowingBooksActivity.Caption = "Ausleihenliste (Detailliert)";
             this.btnBorrowingBooksActivity.Id = 47;
-            this.btnBorrowingBooksActivity.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.Image")));
-            this.btnBorrowingBooksActivity.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooks.ImageOptions.LargeImage")));
+            this.btnBorrowingBooksActivity.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooksActivity.ImageOptions.Image")));
+            this.btnBorrowingBooksActivity.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrowingBooksActivity.ImageOptions.LargeImage")));
             this.btnBorrowingBooksActivity.Name = "btnBorrowingBooksActivity";
             this.btnBorrowingBooksActivity.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrowingBooks_ItemClick);
             // 
@@ -683,6 +683,7 @@ namespace Bibliothek
             this.btnTeachingMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.Image")));
             this.btnTeachingMaterial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTeachingMaterial.ImageOptions.LargeImage")));
             this.btnTeachingMaterial.Name = "btnTeachingMaterial";
+            this.btnTeachingMaterial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTeachingMaterial_ItemClick);
             // 
             // btnNewTeachingMaterial
             // 

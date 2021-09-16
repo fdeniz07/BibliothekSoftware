@@ -88,7 +88,7 @@ namespace Bibliothek.Forms
         {
             Books books = new Books();
 
-            if (txtBookName.Text.Length != null && txtBookName.Text.Length <= 50 && txtDescription.Text.Length <= 250 && lueAuthor.Text.Length != null && lueType.Text.Length != null && luePublisher.Text.Length != null && lueBookCategory.Text.Length != null && lueSection.Text.Length != null)
+            if (txtBookName.Text.Length != null && txtBookName.Text.Length <= 50 && txtDescription.Text.Length <= 250 && lueAuthor.Text.Length != null && lueType.Text.Length != null && luePublisher.Text.Length != null && lueBookCategory.Text.Length != null && lueSection.Text.Length != null && lueLanguage.Text.Length != null)
             {
                 books.Title = txtBookName.Text;
                 books.Description = txtDescription.Text;

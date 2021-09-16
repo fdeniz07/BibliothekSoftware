@@ -270,6 +270,12 @@
     <Compile Include="Forms\FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmTeacherMaterielList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTeacherMaterielList.Designer.cs">
+      <DependentUpon>FrmTeacherMaterielList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmYoutube.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTeacherMaterielList.resx">
+      <DependentUpon>FrmTeacherMaterielList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmYoutube.resx">
       <DependentUpon>FrmYoutube.cs</DependentUpon>

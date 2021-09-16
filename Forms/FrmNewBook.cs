@@ -2,7 +2,6 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.Emf;
 
 namespace Bibliothek.Forms
 {
