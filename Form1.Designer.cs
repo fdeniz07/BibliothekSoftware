@@ -105,8 +105,8 @@ namespace Bibliothek
             this.btnCategoryList2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewCategory2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnLevelList = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewLevelList = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBookClassListe = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewBookClass = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageGroup26 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnLehrMaterialStatistic = new DevExpress.XtraBars.BarButtonItem();
             this.btnBookGenreStatistic = new DevExpress.XtraBars.BarButtonItem();
@@ -634,14 +634,18 @@ namespace Bibliothek
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 46, 45, 46);
             this.ribbonControl1.ExpandCollapseItem.Id = 67;
+            this.ribbonControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
             this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl1.MaxItemId = 69;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
@@ -652,7 +656,7 @@ namespace Bibliothek
             this.ribbonPage3,
             this.ribbonPage7});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
-            this.ribbonControl1.Size = new System.Drawing.Size(1584, 161);
+            this.ribbonControl1.Size = new System.Drawing.Size(1904, 161);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
             // 
             // ribbonPage8
@@ -741,26 +745,26 @@ namespace Bibliothek
             // 
             // ribbonPageGroup25
             // 
-            this.ribbonPageGroup25.ItemLinks.Add(this.btnLevelList);
-            this.ribbonPageGroup25.ItemLinks.Add(this.btnNewLevelList);
+            this.ribbonPageGroup25.ItemLinks.Add(this.btnBookClassListe);
+            this.ribbonPageGroup25.ItemLinks.Add(this.btnNewBookClass);
             this.ribbonPageGroup25.Name = "ribbonPageGroup25";
             this.ribbonPageGroup25.Text = "Niveau";
             // 
-            // btnLevelList
+            // btnBookClassListe
             // 
-            this.btnLevelList.Caption = "Niveauliste";
-            this.btnLevelList.Id = 57;
-            this.btnLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.Image")));
-            this.btnLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.LargeImage")));
-            this.btnLevelList.Name = "btnLevelList";
+            this.btnBookClassListe.Caption = "Klassenliste";
+            this.btnBookClassListe.Id = 57;
+            this.btnBookClassListe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.Image")));
+            this.btnBookClassListe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLevelList.ImageOptions.LargeImage")));
+            this.btnBookClassListe.Name = "btnBookClassListe";
             // 
-            // btnNewLevelList
+            // btnNewBookClass
             // 
-            this.btnNewLevelList.Caption = "Neues Niveau";
-            this.btnNewLevelList.Id = 58;
-            this.btnNewLevelList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.Image")));
-            this.btnNewLevelList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.LargeImage")));
-            this.btnNewLevelList.Name = "btnNewLevelList";
+            this.btnNewBookClass.Caption = "Neue Klasse";
+            this.btnNewBookClass.Id = 58;
+            this.btnNewBookClass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.Image")));
+            this.btnNewBookClass.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewLevelList.ImageOptions.LargeImage")));
+            this.btnNewBookClass.Name = "btnNewBookClass";
             // 
             // ribbonPageGroup26
             // 
@@ -1003,12 +1007,14 @@ namespace Bibliothek
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1584, 881);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.ribbonControl1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "DAMLA NACHHILFE BIBLIOTHEK";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1109,8 +1115,8 @@ namespace Bibliothek
         private DevExpress.XtraBars.BarButtonItem btnBookGenreAdd2;
         private DevExpress.XtraBars.BarButtonItem btnCategoryList2;
         private DevExpress.XtraBars.BarButtonItem btnNewCategory2;
-        private DevExpress.XtraBars.BarButtonItem btnLevelList;
-        private DevExpress.XtraBars.BarButtonItem btnNewLevelList;
+        private DevExpress.XtraBars.BarButtonItem btnBookClassListe;
+        private DevExpress.XtraBars.BarButtonItem btnNewBookClass;
         private DevExpress.XtraBars.BarButtonItem btnLehrMaterialStatistic;
         private DevExpress.XtraBars.BarButtonItem btnBookGenreStatistic;
         private DevExpress.XtraBars.BarButtonItem btnSectionList2;
