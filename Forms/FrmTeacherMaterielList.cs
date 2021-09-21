@@ -79,24 +79,24 @@ namespace Bibliothek.Forms
                          select new
                          {
                              teacherMaterials.Id,
+                             Code = teacherMaterials.QRCode,
                              Buchtitel = teacherMaterials.Title,
-                             Beschreibung = teacherMaterials.Description,
-                             Zusammenfassung = teacherMaterials.Summary,
+                             //Beschreibung = teacherMaterials.Description,
+                             //Zusammenfassung = teacherMaterials.Summary,
                              teacherMaterials.ISBN,
                              Erscheinungsjahr = teacherMaterials.PublicationYear,
-                             Auflage = teacherMaterials.Edition,
+                             //Auflage = teacherMaterials.Edition,
                              Sprache = teacherMaterials.Languages.Language,
-                             Drucklänge = teacherMaterials.PrintLenght,
-                             Autor = teacherMaterials.Authors.FullName,
+                             //Drucklänge = teacherMaterials.PrintLenght,
+                             //Autor = teacherMaterials.Authors.FullName,
                              Verlag = teacherMaterials.Publishers.PublisherName,
                              Fach = teacherMaterials.Lessons.Lesson,
                              Klasse = teacherMaterials.ClassesOfBooks.Class,
                              Buchkategorie = teacherMaterials.BooksByCategories.Category,
                              Abteilung = teacherMaterials.Section.SectionName,
                              Typ = teacherMaterials.TypesOfBookCategories.CategoryName,
-                             QRCode = teacherMaterials.QRCode,
                              Status = teacherMaterials.IsActive,
-                             Erläuterung = teacherMaterials.Note
+                             //Erläuterung = teacherMaterials.Note
                          };
             gridControl1.DataSource = values.ToList();
         }
@@ -151,6 +151,7 @@ namespace Bibliothek.Forms
             value.PrintLenght = Convert.ToInt32(txtPrintLenght.Text);
             value.QRCode = txtQRCode.Text;
             value.Note = txtNote.Text;
+            
 
             db.SaveChanges();
             MessageBox.Show("Lehrmaterial erfolgreich aktualisiert!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -175,15 +176,15 @@ namespace Bibliothek.Forms
         {
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
             txtBookName.Text = gridView1.GetFocusedRowCellValue("Buchtitel").ToString();
-            txtDescription.Text = gridView1.GetFocusedRowCellValue("Beschreibung").ToString();
-            rtxtSummary.Text = gridView1.GetFocusedRowCellValue("Zusammenfassung").ToString();
+            //txtDescription.Text = gridView1.GetFocusedRowCellValue("Beschreibung").ToString();
+            //rtxtSummary.Text = gridView1.GetFocusedRowCellValue("Zusammenfassung").ToString();
             txtISBN.Text = gridView1.GetFocusedRowCellValue("ISBN").ToString();
-            txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("Erscheinungsjahr").ToString();
-            txtEdition.Text = gridView1.GetFocusedRowCellValue("Auflage").ToString();
+            //txtPublicationYear.Text = gridView1.GetFocusedRowCellValue("Erscheinungsjahr").ToString();
+            //txtEdition.Text = gridView1.GetFocusedRowCellValue("Auflage").ToString();
             //txtLanguage.Text = gridView1.GetFocusedRowCellValue("Sprache").ToString();
-            txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
-            txtQRCode.Text = gridView1.GetFocusedRowCellValue("QRCode").ToString();
-            txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();
+            //txtPrintLenght.Text = gridView1.GetFocusedRowCellValue("Drucklänge").ToString();
+            txtQRCode.Text = gridView1.GetFocusedRowCellValue("Code").ToString();
+            //txtNote.Text = gridView1.GetFocusedRowCellValue("Erläuterung").ToString();
             QRCodeEncoder encoder = new QRCodeEncoder();
             pictureEdit1.Image = encoder.Encode(txtQRCode.Text);
         }

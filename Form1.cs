@@ -198,5 +198,11 @@ namespace Bibliothek
             teacherMateriel.MdiParent = this;
             teacherMateriel.Show();
         }
+
+        private void btnNewTeachingMaterial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNewStudent student = new FrmNewStudent();
+            student.Show();
+        }
     }
 }
